@@ -1,0 +1,4 @@
+E:\GitHub\machineLearning2\obj\Debug\machineLearning2.Properties.Resources.resources
+E:\GitHub\machineLearning2\obj\Debug\machineLearning2.csproj.GenerateResource.cache
+E:\GitHub\machineLearning2\obj\Debug\machineLearning2.csproj.CoreCompileInputs.cache
+E:\GitHub\machineLearning2\obj\Debug\machineLearning2.csprojAssemblyReference.cache

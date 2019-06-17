@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\dev",
+    "\\src",
+    "\\src\\forms",
+    "\\src\\neuralNet"
+  ],
+  "SelectedNode": "\\src\\neuralNet\\Neuron.cs",
+  "PreviewInSolutionExplorer": false
+}
