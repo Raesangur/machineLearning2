@@ -6,79 +6,90 @@ using System.Threading.Tasks;
 
 namespace machineLearning2
 {
-    class Neuron
+    class Neuron_t
     {
         private machineLearning2 father;
         /* Public variables */
-        public string Name;
-        public int Column;
-        public int Line;
-        public double Bias = 0.0;
-        public double Output = 0.0;
-        public double Input = 0.0;
+        public string name;
+        public int column;
+        public int line;
+        public double bias = 0.0;
+        public double output = 0.0;
+        public double input = 0.0;
+
+        public List<Connection_t> inputConnections = new List<Connection_t>();
+        public List<Connection_t> outputConnections = new List<Connection_t>();
 
         #region Constructors
-        public Neuron(machineLearning2 parent, string name)
+        public Neuron_t(machineLearning2 Parent, string Name)
         {
-            father = parent;
-            Name = name;
+            father = Parent;
+            name = Name;
 
-            father.WriteLine("Neuron " + name + " created! | " + Bias.ToString(), LogLevel_t.info);
+            father.WriteLine("Neuron " + name + " created! | " + bias.ToString(), LogLevel_t.info);
         }
 
-        public Neuron(machineLearning2 parent, string name, int column, int line)
+        public Neuron_t(machineLearning2 Parent, string Name, int Column, int Line)
         {
-            father = parent;
-            Name = name;
-            Column = column;
-            Line = line;
+            father = Parent;
+            name = Name;
+            column = Column;
+            line = Line;
 
-            father.WriteLine("Neuron " + name + " created! | " + Bias.ToString(), LogLevel_t.info);
+            father.WriteLine("Neuron " + name + " created! | " + bias.ToString(), LogLevel_t.info);
         }
 
-        public Neuron(machineLearning2 parent, string name, double bias)
+        public Neuron_t(machineLearning2 Parent, string Name, double Bias)
         {
-            father = parent;
-            Name = name;
-            Bias = bias;
+            father = Parent;
+            name = Name;
+            bias = Bias;
 
-            father.WriteLine("Neuron " + name + " created! | " + Bias.ToString(), LogLevel_t.info);
+            father.WriteLine("Neuron " + name + " created! | " + bias.ToString(), LogLevel_t.info);
         }
 
-        public Neuron(machineLearning2 parent, string name, double bias, double input)
+        public Neuron_t(machineLearning2 Parent, string Name, double Bias, double Input)
         {
-            father = parent;
-            Name = name;
-            Bias = bias;
+            father = Parent;
+            name = Name;
+            bias = Bias;
             Input = input;
 
-            father.WriteLine("Neuron " + name + " created! | " + Bias.ToString(), LogLevel_t.info);
+            father.WriteLine("Neuron " + name + " created! | " + bias.ToString(), LogLevel_t.info);
         }
 
-        public Neuron(machineLearning2 parent, string name, double bias, int column, int line)
+        public Neuron_t(machineLearning2 Parent, string Name, double Bias, int Column, int Line)
         {
-            father = parent;
-            Name = name;
-            Bias = bias;
-            Column = column;
-            Line = line;
+            father = Parent;
+            name = Name;
+            bias = Bias;
+            column = Column;
+            line = Line;
 
-            father.WriteLine("Neuron " + name + " created! | " + Bias.ToString(), LogLevel_t.info);
+            father.WriteLine("Neuron " + name + " created! | " + bias.ToString(), LogLevel_t.info);
         }
 
-        public Neuron(machineLearning2 parent, string name, double bias, double input, int column, int line)
+        public Neuron_t(machineLearning2 Parent, string Name, double Bias, double Input, int Column, int Line)
         {
-            father = parent;
-            Name = name;
-            Bias = bias;
+            father = Parent;
+            name = Name;
+            bias = Bias;
             Input = input;
-            Column = column;
-            Line = line;
+            column = Column;
+            line = Line;
 
-            father.WriteLine("Neuron " + name + " created! | " + Bias.ToString(), LogLevel_t.info);
+            father.WriteLine("Neuron " + name + " created! | " + bias.ToString(), LogLevel_t.info);
         }
         #endregion
 
+        public void addInputConnection(Connection_t Connection)
+        {
+            inputConnections.Add(Connection);
+        }
 
+        public void addOutputConnection(Connection_t Connection)
+        {
+            outputConnections.Add(Connection);
+        }
     }
 }

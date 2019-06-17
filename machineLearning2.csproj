@@ -62,13 +62,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Forms\Enums.cs" />
     <Compile Include="src\Forms\machineLearning2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\Forms\machineLearning2.Designer.cs">
       <DependentUpon>machineLearning2.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\neuralNet\Connection.cs" />
+    <Compile Include="src\neuralNet\NeuralNetwork_t.cs" />
     <Compile Include="src\neuralNet\Neuron.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

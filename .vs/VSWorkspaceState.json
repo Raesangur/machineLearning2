@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\dev",
+    "\\Properties",
     "\\src",
     "\\src\\forms",
     "\\src\\neuralNet"
   ],
-  "SelectedNode": "\\src\\neuralNet\\Neuron.cs",
+  "SelectedNode": "\\src\\neuralNet\\NeuralNetwork_t.cs",
   "PreviewInSolutionExplorer": false
 }
