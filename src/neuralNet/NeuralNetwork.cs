@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace machineLearning2
 {
     class NeuralNetwork_t
@@ -36,7 +37,7 @@ namespace machineLearning2
         {
             if (Column - 1 > connectionsList.Add(Connection))
             {
-                father.WriteLine
+                
             }
         }
     }
