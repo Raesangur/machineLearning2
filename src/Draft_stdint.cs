@@ -4,7 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace machineLearning2
+/*****************************************************************************/
+/* TODO:
+ * - Assignments for other types than int8_t
+ * - Cleanup of casts for other types than int8_t
+ * - size_t
+ * - float and double support
+ * - parsing
+ * - Compares
+ * - Lists & arrays
+ * /
+
+namespace stdint
 {
     /****************************** int8_t ***********************************/
     class int8_t
@@ -44,7 +55,7 @@ namespace machineLearning2
         /* Math */
         public static int8_t operator +(int8_t var1, int8_t var2)       /* + */
         {
-            int8_t result = new int8_t((SByte)(var1.var + var2.var));
+            int8_t result = new int8_t(var1.var + var2.var);
             return result;
         }
         public static int8_t operator ++(int8_t var1)                   /* ++ */
@@ -54,7 +65,7 @@ namespace machineLearning2
         }
         public static int8_t operator -(int8_t var1, int8_t var2)       /* - */
         {
-            int8_t result = new int8_t((SByte)(var1.var - var2.var));
+            int8_t result = new int8_t(var1.var - var2.var);
             return result;
         }
         public static int8_t operator --(int8_t var1)                   /* -- */
@@ -64,22 +75,22 @@ namespace machineLearning2
         }
         public static int8_t operator *(int8_t var1, int8_t var2)       /* * */
         {
-            int8_t result = new int8_t((SByte)var1.var * var2.var);
+            int8_t result = new int8_t(var1.var * var2.var);
             return result;
         }
         public static int8_t operator /(int8_t var1, int8_t var2)       /* / */
         {
-            int8_t result = new int8_t((SByte)var1.var / var2.var);
+            int8_t result = new int8_t(var1.var / var2.var);
             return result;
         }
         public static int8_t operator %(int8_t var1, int8_t var2)       /* % */
         {
-            int8_t result = new int8_t((SByte)var1.var % var2.var);
+            int8_t result = new int8_t(var1.var % var2.var);
             return result;
         }
         public static int8_t operator &(int8_t var1, int8_t var2)       /* & */
         {
-            int8_t result = new int8_t((SByte)var1.var & var2.var);
+            int8_t result = new int8_t(var1.var & var2.var);
             return result;
         }
         public static int8_t operator |(int8_t var1, int8_t var2)       /* | */
@@ -89,7 +100,7 @@ namespace machineLearning2
         }
         public static int8_t operator ^(int8_t var1, int8_t var2)       /* ^ */
         {
-            int8_t result = new int8_t((SByte)var1.var ^ var2.var);
+            int8_t result = new int8_t(var1.var ^ var2.var);
             return result;
         }
 
@@ -123,42 +134,42 @@ namespace machineLearning2
         /* Math */
         public static int8_t operator +(int8_t var1, uint8_t var2)       /* + */
         {
-            int8_t result = new int8_t((SByte)(var1.var + var2.var));
+            int8_t result = new int8_t(var1.var + var2.var);
             return result;
         }
         public static int8_t operator -(int8_t var1, uint8_t var2)       /* - */
         {
-            int8_t result = new int8_t((SByte)(var1.var - var2.var));
+            int8_t result = new int8_t(var1.var - var2.var);
             return result;
         }
         public static int8_t operator *(int8_t var1, uint8_t var2)       /* * */
         {
-            int8_t result = new int8_t((SByte)var1.var * var2.var);
+            int8_t result = new int8_t(var1.var * var2.var);
             return result;
         }
         public static int8_t operator /(int8_t var1, uint8_t var2)       /* / */
         {
-            int8_t result = new int8_t((SByte)var1.var / var2.var);
+            int8_t result = new int8_t(var1.var / var2.var);
             return result;
         }
         public static int8_t operator %(int8_t var1, uint8_t var2)       /* % */
         {
-            int8_t result = new int8_t((SByte)var1.var % var2.var);
+            int8_t result = new int8_t(var1.var % var2.var);
             return result;
         }
         public static int8_t operator &(int8_t var1, uint8_t var2)       /* & */
         {
-            int8_t result = new int8_t((SByte)var1.var & var2.var);
+            int8_t result = new int8_t(var1.var & var2.var);
             return result;
         }
         public static int8_t operator |(int8_t var1, uint8_t var2)       /* | */
         {
-            int8_t result = new int8_t((SByte)var1.var | (SByte)var2.var);
+            int8_t result = new int8_t((byte)var1.var | var2.var);
             return result;
         }
         public static int8_t operator ^(int8_t var1, uint8_t var2)       /* ^ */
         {
-            int8_t result = new int8_t((SByte)var1.var ^ var2.var);
+            int8_t result = new int8_t(var1.var ^ var2.var);
             return result;
         }
 
@@ -189,45 +200,57 @@ namespace machineLearning2
         }
         #endregion
         #region int16_t
+        /* Assignment */
+        public static implicit operator Int16(int8_t obj)
+        {
+            return (Int16)obj.var;
+        }
+
+        public static implicit operator int8_t(Int16 var)
+        {
+            int8_t obj = new int8_t(var);
+            return obj;
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, int16_t var2)       /* + */
         {
-            int8_t result = new int8_t((SByte)(var1.var + var2.var));
+            int8_t result = new int8_t(var1.var + var2.var);
             return result;
         }
         public static int8_t operator -(int8_t var1, int16_t var2)       /* - */
         {
-            int8_t result = new int8_t((SByte)(var1.var - var2.var));
+            int8_t result = new int8_t(var1.var - var2.var);
             return result;
         }
         public static int8_t operator *(int8_t var1, int16_t var2)       /* * */
         {
-            int8_t result = new int8_t((SByte)var1.var * var2.var);
+            int8_t result = new int8_t(var1.var * var2.var);
             return result;
         }
         public static int8_t operator /(int8_t var1, int16_t var2)       /* / */
         {
-            int8_t result = new int8_t((SByte)var1.var / var2.var);
+            int8_t result = new int8_t(var1.var / var2.var);
             return result;
         }
         public static int8_t operator %(int8_t var1, int16_t var2)       /* % */
         {
-            int8_t result = new int8_t((SByte)var1.var % var2.var);
+            int8_t result = new int8_t(var1.var % var2.var);
             return result;
         }
         public static int8_t operator &(int8_t var1, int16_t var2)       /* & */
         {
-            int8_t result = new int8_t((SByte)var1.var & var2.var);
+            int8_t result = new int8_t(var1.var & var2.var);
             return result;
         }
         public static int8_t operator |(int8_t var1, int16_t var2)       /* | */
         {
-            int8_t result = new int8_t((SByte)var1.var | (SByte)var2.var);
+            int8_t result = new int8_t((byte)var1.var | (UInt16)var2.var);
             return result;
         }
         public static int8_t operator ^(int8_t var1, int16_t var2)       /* ^ */
         {
-            int8_t result = new int8_t((SByte)var1.var ^ var2.var);
+            int8_t result = new int8_t(var1.var ^ var2.var);
             return result;
         }
 
@@ -258,44 +281,57 @@ namespace machineLearning2
         }
         #endregion
         #region uint16_t
+        /* Assignment */
+        public static implicit operator UInt16(int8_t obj)
+        {
+            return (UInt16)obj.var;
+        }
+
+        public static implicit operator int8_t(UInt16 var)
+        {
+            int8_t obj = new int8_t(var);
+            return obj;
+        }
+
+        /* Math */
         public static int8_t operator +(int8_t var1, uint16_t var2)       /* + */
         {
-            int8_t result = new int8_t((SByte)(var1.var + var2.var));
+            int8_t result = new int8_t(var1.var + var2.var);
             return result;
         }
         public static int8_t operator -(int8_t var1, uint16_t var2)       /* - */
         {
-            int8_t result = new int8_t((SByte)(var1.var - var2.var));
+            int8_t result = new int8_t(var1.var - var2.var);
             return result;
         }
         public static int8_t operator *(int8_t var1, uint16_t var2)       /* * */
         {
-            int8_t result = new int8_t((SByte)var1.var * var2.var);
+            int8_t result = new int8_t(var1.var * var2.var);
             return result;
         }
         public static int8_t operator /(int8_t var1, uint16_t var2)       /* / */
         {
-            int8_t result = new int8_t((SByte)var1.var / var2.var);
+            int8_t result = new int8_t(var1.var / var2.var);
             return result;
         }
         public static int8_t operator %(int8_t var1, uint16_t var2)       /* % */
         {
-            int8_t result = new int8_t((SByte)var1.var % var2.var);
+            int8_t result = new int8_t(var1.var % var2.var);
             return result;
         }
         public static int8_t operator &(int8_t var1, uint16_t var2)       /* & */
         {
-            int8_t result = new int8_t((SByte)var1.var & var2.var);
+            int8_t result = new int8_t(var1.var & var2.var);
             return result;
         }
         public static int8_t operator |(int8_t var1, uint16_t var2)       /* | */
         {
-            int8_t result = new int8_t((SByte)var1.var | (SByte)var2.var);
+            int8_t result = new int8_t((byte)var1.var | var2.var);
             return result;
         }
         public static int8_t operator ^(int8_t var1, uint16_t var2)       /* ^ */
         {
-            int8_t result = new int8_t((SByte)var1.var ^ var2.var);
+            int8_t result = new int8_t(var1.var ^ var2.var);
             return result;
         }
 
@@ -326,44 +362,45 @@ namespace machineLearning2
         }
         #endregion
         #region int32_t
+        /* Math */
         public static int8_t operator +(int8_t var1, int32_t var2)       /* + */
         {
-            int8_t result = new int8_t((SByte)(var1.var + var2.var));
+            int8_t result = new int8_t(var1.var + var2.var);
             return result;
         }
         public static int8_t operator -(int8_t var1, int32_t var2)       /* - */
         {
-            int8_t result = new int8_t((SByte)(var1.var - var2.var));
+            int8_t result = new int8_t(var1.var - var2.var);
             return result;
         }
         public static int8_t operator *(int8_t var1, int32_t var2)       /* * */
         {
-            int8_t result = new int8_t((SByte)var1.var * var2.var);
+            int8_t result = new int8_t(var1.var * var2.var);
             return result;
         }
         public static int8_t operator /(int8_t var1, int32_t var2)       /* / */
         {
-            int8_t result = new int8_t((SByte)var1.var / var2.var);
+            int8_t result = new int8_t(var1.var / var2.var);
             return result;
         }
         public static int8_t operator %(int8_t var1, int32_t var2)       /* % */
         {
-            int8_t result = new int8_t((SByte)var1.var % var2.var);
+            int8_t result = new int8_t(var1.var % var2.var);
             return result;
         }
         public static int8_t operator &(int8_t var1, int32_t var2)       /* & */
         {
-            int8_t result = new int8_t((SByte)var1.var & var2.var);
+            int8_t result = new int8_t(var1.var & var2.var);
             return result;
         }
         public static int8_t operator |(int8_t var1, int32_t var2)       /* | */
         {
-            int8_t result = new int8_t((SByte)var1.var | (SByte)var2.var);
+            int8_t result = new int8_t((byte)var1.var | var2.var);
             return result;
         }
         public static int8_t operator ^(int8_t var1, int32_t var2)       /* ^ */
         {
-            int8_t result = new int8_t((SByte)var1.var ^ var2.var);
+            int8_t result = new int8_t(var1.var ^ var2.var);
             return result;
         }
 
@@ -394,44 +431,57 @@ namespace machineLearning2
         }
         #endregion
         #region uint32_t
+        /* Assignment */
+        public static implicit operator UInt32(int8_t obj)
+        {
+            return (UInt32)obj.var;
+        }
+
+        public static implicit operator int8_t(UInt32 var)
+        {
+            int8_t obj = new int8_t(var);
+            return obj;
+        }
+
+        /* Math */
         public static int8_t operator +(int8_t var1, uint32_t var2)       /* + */
         {
-            int8_t result = new int8_t((SByte)(var1.var + var2.var));
+            int8_t result = new int8_t(var1.var + var2.var);
             return result;
         }
         public static int8_t operator -(int8_t var1, uint32_t var2)       /* - */
         {
-            int8_t result = new int8_t((SByte)(var1.var - var2.var));
+            int8_t result = new int8_t(var1.var - var2.var);
             return result;
         }
         public static int8_t operator *(int8_t var1, uint32_t var2)       /* * */
         {
-            int8_t result = new int8_t((SByte)var1.var * var2.var);
+            int8_t result = new int8_t(var1.var * var2.var);
             return result;
         }
         public static int8_t operator /(int8_t var1, uint32_t var2)       /* / */
         {
-            int8_t result = new int8_t((SByte)var1.var / var2.var);
+            int8_t result = new int8_t(var1.var / var2.var);
             return result;
         }
         public static int8_t operator %(int8_t var1, uint32_t var2)       /* % */
         {
-            int8_t result = new int8_t((SByte)var1.var % var2.var);
+            int8_t result = new int8_t(var1.var % var2.var);
             return result;
         }
         public static int8_t operator &(int8_t var1, uint32_t var2)       /* & */
         {
-            int8_t result = new int8_t((SByte)var1.var & var2.var);
+            int8_t result = new int8_t(var1.var & var2.var);
             return result;
         }
         public static int8_t operator |(int8_t var1, uint32_t var2)       /* | */
         {
-            int8_t result = new int8_t((SByte)var1.var | (SByte)var2.var);
+            int8_t result = new int8_t((byte)var1.var | var2.var);
             return result;
         }
         public static int8_t operator ^(int8_t var1, uint32_t var2)       /* ^ */
         {
-            int8_t result = new int8_t((SByte)var1.var ^ var2.var);
+            int8_t result = new int8_t(var1.var ^ var2.var);
             return result;
         }
 
@@ -462,44 +512,57 @@ namespace machineLearning2
         }
         #endregion
         #region int64_t
+        /* Assignment */
+        public static implicit operator Int64(int8_t obj)
+        {
+            return (Int64)obj.var;
+        }
+
+        public static implicit operator int8_t(Int64 var)
+        {
+            int8_t obj = new int8_t(var);
+            return obj;
+        }
+
+        /* Math */
         public static int8_t operator +(int8_t var1, int64_t var2)       /* + */
         {
-            int8_t result = new int8_t((SByte)(var1.var + var2.var));
+            int8_t result = new int8_t(var1.var + var2.var);
             return result;
         }
         public static int8_t operator -(int8_t var1, int64_t var2)       /* - */
         {
-            int8_t result = new int8_t((SByte)(var1.var - var2.var));
+            int8_t result = new int8_t(var1.var - var2.var);
             return result;
         }
         public static int8_t operator *(int8_t var1, int64_t var2)       /* * */
         {
-            int8_t result = new int8_t((SByte)var1.var * var2.var);
+            int8_t result = new int8_t(var1.var * var2.var);
             return result;
         }
         public static int8_t operator /(int8_t var1, int64_t var2)       /* / */
         {
-            int8_t result = new int8_t((SByte)var1.var / var2.var);
+            int8_t result = new int8_t(var1.var / var2.var);
             return result;
         }
         public static int8_t operator %(int8_t var1, int64_t var2)       /* % */
         {
-            int8_t result = new int8_t((SByte)var1.var % var2.var);
+            int8_t result = new int8_t(var1.var % var2.var);
             return result;
         }
         public static int8_t operator &(int8_t var1, int64_t var2)       /* & */
         {
-            int8_t result = new int8_t((SByte)var1.var & var2.var);
+            int8_t result = new int8_t(var1.var & var2.var);
             return result;
         }
         public static int8_t operator |(int8_t var1, int64_t var2)       /* | */
         {
-            int8_t result = new int8_t((SByte)var1.var | (SByte)var2.var);
+            int8_t result = new int8_t((byte)var1.var | (UInt64)var2.var);
             return result;
         }
         public static int8_t operator ^(int8_t var1, int64_t var2)       /* ^ */
         {
-            int8_t result = new int8_t((SByte)var1.var ^ var2.var);
+            int8_t result = new int8_t(var1.var ^ var2.var);
             return result;
         }
 
@@ -530,113 +593,138 @@ namespace machineLearning2
         }
         #endregion
         #region uint64_t
+        /* Assignment */
+        public static implicit operator UInt64(int8_t obj)
+        {
+            return (UInt64)obj.var;
+        }
+
+        public static implicit operator int8_t(UInt64 var)
+        {
+            int8_t obj = new int8_t(var);
+            return obj;
+        }
+
+        /* Math */
         public static int8_t operator +(int8_t var1, uint64_t var2)       /* + */
         {
-            int8_t result = new int8_t((SByte)(var1.var + (Int64)var2.var));
+            int8_t result = new int8_t((UInt64)var1.var + var2.var);
             return result;
         }
         public static int8_t operator -(int8_t var1, uint64_t var2)       /* - */
         {
-            int8_t result = new int8_t((SByte)(var1.var - (Int64)var2.var));
+            int8_t result = new int8_t((UInt64)var1.var - var2.var);
             return result;
         }
         public static int8_t operator *(int8_t var1, uint64_t var2)       /* * */
         {
-            int8_t result = new int8_t((SByte)var1.var * (Int64)var2.var);
+            int8_t result = new int8_t((UInt64)var1.var * var2.var);
             return result;
         }
         public static int8_t operator /(int8_t var1, uint64_t var2)       /* / */
         {
-            int8_t result = new int8_t((SByte)var1.var / (Int64)var2.var);
+            int8_t result = new int8_t((UInt64)var1.var / var2.var);
             return result;
         }
         public static int8_t operator %(int8_t var1, uint64_t var2)       /* % */
         {
-            int8_t result = new int8_t((SByte)var1.var % (Int64)var2.var);
+            int8_t result = new int8_t((UInt64)var1.var % var2.var);
             return result;
         }
         public static int8_t operator &(int8_t var1, uint64_t var2)       /* & */
         {
-            int8_t result = new int8_t((SByte)var1.var & (Int64)var2.var);
+            int8_t result = new int8_t((UInt64)var1.var & var2.var);
             return result;
         }
         public static int8_t operator |(int8_t var1, uint64_t var2)       /* | */
         {
-            int8_t result = new int8_t((SByte)var1.var | (SByte)var2.var);
+            int8_t result = new int8_t((byte)var1.var | var2.var);
             return result;
         }
         public static int8_t operator ^(int8_t var1, uint64_t var2)       /* ^ */
         {
-            int8_t result = new int8_t((SByte)var1.var ^ (Int64)var2.var);
+            int8_t result = new int8_t((UInt64)var1.var ^ var2.var);
             return result;
         }
 
         /* Comparison */
         public static bool operator >(int8_t var1, uint64_t var2)     /* > */
         {
-            return (var1.var > (Int64)var2.var) ? true : false;
+            return ((UInt64)var1.var > var2.var) ? true : false;
         }
         public static bool operator <(int8_t var1, uint64_t var2)     /* < */
         {
-            return (var1.var < (Int64)var2.var) ? true : false;
+            return ((UInt64)var1.var < var2.var) ? true : false;
         }
         public static bool operator <=(int8_t var1, uint64_t var2)    /* <= */
         {
-            return (var1.var <= (Int64)var2.var) ? true : false;
+            return ((UInt64)var1.var <= var2.var) ? true : false;
         }
         public static bool operator >=(int8_t var1, uint64_t var2)    /* >= */
         {
-            return (var1.var >= (Int64)var2.var) ? true : false;
+            return ((UInt64)var1.var >= var2.var) ? true : false;
         }
         public static bool operator ==(int8_t var1, uint64_t var2)    /* == */
         {
-            return (var1.var == (Int64)var2.var) ? true : false;
+            return ((UInt64)var1.var == var2.var) ? true : false;
         }
         public static bool operator !=(int8_t var1, uint64_t var2)    /* > */
         {
-            return (var1.var != (Int64)var2.var) ? true : false;
+            return ((UInt64)var1.var != var2.var) ? true : false;
         }
         #endregion
         #region int
+        /* Assignment */
+        public static implicit operator int(int8_t obj)
+        {
+            return (int)obj.var;
+        }
+
+        public static implicit operator int8_t(int var)
+        {
+            int8_t obj = new int8_t(var);
+            return obj;
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, int var2)       /* + */
         {
-            int8_t result = new int8_t((SByte)(var1.var + var2));
+            int8_t result = new int8_t((int)(var1.var + var2));
             return result;
         }
         public static int8_t operator -(int8_t var1, int var2)       /* - */
         {
-            int8_t result = new int8_t((SByte)(var1.var - var2));
+            int8_t result = new int8_t((int)(var1.var - var2));
             return result;
         }
         public static int8_t operator *(int8_t var1, int var2)       /* * */
         {
-            int8_t result = new int8_t((SByte)var1.var * var2);
+            int8_t result = new int8_t((int)var1.var * var2);
             return result;
         }
         public static int8_t operator /(int8_t var1, int var2)       /* / */
         {
-            int8_t result = new int8_t((SByte)var1.var / var2);
+            int8_t result = new int8_t((int)var1.var / var2);
             return result;
         }
         public static int8_t operator %(int8_t var1, int var2)       /* % */
         {
-            int8_t result = new int8_t((SByte)var1.var % var2);
+            int8_t result = new int8_t((int)var1.var % var2);
             return result;
         }
         public static int8_t operator &(int8_t var1, int var2)       /* & */
         {
-            int8_t result = new int8_t((SByte)var1.var & var2);
+            int8_t result = new int8_t((int)var1.var & var2);
             return result;
         }
         public static int8_t operator |(int8_t var1, int var2)       /* | */
         {
-            int8_t result = new int8_t((SByte)var1.var | (SByte)var2);
+            int8_t result = new int8_t((byte)var1.var | (UInt16)var2);
             return result;
         }
         public static int8_t operator ^(int8_t var1, int var2)       /* ^ */
         {
-            int8_t result = new int8_t((SByte)var1.var ^ var2);
+            int8_t result = new int8_t((int)var1.var ^ var2);
             return result;
         }
 
@@ -667,45 +755,57 @@ namespace machineLearning2
         }
         #endregion
         #region byte
+        /* Assignment */
+        public static implicit operator byte(int8_t obj)
+        {
+            return (byte)obj.var;
+        }
+
+        public static implicit operator int8_t(byte var)
+        {
+            int8_t obj = new int8_t(var);
+            return obj;
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, byte var2)       /* + */
         {
-            int8_t result = new int8_t((SByte)(var1.var + var2));
+            int8_t result = new int8_t(var1.var + var2);
             return result;
         }
         public static int8_t operator -(int8_t var1, byte var2)       /* - */
         {
-            int8_t result = new int8_t((SByte)(var1.var - var2));
+            int8_t result = new int8_t(var1.var - var2);
             return result;
         }
         public static int8_t operator *(int8_t var1, byte var2)       /* * */
         {
-            int8_t result = new int8_t((SByte)var1.var * var2);
+            int8_t result = new int8_t(var1.var * var2);
             return result;
         }
         public static int8_t operator /(int8_t var1, byte var2)       /* / */
         {
-            int8_t result = new int8_t((SByte)var1.var / var2);
+            int8_t result = new int8_t(var1.var / var2);
             return result;
         }
         public static int8_t operator %(int8_t var1, byte var2)       /* % */
         {
-            int8_t result = new int8_t((SByte)var1.var % var2);
+            int8_t result = new int8_t(var1.var % var2);
             return result;
         }
         public static int8_t operator &(int8_t var1, byte var2)       /* & */
         {
-            int8_t result = new int8_t((SByte)var1.var & var2);
+            int8_t result = new int8_t(var1.var & var2);
             return result;
         }
         public static int8_t operator |(int8_t var1, byte var2)       /* | */
         {
-            int8_t result = new int8_t((SByte)var1.var | (SByte)var2);
+            int8_t result = new int8_t((byte)var1.var | var2);
             return result;
         }
         public static int8_t operator ^(int8_t var1, byte var2)       /* ^ */
         {
-            int8_t result = new int8_t((SByte)var1.var ^ var2);
+            int8_t result = new int8_t(var1.var ^ var2);
             return result;
         }
 
@@ -1515,6 +1615,7 @@ namespace machineLearning2
                 var = value;
             }
         }
+
         #region Constructors
         public int16_t() { var = 0; }
         public int16_t(byte value) { var = (Int16)value; }
