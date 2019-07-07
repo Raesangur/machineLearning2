@@ -9,3 +9,9 @@ E:\GitHub\machineLearning2\bin\machineLearning2.exe.lastcodeanalysissucceeded
 E:\GitHub\machineLearning2\obj\Debug\machineLearning2.exe
 E:\GitHub\machineLearning2\obj\Debug\machineLearning2.pdb
 E:\GitHub\machineLearning2\obj\Debug\machineLearning2.csprojAssemblyReference.cache
+C:\GitHub\machineLearning2\obj\Debug\machineLearning2.csprojAssemblyReference.cache
+C:\GitHub\machineLearning2\obj\Debug\machineLearning2.Properties.Resources.resources
+C:\GitHub\machineLearning2\obj\Debug\machineLearning2.csproj.GenerateResource.cache
+C:\GitHub\machineLearning2\obj\Debug\machineLearning2.csproj.CoreCompileInputs.cache
+C:\GitHub\machineLearning2\obj\Debug\machineLearning2.exe
+C:\GitHub\machineLearning2\obj\Debug\machineLearning2.pdb
