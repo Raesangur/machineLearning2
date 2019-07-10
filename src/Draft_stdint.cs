@@ -7,23 +7,16 @@ using System.Threading.Tasks;
 /*****************************************************************************/
 /* TODO:
  * - Aligment of comments 
- *      - uint16_t
- *      - int32_t
- *      - uint32_t
  *      - int64_t
  *      - uint64_t
  * - Shorten maths
- *      - int16_t
- *      - uint16_t
- *      - int32_t
- *      - uint32_t
  *      - int64_t
  *      - uint64_t
  * - bool support
  * - short, ushort, uint, long and ulong support
  * - float and double support
  * - size_t
- * - parsing
+ * - parsing, strings
  * - Compares
  * - Lists & arrays
  * */
@@ -33,17 +26,8 @@ namespace stdint
     /****************************** int8_t ***********************************/
     class int8_t
     {
-        public SByte var
-        {
-            get
-            {
-                return var;
-            }
-            set
-            {
-                var = value;
-            }
-        }
+        public SByte var = 0;
+
         #region Constructors
         public int8_t()                 { var = 0; }
         public int8_t(byte value)       { var = (SByte)value; }
@@ -68,7 +52,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator sbyte(int8_t obj)
         {
-            return (sbyte)obj.var;
+            return obj.var;
         }
 
         public static implicit operator int8_t(sbyte var)
@@ -220,7 +204,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int16(int8_t obj)
         {
-            return (Int16)obj.var;
+            return obj.var;
         }
 
         public static implicit operator int8_t(Int16 var)
@@ -292,7 +276,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator UInt16(int8_t obj)
         {
-            return (UInt16)obj.var;
+            return (ushort)obj.var;
         }
 
         public static implicit operator int8_t(UInt16 var)
@@ -364,7 +348,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int32(int8_t obj)
         {
-            return (Int32)obj.var;
+            return obj.var;
         }
 
         public static implicit operator int8_t(Int32 var)
@@ -436,7 +420,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator UInt32(int8_t obj)
         {
-            return (UInt32)obj.var;
+            return (uint)obj.var;
         }
 
         public static implicit operator int8_t(UInt32 var)
@@ -508,7 +492,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int64(int8_t obj)
         {
-            return (Int64)obj.var;
+            return obj.var;
         }
 
         public static implicit operator int8_t(Int64 var)
@@ -581,7 +565,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator UInt64(int8_t obj)
         {
-            return (UInt64)obj.var;
+            return (ulong)obj.var;
         }
 
         public static implicit operator int8_t(UInt64 var)
@@ -791,17 +775,8 @@ namespace stdint
     /****************************** uint8_t **********************************/
     class uint8_t
     {
-        public byte var
-        {
-            get
-            {
-                return var;
-            }
-            set
-            {
-                var = value;
-            }
-        }
+        public byte var = 0;
+
         #region Constructors
         public uint8_t()                { var = 0; }
         public uint8_t(byte value)      { var = value; }
@@ -898,7 +873,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator byte(uint8_t obj)
         {
-            return (byte)obj.var;
+            return obj.var;
         }
 
         public static implicit operator uint8_t(byte var)
@@ -978,7 +953,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int16(uint8_t obj)
         {
-            return (Int16)obj.var;
+            return obj.var;
         }
 
         public static implicit operator uint8_t(Int16 var)
@@ -1050,7 +1025,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator UInt16(uint8_t obj)
         {
-            return (UInt16)obj.var;
+            return obj.var;
         }
 
         public static implicit operator uint8_t(UInt16 var)
@@ -1122,7 +1097,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int32(uint8_t obj)
         {
-            return (Int32)obj.var;
+            return obj.var;
         }
 
         public static implicit operator uint8_t(Int32 var)
@@ -1195,7 +1170,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator UInt32(uint8_t obj)
         {
-            return (UInt32)obj.var;
+            return obj.var;
         }
 
         public static implicit operator uint8_t(UInt32 var)
@@ -1267,7 +1242,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int64(uint8_t obj)
         {
-            return (Int64)obj.var;
+            return obj.var;
         }
 
         public static implicit operator uint8_t(Int64 var)
@@ -1339,7 +1314,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator UInt64(uint8_t obj)
         {
-            return (UInt64)obj.var;
+            return obj.var;
         }
 
         public static implicit operator uint8_t(UInt64 var)
@@ -1548,17 +1523,7 @@ namespace stdint
     /****************************** int16_t **********************************/
     class int16_t
     {
-        public Int16 var
-        {
-            get
-            {
-                return var;
-            }
-            set
-            {
-                var = value;
-            }
-        }
+        public Int16 var = 0;
 
         #region Constructors
         public int16_t()                { var = 0; }
@@ -1595,43 +1560,35 @@ namespace stdint
         /* Math */
         public static int16_t operator +(int16_t var1, int8_t var2)     /* + */
         {
-            int16_t result = new int16_t(var1.var + var2.var);
-            return result;
+            return new int16_t(var1.var + var2.var);
         }
         public static int16_t operator -(int16_t var1, int8_t var2)     /* - */
         {
-            int16_t result = new int16_t(var1.var - var2.var);
-            return result;
+            return new int16_t(var1.var - var2.var);
         }
         public static int16_t operator *(int16_t var1, int8_t var2)     /* * */
         {
-            int16_t result = new int16_t(var1.var * var2.var);
-            return result;
+            return new int16_t(var1.var * var2.var);
         }
         public static int16_t operator /(int16_t var1, int8_t var2)     /* / */
         {
-            int16_t result = new int16_t(var1.var / var2.var);
-            return result;
+            return new int16_t(var1.var / var2.var);
         }
         public static int16_t operator %(int16_t var1, int8_t var2)     /* % */
         {
-            int16_t result = new int16_t(var1.var % var2.var);
-            return result;
+            return new int16_t(var1.var % var2.var);
         }
         public static int16_t operator &(int16_t var1, int8_t var2)     /* & */
         {
-            int16_t result = new int16_t(var1.var & var2.var);
-            return result;
+            return new int16_t(var1.var & var2.var);
         }
         public static int16_t operator |(int16_t var1, int8_t var2)     /* | */
         {
-            int16_t result = new int16_t((UInt16)var1.var | (byte)var2.var);
-            return result;
+            return new int16_t((ushort)var1.var | (byte)var2.var);
         }
         public static int16_t operator ^(int16_t var1, int8_t var2)     /* ^ */
         {
-            int16_t result = new int16_t(var1.var ^ var2.var);
-            return result;
+            return new int16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -1675,43 +1632,35 @@ namespace stdint
         /* Math */
         public static int16_t operator +(int16_t var1, uint8_t var2)    /* + */
         {
-            int16_t result = new int16_t(var1.var + var2.var);
-            return result;
+            return new int16_t(var1.var + var2.var);
         }
         public static int16_t operator -(int16_t var1, uint8_t var2)    /* - */
         {
-            int16_t result = new int16_t(var1.var - var2.var);
-            return result;
+            return new int16_t(var1.var - var2.var);
         }
         public static int16_t operator *(int16_t var1, uint8_t var2)    /* * */
         {
-            int16_t result = new int16_t(var1.var * var2.var);
-            return result;
+            return new int16_t(var1.var * var2.var);
         }
         public static int16_t operator /(int16_t var1, uint8_t var2)    /* / */
         {
-            int16_t result = new int16_t(var1.var / var2.var);
-            return result;
+            return new int16_t(var1.var / var2.var);
         }
         public static int16_t operator %(int16_t var1, uint8_t var2)    /* % */
         {
-            int16_t result = new int16_t(var1.var % var2.var);
-            return result;
+            return new int16_t(var1.var % var2.var);
         }
         public static int16_t operator &(int16_t var1, uint8_t var2)    /* & */
         {
-            int16_t result = new int16_t(var1.var & var2.var);
-            return result;
+            return new int16_t(var1.var & var2.var);
         }
         public static int16_t operator |(int16_t var1, uint8_t var2)    /* | */
         {
-            int16_t result = new int16_t((UInt16)var1.var | var2.var);
-            return result;
+            return new int16_t((ushort)var1.var | var2.var);
         }
         public static int16_t operator ^(int16_t var1, uint8_t var2)    /* ^ */
         {
-            int16_t result = new int16_t(var1.var ^ var2.var);
-            return result;
+            return new int16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -1744,7 +1693,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int16(int16_t obj)
         {
-            return (Int16)obj.var;
+            return obj.var;
         }
 
         public static implicit operator int16_t(Int16 var)
@@ -1755,53 +1704,43 @@ namespace stdint
         /* Math */
         public static int16_t operator +(int16_t var1, int16_t var2)    /* + */
         {
-            int16_t result = new int16_t(var1.var + var2.var);
-            return result;
+            return new int16_t(var1.var + var2.var);
         }
-        public static int16_t operator ++(int16_t var1)                 /* ++ */
+        public static int16_t operator ++(int16_t obj)                  /* ++ */
         {
-            var1.var++;
-            return var1;
+            return (obj.var++);
         }
         public static int16_t operator -(int16_t var1, int16_t var2)    /* - */
         {
-            int16_t result = new int16_t(var1.var - var2.var);
-            return result;
+            return new int16_t(var1.var - var2.var);
         }
-        public static int16_t operator --(int16_t var1)                 /* -- */
+        public static int16_t operator --(int16_t obj)
         {
-            var1.var--;
-            return var1;
+            return (obj.var--);
         }
         public static int16_t operator *(int16_t var1, int16_t var2)    /* * */
         {
-            int16_t result = new int16_t(var1.var * var2.var);
-            return result;
+            return new int16_t(var1.var * var2.var);
         }
         public static int16_t operator /(int16_t var1, int16_t var2)    /* / */
         {
-            int16_t result = new int16_t(var1.var / var2.var);
-            return result;
+            return new int16_t(var1.var / var2.var);
         }
         public static int16_t operator %(int16_t var1, int16_t var2)    /* % */
         {
-            int16_t result = new int16_t(var1.var % var2.var);
-            return result;
+            return new int16_t(var1.var % var2.var);
         }
         public static int16_t operator &(int16_t var1, int16_t var2)    /* & */
         {
-            int16_t result = new int16_t(var1.var & var2.var);
-            return result;
+            return new int16_t(var1.var & var2.var);
         }
         public static int16_t operator |(int16_t var1, int16_t var2)    /* | */
         {
-            int16_t result = new int16_t(var1.var | var2.var);
-            return result;
+            return new int16_t(var1.var | var2.var);
         }
         public static int16_t operator ^(int16_t var1, int16_t var2)    /* ^ */
         {
-            int16_t result = new int16_t(var1.var ^ var2.var);
-            return result;
+            return new int16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -1834,7 +1773,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator UInt16(int16_t obj)
         {
-            return (UInt16)obj.var;
+            return (ushort)obj.var;
         }
 
         public static implicit operator int16_t(UInt16 var)
@@ -1845,43 +1784,35 @@ namespace stdint
         /* Math */
         public static int16_t operator +(int16_t var1, uint16_t var2)   /* + */
         {
-            int16_t result = new int16_t(var1.var + var2.var);
-            return result;
+            return new int16_t(var1.var + var2.var);
         }
         public static int16_t operator -(int16_t var1, uint16_t var2)   /* - */
         {
-            int16_t result = new int16_t(var1.var - var2.var);
-            return result;
+            return new int16_t(var1.var - var2.var);
         }
         public static int16_t operator *(int16_t var1, uint16_t var2)   /* * */
         {
-            int16_t result = new int16_t(var1.var * var2.var);
-            return result;
+            return new int16_t(var1.var * var2.var);
         }
         public static int16_t operator /(int16_t var1, uint16_t var2)   /* / */
         {
-            int16_t result = new int16_t(var1.var / var2.var);
-            return result;
+            return new int16_t(var1.var / var2.var);
         }
         public static int16_t operator %(int16_t var1, uint16_t var2)   /* % */
         {
-            int16_t result = new int16_t(var1.var % var2.var);
-            return result;
+            return new int16_t(var1.var % var2.var);
         }
         public static int16_t operator &(int16_t var1, uint16_t var2)   /* & */
         {
-            int16_t result = new int16_t(var1.var & var2.var);
-            return result;
+            return new int16_t(var1.var & var2.var);
         }
         public static int16_t operator |(int16_t var1, uint16_t var2)   /* | */
         {
-            int16_t result = new int16_t((UInt16)var1.var | var2.var);
-            return result;
+            return new int16_t((ushort)var1.var | var2.var);
         }
         public static int16_t operator ^(int16_t var1, uint16_t var2)   /* ^ */
         {
-            int16_t result = new int16_t(var1.var ^ var2.var);
-            return result;
+            return new int16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -1914,7 +1845,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int32(int16_t obj)
         {
-            return (Int32)obj.var;
+            return obj.var;
         }
 
         public static implicit operator int16_t(Int32 var)
@@ -1925,43 +1856,35 @@ namespace stdint
         /* Math */
         public static int16_t operator +(int16_t var1, int32_t var2)    /* + */
         {
-            int16_t result = new int16_t(var1.var + var2.var);
-            return result;
+            return new int16_t(var1.var + var2.var);
         }
         public static int16_t operator -(int16_t var1, int32_t var2)    /* - */
         {
-            int16_t result = new int16_t(var1.var - var2.var);
-            return result;
+            return new int16_t(var1.var - var2.var);
         }
         public static int16_t operator *(int16_t var1, int32_t var2)    /* * */
         {
-            int16_t result = new int16_t(var1.var * var2.var);
-            return result;
+            return new int16_t(var1.var * var2.var);
         }
         public static int16_t operator /(int16_t var1, int32_t var2)    /* / */
         {
-            int16_t result = new int16_t(var1.var / var2.var);
-            return result;
+            return new int16_t(var1.var / var2.var);
         }
         public static int16_t operator %(int16_t var1, int32_t var2)    /* % */
         {
-            int16_t result = new int16_t(var1.var % var2.var);
-            return result;
+            return new int16_t(var1.var % var2.var);
         }
         public static int16_t operator &(int16_t var1, int32_t var2)    /* & */
         {
-            int16_t result = new int16_t(var1.var & var2.var);
-            return result;
+            return new int16_t(var1.var & var2.var);
         }
         public static int16_t operator |(int16_t var1, int32_t var2)    /* | */
         {
-            int16_t result = new int16_t((UInt16)var1.var | var2.var);
-            return result;
+            return new int16_t((ushort)var1.var | var2.var);
         }
         public static int16_t operator ^(int16_t var1, int32_t var2)    /* ^ */
         {
-            int16_t result = new int16_t(var1.var ^ var2.var);
-            return result;
+            return new int16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -1994,7 +1917,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator UInt32(int16_t obj)
         {
-            return (UInt32)obj.var;
+            return (uint)obj.var;
         }
 
         public static implicit operator int16_t(UInt32 var)
@@ -2005,43 +1928,35 @@ namespace stdint
         /* Math */
         public static int16_t operator +(int16_t var1, uint32_t var2)   /* + */
         {
-            int16_t result = new int16_t(var1.var + var2.var);
-            return result;
+            return new int16_t(var1.var + var2.var);
         }
         public static int16_t operator -(int16_t var1, uint32_t var2)   /* - */
         {
-            int16_t result = new int16_t(var1.var - var2.var);
-            return result;
+            return new int16_t(var1.var - var2.var);
         }
         public static int16_t operator *(int16_t var1, uint32_t var2)   /* * */
         {
-            int16_t result = new int16_t(var1.var * var2.var);
-            return result;
+            return new int16_t(var1.var * var2.var);
         }
         public static int16_t operator /(int16_t var1, uint32_t var2)   /* / */
         {
-            int16_t result = new int16_t(var1.var / var2.var);
-            return result;
+            return new int16_t(var1.var / var2.var);
         }
         public static int16_t operator %(int16_t var1, uint32_t var2)   /* % */
         {
-            int16_t result = new int16_t(var1.var % var2.var);
-            return result;
+            return new int16_t(var1.var % var2.var);
         }
         public static int16_t operator &(int16_t var1, uint32_t var2)   /* & */
         {
-            int16_t result = new int16_t(var1.var & var2.var);
-            return result;
+            return new int16_t(var1.var & var2.var);
         }
         public static int16_t operator |(int16_t var1, uint32_t var2)   /* | */
         {
-            int16_t result = new int16_t((UInt16)var1.var | var2.var);
-            return result;
+            return new int16_t((ushort)var1.var | var2.var);
         }
         public static int16_t operator ^(int16_t var1, uint32_t var2)   /* ^ */
         {
-            int16_t result = new int16_t(var1.var ^ var2.var);
-            return result;
+            return new int16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -2074,7 +1989,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int64(int16_t obj)
         {
-            return (Int64)obj.var;
+            return obj.var;
         }
 
         public static implicit operator int16_t(Int64 var)
@@ -2085,43 +2000,35 @@ namespace stdint
         /* Math */
         public static int16_t operator +(int16_t var1, int64_t var2)    /* + */
         {
-            int16_t result = new int16_t(var1.var + var2.var);
-            return result;
+            return new int16_t(var1.var + var2.var);
         }
         public static int16_t operator -(int16_t var1, int64_t var2)    /* - */
         {
-            int16_t result = new int16_t(var1.var - var2.var);
-            return result;
+            return new int16_t(var1.var - var2.var);
         }
         public static int16_t operator *(int16_t var1, int64_t var2)    /* * */
         {
-            int16_t result = new int16_t(var1.var * var2.var);
-            return result;
+            return new int16_t(var1.var * var2.var);
         }
         public static int16_t operator /(int16_t var1, int64_t var2)    /* / */
         {
-            int16_t result = new int16_t(var1.var / var2.var);
-            return result;
+            return new int16_t(var1.var / var2.var);
         }
         public static int16_t operator %(int16_t var1, int64_t var2)    /* % */
         {
-            int16_t result = new int16_t(var1.var % var2.var);
-            return result;
+            return new int16_t(var1.var % var2.var);
         }
         public static int16_t operator &(int16_t var1, int64_t var2)    /* & */
         {
-            int16_t result = new int16_t(var1.var & var2.var);
-            return result;
+            return new int16_t(var1.var & var2.var);
         }
         public static int16_t operator |(int16_t var1, int64_t var2)    /* | */
         {
-            int16_t result = new int16_t((UInt16)var1.var | var2.var);
-            return result;
+            return new int16_t((ushort)var1.var | var2.var);
         }
         public static int16_t operator ^(int16_t var1, int64_t var2)    /* ^ */
         {
-            int16_t result = new int16_t(var1.var ^ var2.var);
-            return result;
+            return new int16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -2154,7 +2061,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator UInt64(int16_t obj)
         {
-            return (UInt64)obj.var;
+            return (ulong)obj.var;
         }
 
         public static implicit operator int16_t(UInt64 var)
@@ -2165,43 +2072,35 @@ namespace stdint
         /* Math */
         public static int16_t operator +(int16_t var1, uint64_t var2)   /* + */
         {
-            int16_t result = new int16_t(var1.var + (Int64)var2.var);
-            return result;
+            return new int16_t((ulong)var1.var + var2.var);
         }
         public static int16_t operator -(int16_t var1, uint64_t var2)   /* - */
         {
-            int16_t result = new int16_t(var1.var - (Int64)var2.var);
-            return result;
+            return new int16_t((ulong)var1.var - var2.var);
         }
         public static int16_t operator *(int16_t var1, uint64_t var2)   /* * */
         {
-            int16_t result = new int16_t(var1.var * (Int64)var2.var);
-            return result;
+            return new int16_t((ulong)var1.var * var2.var);
         }
         public static int16_t operator /(int16_t var1, uint64_t var2)   /* / */
         {
-            int16_t result = new int16_t(var1.var / (Int64)var2.var);
-            return result;
+            return new int16_t((ulong)var1.var / var2.var);
         }
         public static int16_t operator %(int16_t var1, uint64_t var2)   /* % */
         {
-            int16_t result = new int16_t(var1.var % (Int64)var2.var);
-            return result;
+            return new int16_t((ulong)var1.var % var2.var);
         }
         public static int16_t operator &(int16_t var1, uint64_t var2)   /* & */
         {
-            int16_t result = new int16_t(var1.var & (Int64)var2.var);
-            return result;
+            return new int16_t((ulong)var1.var & var2.var);
         }
         public static int16_t operator |(int16_t var1, uint64_t var2)   /* | */
         {
-            int16_t result = new int16_t((UInt16)var1.var | var2.var);
-            return result;
+            return new int16_t((ushort)var1.var | var2.var);
         }
         public static int16_t operator ^(int16_t var1, uint64_t var2)   /* ^ */
         {
-            int16_t result = new int16_t(var1.var ^ (Int64)var2.var);
-            return result;
+            return new int16_t((ulong)var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -2387,17 +2286,7 @@ namespace stdint
     /***************************** uint16_t **********************************/
     class uint16_t
     {
-        public UInt16 var
-        {
-            get
-            {
-                return var;
-            }
-            set
-            {
-                var = value;
-            }
-        }
+        public UInt16 var = 0;
 
         #region Constructors
         public uint16_t()               { var = 0; }
@@ -2432,69 +2321,61 @@ namespace stdint
         }
 
         /* Math */
-        public static uint16_t operator +(uint16_t var1, int8_t var2)       /* + */
+        public static uint16_t operator +(uint16_t var1, int8_t var2)   /* + */
         {
-            uint16_t result = new uint16_t(var1.var + var2.var);
-            return result;
+            return new uint16_t(var1.var + var2.var);
         }
-        public static uint16_t operator -(uint16_t var1, int8_t var2)       /* - */
+        public static uint16_t operator -(uint16_t var1, int8_t var2)   /* - */
         {
-            uint16_t result = new uint16_t(var1.var - var2.var);
-            return result;
+            return new uint16_t(var1.var - var2.var);
         }
-        public static uint16_t operator *(uint16_t var1, int8_t var2)       /* * */
+        public static uint16_t operator *(uint16_t var1, int8_t var2)   /* * */
         {
-            uint16_t result = new uint16_t(var1.var * var2.var);
-            return result;
+            return new uint16_t(var1.var * var2.var);
         }
-        public static uint16_t operator /(uint16_t var1, int8_t var2)       /* / */
+        public static uint16_t operator /(uint16_t var1, int8_t var2)   /* / */
         {
-            uint16_t result = new uint16_t(var1.var / var2.var);
-            return result;
+            return new uint16_t(var1.var / var2.var);
         }
-        public static uint16_t operator %(uint16_t var1, int8_t var2)       /* % */
+        public static uint16_t operator %(uint16_t var1, int8_t var2)   /* % */
         {
-            uint16_t result = new uint16_t(var1.var % var2.var);
-            return result;
+            return new uint16_t(var1.var % var2.var);
         }
-        public static uint16_t operator &(uint16_t var1, int8_t var2)       /* & */
+        public static uint16_t operator &(uint16_t var1, int8_t var2)   /* & */
         {
-            uint16_t result = new uint16_t(var1.var & var2.var);
-            return result;
+            return new uint16_t(var1.var & var2.var);
         }
-        public static uint16_t operator |(uint16_t var1, int8_t var2)       /* | */
+        public static uint16_t operator |(uint16_t var1, int8_t var2)   /* | */
         {
-            uint16_t result = new uint16_t(var1.var | (byte)var2.var);
-            return result;
+            return new uint16_t(var1.var | (byte)var2.var);
         }
-        public static uint16_t operator ^(uint16_t var1, int8_t var2)       /* ^ */
+        public static uint16_t operator ^(uint16_t var1, int8_t var2)   /* ^ */
         {
-            uint16_t result = new uint16_t(var1.var ^ var2.var);
-            return result;
+            return new uint16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(uint16_t var1, int8_t var2)     /* > */
+        public static bool operator >(uint16_t var1, int8_t var2)       /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(uint16_t var1, int8_t var2)     /* < */
+        public static bool operator <(uint16_t var1, int8_t var2)       /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(uint16_t var1, int8_t var2)    /* <= */
+        public static bool operator <=(uint16_t var1, int8_t var2)      /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(uint16_t var1, int8_t var2)    /* >= */
+        public static bool operator >=(uint16_t var1, int8_t var2)      /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(uint16_t var1, int8_t var2)    /* == */
+        public static bool operator ==(uint16_t var1, int8_t var2)      /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint16_t var1, int8_t var2)    /* > */
+        public static bool operator !=(uint16_t var1, int8_t var2)      /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -2512,69 +2393,61 @@ namespace stdint
         }
 
         /* Math */
-        public static uint16_t operator +(uint16_t var1, uint8_t var2)       /* + */
+        public static uint16_t operator +(uint16_t var1, uint8_t var2)  /* + */
         {
-            uint16_t result = new uint16_t(var1.var + var2.var);
-            return result;
+            return new uint16_t(var1.var + var2.var);
         }
-        public static uint16_t operator -(uint16_t var1, uint8_t var2)       /* - */
+        public static uint16_t operator -(uint16_t var1, uint8_t var2)  /* - */
         {
-            uint16_t result = new uint16_t(var1.var - var2.var);
-            return result;
+            return new uint16_t(var1.var - var2.var);
         }
-        public static uint16_t operator *(uint16_t var1, uint8_t var2)       /* * */
+        public static uint16_t operator *(uint16_t var1, uint8_t var2)  /* * */
         {
-            uint16_t result = new uint16_t(var1.var * var2.var);
-            return result;
+            return new uint16_t(var1.var * var2.var);
         }
-        public static uint16_t operator /(uint16_t var1, uint8_t var2)       /* / */
+        public static uint16_t operator /(uint16_t var1, uint8_t var2)  /* / */
         {
-            uint16_t result = new uint16_t(var1.var / var2.var);
-            return result;
+            return new uint16_t(var1.var / var2.var);
         }
-        public static uint16_t operator %(uint16_t var1, uint8_t var2)       /* % */
+        public static uint16_t operator %(uint16_t var1, uint8_t var2)  /* % */
         {
-            uint16_t result = new uint16_t(var1.var % var2.var);
-            return result;
+            return new uint16_t(var1.var % var2.var);
         }
-        public static uint16_t operator &(uint16_t var1, uint8_t var2)       /* & */
+        public static uint16_t operator &(uint16_t var1, uint8_t var2)  /* & */
         {
-            uint16_t result = new uint16_t(var1.var & var2.var);
-            return result;
+            return new uint16_t(var1.var & var2.var);
         }
-        public static uint16_t operator |(uint16_t var1, uint8_t var2)       /* | */
+        public static uint16_t operator |(uint16_t var1, uint8_t var2)  /* | */
         {
-            uint16_t result = new uint16_t(var1.var | var2.var);
-            return result;
+            return new uint16_t(var1.var | var2.var);
         }
-        public static uint16_t operator ^(uint16_t var1, uint8_t var2)       /* ^ */
+        public static uint16_t operator ^(uint16_t var1, uint8_t var2)  /* ^ */
         {
-            uint16_t result = new uint16_t(var1.var ^ var2.var);
-            return result;
+            return new uint16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(uint16_t var1, uint8_t var2)     /* > */
+        public static bool operator >(uint16_t var1, uint8_t var2)      /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(uint16_t var1, uint8_t var2)     /* < */
+        public static bool operator <(uint16_t var1, uint8_t var2)      /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(uint16_t var1, uint8_t var2)    /* <= */
+        public static bool operator <=(uint16_t var1, uint8_t var2)     /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(uint16_t var1, uint8_t var2)    /* >= */
+        public static bool operator >=(uint16_t var1, uint8_t var2)     /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(uint16_t var1, uint8_t var2)    /* == */
+        public static bool operator ==(uint16_t var1, uint8_t var2)     /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint16_t var1, uint8_t var2)    /* > */
+        public static bool operator !=(uint16_t var1, uint8_t var2)     /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -2592,69 +2465,61 @@ namespace stdint
         }
 
         /* Math */
-        public static uint16_t operator +(uint16_t var1, int16_t var2)       /* + */
+        public static uint16_t operator +(uint16_t var1, int16_t var2)  /* + */
         {
-            uint16_t result = new uint16_t(var1.var + var2.var);
-            return result;
+            return new uint16_t(var1.var + var2.var);
         }
-        public static uint16_t operator -(uint16_t var1, int16_t var2)       /* - */
+        public static uint16_t operator -(uint16_t var1, int16_t var2)  /* - */
         {
-            uint16_t result = new uint16_t(var1.var - var2.var);
-            return result;
+            return new uint16_t(var1.var - var2.var);
         }
-        public static uint16_t operator *(uint16_t var1, int16_t var2)       /* * */
+        public static uint16_t operator *(uint16_t var1, int16_t var2)  /* * */
         {
-            uint16_t result = new uint16_t(var1.var * var2.var);
-            return result;
+            return new uint16_t(var1.var * var2.var);
         }
-        public static uint16_t operator /(uint16_t var1, int16_t var2)       /* / */
+        public static uint16_t operator /(uint16_t var1, int16_t var2)  /* / */
         {
-            uint16_t result = new uint16_t(var1.var / var2.var);
-            return result;
+            return new uint16_t(var1.var / var2.var);
         }
-        public static uint16_t operator %(uint16_t var1, int16_t var2)       /* % */
+        public static uint16_t operator %(uint16_t var1, int16_t var2)  /* % */
         {
-            uint16_t result = new uint16_t(var1.var % var2.var);
-            return result;
+            return new uint16_t(var1.var % var2.var);
         }
-        public static uint16_t operator &(uint16_t var1, int16_t var2)       /* & */
+        public static uint16_t operator &(uint16_t var1, int16_t var2)  /* & */
         {
-            uint16_t result = new uint16_t(var1.var & var2.var);
-            return result;
+            return new uint16_t(var1.var & var2.var);
         }
-        public static uint16_t operator |(uint16_t var1, int16_t var2)       /* | */
+        public static uint16_t operator |(uint16_t var1, int16_t var2)  /* | */
         {
-            uint16_t result = new uint16_t(var1.var | (UInt16)var2.var);
-            return result;
+            return new uint16_t(var1.var | (ushort)var2.var);
         }
-        public static uint16_t operator ^(uint16_t var1, int16_t var2)       /* ^ */
+        public static uint16_t operator ^(uint16_t var1, int16_t var2)  /* ^ */
         {
-            uint16_t result = new uint16_t(var1.var ^ var2.var);
-            return result;
+            return new uint16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(uint16_t var1, int16_t var2)     /* > */
+        public static bool operator >(uint16_t var1, int16_t var2)      /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(uint16_t var1, int16_t var2)     /* < */
+        public static bool operator <(uint16_t var1, int16_t var2)      /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(uint16_t var1, int16_t var2)    /* <= */
+        public static bool operator <=(uint16_t var1, int16_t var2)     /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(uint16_t var1, int16_t var2)    /* >= */
+        public static bool operator >=(uint16_t var1, int16_t var2)     /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(uint16_t var1, int16_t var2)    /* == */
+        public static bool operator ==(uint16_t var1, int16_t var2)     /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint16_t var1, int16_t var2)    /* > */
+        public static bool operator !=(uint16_t var1, int16_t var2)     /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -2672,55 +2537,45 @@ namespace stdint
         }
 
         /* Math */
-        public static uint16_t operator +(uint16_t var1, uint16_t var2)       /* + */
+        public static uint16_t operator +(uint16_t var1, uint16_t var2) /* + */
         {
-            uint16_t result = new uint16_t(var1.var + var2.var);
-            return result;
+            return new uint16_t(var1.var + var2.var);
         }
-        public static uint16_t operator ++(uint16_t var1)                   /* ++ */
+        public static uint16_t operator ++(uint16_t obj)
         {
-            var1.var++;
-            return var1;
+            return (obj.var++);
         }
-        public static uint16_t operator -(uint16_t var1, uint16_t var2)       /* - */
+        public static uint16_t operator -(uint16_t var1, uint16_t var2) /* - */
         {
-            uint16_t result = new uint16_t(var1.var - var2.var);
-            return result;
+            return new uint16_t(var1.var - var2.var);
         }
-        public static uint16_t operator --(uint16_t var1)                   /* -- */
+        public static uint16_t operator --(uint16_t obj)
         {
-            var1.var--;
-            return var1;
+            return (obj.var--);
         }
-        public static uint16_t operator *(uint16_t var1, uint16_t var2)       /* * */
+        public static uint16_t operator *(uint16_t var1, uint16_t var2) /* * */
         {
-            uint16_t result = new uint16_t(var1.var * var2.var);
-            return result;
+            return new uint16_t(var1.var * var2.var);
         }
-        public static uint16_t operator /(uint16_t var1, uint16_t var2)       /* / */
+        public static uint16_t operator /(uint16_t var1, uint16_t var2) /* / */
         {
-            uint16_t result = new uint16_t(var1.var / var2.var);
-            return result;
+            return new uint16_t(var1.var / var2.var);
         }
-        public static uint16_t operator %(uint16_t var1, uint16_t var2)       /* % */
+        public static uint16_t operator %(uint16_t var1, uint16_t var2) /* % */
         {
-            uint16_t result = new uint16_t(var1.var % var2.var);
-            return result;
+            return new uint16_t(var1.var % var2.var);
         }
-        public static uint16_t operator &(uint16_t var1, uint16_t var2)       /* & */
+        public static uint16_t operator &(uint16_t var1, uint16_t var2) /* & */
         {
-            uint16_t result = new uint16_t(var1.var & var2.var);
-            return result;
+            return new uint16_t(var1.var & var2.var);
         }
-        public static uint16_t operator |(uint16_t var1, uint16_t var2)       /* | */
+        public static uint16_t operator |(uint16_t var1, uint16_t var2) /* | */
         {
-            uint16_t result = new uint16_t(var1.var | var2.var);
-            return result;
+            return new uint16_t(var1.var | var2.var);
         }
-        public static uint16_t operator ^(uint16_t var1, uint16_t var2)       /* ^ */
+        public static uint16_t operator ^(uint16_t var1, uint16_t var2) /* ^ */
         {
-            uint16_t result = new uint16_t(var1.var ^ var2.var);
-            return result;
+            return new uint16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -2744,7 +2599,7 @@ namespace stdint
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint16_t var1, uint16_t var2)    /* > */
+        public static bool operator !=(uint16_t var1, uint16_t var2)    /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -2762,69 +2617,61 @@ namespace stdint
         }
 
         /* Math */
-        public static uint16_t operator +(uint16_t var1, int32_t var2)       /* + */
+        public static uint16_t operator +(uint16_t var1, int32_t var2)  /* + */
         {
-            uint16_t result = new uint16_t(var1.var + var2.var);
-            return result;
+            return new uint16_t(var1.var + var2.var);
         }
-        public static uint16_t operator -(uint16_t var1, int32_t var2)       /* - */
+        public static uint16_t operator -(uint16_t var1, int32_t var2)  /* - */
         {
-            uint16_t result = new uint16_t(var1.var - var2.var);
-            return result;
+            return new uint16_t(var1.var - var2.var);
         }
-        public static uint16_t operator *(uint16_t var1, int32_t var2)       /* * */
+        public static uint16_t operator *(uint16_t var1, int32_t var2)  /* * */
         {
-            uint16_t result = new uint16_t(var1.var * var2.var);
-            return result;
+            return new uint16_t(var1.var * var2.var);
         }
-        public static uint16_t operator /(uint16_t var1, int32_t var2)       /* / */
+        public static uint16_t operator /(uint16_t var1, int32_t var2)  /* / */
         {
-            uint16_t result = new uint16_t(var1.var / var2.var);
-            return result;
+            return new uint16_t(var1.var / var2.var);
         }
-        public static uint16_t operator %(uint16_t var1, int32_t var2)       /* % */
+        public static uint16_t operator %(uint16_t var1, int32_t var2)  /* % */
         {
-            uint16_t result = new uint16_t(var1.var % var2.var);
-            return result;
+            return new uint16_t(var1.var % var2.var);
         }
-        public static uint16_t operator &(uint16_t var1, int32_t var2)       /* & */
+        public static uint16_t operator &(uint16_t var1, int32_t var2)  /* & */
         {
-            uint16_t result = new uint16_t(var1.var & var2.var);
-            return result;
+            return new uint16_t(var1.var & var2.var);
         }
-        public static uint16_t operator |(uint16_t var1, int32_t var2)       /* | */
+        public static uint16_t operator |(uint16_t var1, int32_t var2)  /* | */
         {
-            uint16_t result = new uint16_t(var1.var | (UInt32)var2.var);
-            return result;
+            return new uint16_t(var1.var | var2.var);
         }
-        public static uint16_t operator ^(uint16_t var1, int32_t var2)       /* ^ */
+        public static uint16_t operator ^(uint16_t var1, int32_t var2)  /* ^ */
         {
-            uint16_t result = new uint16_t(var1.var ^ var2.var);
-            return result;
+            return new uint16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(uint16_t var1, int32_t var2)     /* > */
+        public static bool operator >(uint16_t var1, int32_t var2)      /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(uint16_t var1, int32_t var2)     /* < */
+        public static bool operator <(uint16_t var1, int32_t var2)      /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(uint16_t var1, int32_t var2)    /* <= */
+        public static bool operator <=(uint16_t var1, int32_t var2)     /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(uint16_t var1, int32_t var2)    /* >= */
+        public static bool operator >=(uint16_t var1, int32_t var2)     /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(uint16_t var1, int32_t var2)    /* == */
+        public static bool operator ==(uint16_t var1, int32_t var2)     /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint16_t var1, int32_t var2)    /* > */
+        public static bool operator !=(uint16_t var1, int32_t var2)     /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -2842,45 +2689,37 @@ namespace stdint
         }
 
         /* Math */
-        public static uint16_t operator +(uint16_t var1, uint32_t var2)       /* + */
+        public static uint16_t operator +(uint16_t var1, uint32_t var2) /* + */
         {
-            uint16_t result = new uint16_t(var1.var + var2.var);
-            return result;
+            return new uint16_t(var1.var + var2.var);
         }
-        public static uint16_t operator -(uint16_t var1, uint32_t var2)       /* - */
+        public static uint16_t operator -(uint16_t var1, uint32_t var2) /* - */
         {
-            uint16_t result = new uint16_t(var1.var - var2.var);
-            return result;
+            return new uint16_t(var1.var - var2.var);
         }
-        public static uint16_t operator *(uint16_t var1, uint32_t var2)       /* * */
+        public static uint16_t operator *(uint16_t var1, uint32_t var2) /* * */
         {
-            uint16_t result = new uint16_t(var1.var * var2.var);
-            return result;
+            return new uint16_t(var1.var * var2.var);
         }
-        public static uint16_t operator /(uint16_t var1, uint32_t var2)       /* / */
+        public static uint16_t operator /(uint16_t var1, uint32_t var2) /* / */
         {
-            uint16_t result = new uint16_t(var1.var / var2.var);
-            return result;
+            return new uint16_t(var1.var / var2.var);
         }
-        public static uint16_t operator %(uint16_t var1, uint32_t var2)       /* % */
+        public static uint16_t operator %(uint16_t var1, uint32_t var2) /* % */
         {
-            uint16_t result = new uint16_t(var1.var % var2.var);
-            return result;
+            return new uint16_t(var1.var % var2.var);
         }
-        public static uint16_t operator &(uint16_t var1, uint32_t var2)       /* & */
+        public static uint16_t operator &(uint16_t var1, uint32_t var2) /* & */
         {
-            uint16_t result = new uint16_t(var1.var & var2.var);
-            return result;
+            return new uint16_t(var1.var & var2.var);
         }
-        public static uint16_t operator |(uint16_t var1, uint32_t var2)       /* | */
+        public static uint16_t operator |(uint16_t var1, uint32_t var2) /* | */
         {
-            uint16_t result = new uint16_t(var1.var | var2.var);
-            return result;
+            return new uint16_t(var1.var | var2.var);
         }
-        public static uint16_t operator ^(uint16_t var1, uint32_t var2)       /* ^ */
+        public static uint16_t operator ^(uint16_t var1, uint32_t var2) /* ^ */
         {
-            uint16_t result = new uint16_t(var1.var ^ var2.var);
-            return result;
+            return new uint16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -2904,7 +2743,7 @@ namespace stdint
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint16_t var1, uint32_t var2)    /* > */
+        public static bool operator !=(uint16_t var1, uint32_t var2)    /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -2922,69 +2761,61 @@ namespace stdint
         }
 
         /* Math */
-        public static uint16_t operator +(uint16_t var1, int64_t var2)       /* + */
+        public static uint16_t operator +(uint16_t var1, int64_t var2)  /* + */
         {
-            uint16_t result = new uint16_t(var1.var + var2.var);
-            return result;
+            return new uint16_t(var1.var + var2.var);
         }
-        public static uint16_t operator -(uint16_t var1, int64_t var2)       /* - */
+        public static uint16_t operator -(uint16_t var1, int64_t var2)  /* - */
         {
-            uint16_t result = new uint16_t(var1.var - var2.var);
-            return result;
+            return new uint16_t(var1.var - var2.var);
         }
-        public static uint16_t operator *(uint16_t var1, int64_t var2)       /* * */
+        public static uint16_t operator *(uint16_t var1, int64_t var2)  /* * */
         {
-            uint16_t result = new uint16_t(var1.var * var2.var);
-            return result;
+            return new uint16_t(var1.var * var2.var);
         }
-        public static uint16_t operator /(uint16_t var1, int64_t var2)       /* / */
+        public static uint16_t operator /(uint16_t var1, int64_t var2)  /* / */
         {
-            uint16_t result = new uint16_t(var1.var / var2.var);
-            return result;
+            return new uint16_t(var1.var / var2.var);
         }
-        public static uint16_t operator %(uint16_t var1, int64_t var2)       /* % */
+        public static uint16_t operator %(uint16_t var1, int64_t var2)  /* % */
         {
-            uint16_t result = new uint16_t(var1.var % var2.var);
-            return result;
+            return new uint16_t(var1.var % var2.var);
         }
-        public static uint16_t operator &(uint16_t var1, int64_t var2)       /* & */
+        public static uint16_t operator &(uint16_t var1, int64_t var2)  /* & */
         {
-            uint16_t result = new uint16_t(var1.var & var2.var);
-            return result;
+            return new uint16_t(var1.var & var2.var);
         }
-        public static uint16_t operator |(uint16_t var1, int64_t var2)       /* | */
+        public static uint16_t operator |(uint16_t var1, int64_t var2)  /* | */
         {
-            uint16_t result = new uint16_t(var1.var | (UInt64)var2.var);
-            return result;
+            return new uint16_t(var1.var | var2.var);
         }
-        public static uint16_t operator ^(uint16_t var1, int64_t var2)       /* ^ */
+        public static uint16_t operator ^(uint16_t var1, int64_t var2)  /* ^ */
         {
-            uint16_t result = new uint16_t(var1.var ^ var2.var);
-            return result;
+            return new uint16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(uint16_t var1, int64_t var2)     /* > */
+        public static bool operator >(uint16_t var1, int64_t var2)      /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(uint16_t var1, int64_t var2)     /* < */
+        public static bool operator <(uint16_t var1, int64_t var2)      /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(uint16_t var1, int64_t var2)    /* <= */
+        public static bool operator <=(uint16_t var1, int64_t var2)     /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(uint16_t var1, int64_t var2)    /* >= */
+        public static bool operator >=(uint16_t var1, int64_t var2)     /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(uint16_t var1, int64_t var2)    /* == */
+        public static bool operator ==(uint16_t var1, int64_t var2)     /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint16_t var1, int64_t var2)    /* > */
+        public static bool operator !=(uint16_t var1, int64_t var2)     /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -3002,45 +2833,37 @@ namespace stdint
         }
 
         /* Math */
-        public static uint16_t operator +(uint16_t var1, uint64_t var2)       /* + */
+        public static uint16_t operator +(uint16_t var1, uint64_t var2) /* + */
         {
-            uint16_t result = new uint16_t(var1.var + var2.var);
-            return result;
+            return new uint16_t(var1.var + var2.var);
         }
-        public static uint16_t operator -(uint16_t var1, uint64_t var2)       /* - */
+        public static uint16_t operator -(uint16_t var1, uint64_t var2) /* - */
         {
-            uint16_t result = new uint16_t(var1.var - var2.var);
-            return result;
+            return new uint16_t(var1.var - var2.var);
         }
-        public static uint16_t operator *(uint16_t var1, uint64_t var2)       /* * */
+        public static uint16_t operator *(uint16_t var1, uint64_t var2) /* * */
         {
-            uint16_t result = new uint16_t(var1.var * var2.var);
-            return result;
+            return new uint16_t(var1.var * var2.var);
         }
-        public static uint16_t operator /(uint16_t var1, uint64_t var2)       /* / */
+        public static uint16_t operator /(uint16_t var1, uint64_t var2) /* / */
         {
-            uint16_t result = new uint16_t(var1.var / var2.var);
-            return result;
+            return new uint16_t(var1.var / var2.var);
         }
-        public static uint16_t operator %(uint16_t var1, uint64_t var2)       /* % */
+        public static uint16_t operator %(uint16_t var1, uint64_t var2) /* % */
         {
-            uint16_t result = new uint16_t(var1.var % var2.var);
-            return result;
+            return new uint16_t(var1.var % var2.var);
         }
-        public static uint16_t operator &(uint16_t var1, uint64_t var2)       /* & */
+        public static uint16_t operator &(uint16_t var1, uint64_t var2) /* & */
         {
-            uint16_t result = new uint16_t(var1.var & var2.var);
-            return result;
+            return new uint16_t(var1.var & var2.var);
         }
-        public static uint16_t operator |(uint16_t var1, uint64_t var2)       /* | */
+        public static uint16_t operator |(uint16_t var1, uint64_t var2) /* | */
         {
-            uint16_t result = new uint16_t(var1.var | var2.var);
-            return result;
+            return new uint16_t(var1.var | var2.var);
         }
-        public static uint16_t operator ^(uint16_t var1, uint64_t var2)       /* ^ */
+        public static uint16_t operator ^(uint16_t var1, uint64_t var2) /* ^ */
         {
-            uint16_t result = new uint16_t(var1.var ^ var2.var);
-            return result;
+            return new uint16_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -3064,145 +2887,129 @@ namespace stdint
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint16_t var1, uint64_t var2)    /* > */
+        public static bool operator !=(uint16_t var1, uint64_t var2)    /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
         #endregion
         #region int
         /* Math */
-        public static uint16_t operator +(uint16_t var1, int var2)       /* + */
+        public static uint16_t operator +(uint16_t var1, int var2)      /* + */
         {
-            uint16_t result = new uint16_t(var1.var + var2);
-            return result;
+            return new uint16_t(var1.var + var2);
         }
-        public static uint16_t operator -(uint16_t var1, int var2)       /* - */
+        public static uint16_t operator -(uint16_t var1, int var2)      /* - */
         {
-            uint16_t result = new uint16_t(var1.var - var2);
-            return result;
+            return new uint16_t(var1.var - var2);
         }
-        public static uint16_t operator *(uint16_t var1, int var2)       /* * */
+        public static uint16_t operator *(uint16_t var1, int var2)      /* * */
         {
-            uint16_t result = new uint16_t(var1.var * var2);
-            return result;
+            return new uint16_t(var1.var * var2);
         }
-        public static uint16_t operator /(uint16_t var1, int var2)       /* / */
+        public static uint16_t operator /(uint16_t var1, int var2)      /* / */
         {
-            uint16_t result = new uint16_t(var1.var / var2);
-            return result;
+            return new uint16_t(var1.var / var2);
         }
-        public static uint16_t operator %(uint16_t var1, int var2)       /* % */
+        public static uint16_t operator %(uint16_t var1, int var2)      /* % */
         {
-            uint16_t result = new uint16_t(var1.var % var2);
-            return result;
+            return new uint16_t(var1.var % var2);
         }
-        public static uint16_t operator &(uint16_t var1, int var2)       /* & */
+        public static uint16_t operator &(uint16_t var1, int var2)      /* & */
         {
-            uint16_t result = new uint16_t(var1.var & var2);
-            return result;
+            return new uint16_t(var1.var & var2);
         }
-        public static uint16_t operator |(uint16_t var1, int var2)       /* | */
+        public static uint16_t operator |(uint16_t var1, int var2)      /* | */
         {
-            uint16_t result = new uint16_t(var1.var | var2);
-            return result;
+            return new uint16_t(var1.var | var2);
         }
-        public static uint16_t operator ^(uint16_t var1, int var2)       /* ^ */
+        public static uint16_t operator ^(uint16_t var1, int var2)      /* ^ */
         {
-            uint16_t result = new uint16_t(var1.var ^ var2);
-            return result;
+            return new uint16_t(var1.var ^ var2);
         }
 
         /* Comparison */
-        public static bool operator >(uint16_t var1, int var2)     /* > */
+        public static bool operator >(uint16_t var1, int var2)          /* > */
         {
             return (var1.var > var2) ? true : false;
         }
-        public static bool operator <(uint16_t var1, int var2)     /* < */
+        public static bool operator <(uint16_t var1, int var2)          /* < */
         {
             return (var1.var < var2) ? true : false;
         }
-        public static bool operator <=(uint16_t var1, int var2)    /* <= */
+        public static bool operator <=(uint16_t var1, int var2)         /* <= */
         {
             return (var1.var <= var2) ? true : false;
         }
-        public static bool operator >=(uint16_t var1, int var2)    /* >= */
+        public static bool operator >=(uint16_t var1, int var2)         /* >= */
         {
             return (var1.var >= var2) ? true : false;
         }
-        public static bool operator ==(uint16_t var1, int var2)    /* == */
+        public static bool operator ==(uint16_t var1, int var2)         /* == */
         {
             return (var1.var == var2) ? true : false;
         }
-        public static bool operator !=(uint16_t var1, int var2)    /* > */
+        public static bool operator !=(uint16_t var1, int var2)         /* !=*/
         {
             return (var1.var != var2) ? true : false;
         }
         #endregion
         #region byte
         /* Math */
-        public static uint16_t operator +(uint16_t var1, byte var2)       /* + */
+        public static uint16_t operator +(uint16_t var1, byte var2)     /* + */
         {
-            uint16_t result = new uint16_t(var1.var + var2);
-            return result;
+            return new uint16_t(var1.var + var2);
         }
-        public static uint16_t operator -(uint16_t var1, byte var2)       /* - */
+        public static uint16_t operator -(uint16_t var1, byte var2)     /* - */
         {
-            uint16_t result = new uint16_t(var1.var - var2);
-            return result;
+            return new uint16_t(var1.var - var2);
         }
-        public static uint16_t operator *(uint16_t var1, byte var2)       /* * */
+        public static uint16_t operator *(uint16_t var1, byte var2)     /* * */
         {
-            uint16_t result = new uint16_t(var1.var * var2);
-            return result;
+            return new uint16_t(var1.var * var2);
         }
-        public static uint16_t operator /(uint16_t var1, byte var2)       /* / */
+        public static uint16_t operator /(uint16_t var1, byte var2)     /* / */
         {
-            uint16_t result = new uint16_t(var1.var / var2);
-            return result;
+            return new uint16_t(var1.var / var2);
         }
-        public static uint16_t operator %(uint16_t var1, byte var2)       /* % */
+        public static uint16_t operator %(uint16_t var1, byte var2)     /* % */
         {
-            uint16_t result = new uint16_t(var1.var % var2);
-            return result;
+            return new uint16_t(var1.var % var2);
         }
-        public static uint16_t operator &(uint16_t var1, byte var2)       /* & */
+        public static uint16_t operator &(uint16_t var1, byte var2)     /* & */
         {
-            uint16_t result = new uint16_t(var1.var & var2);
-            return result;
+            return new uint16_t(var1.var & var2);
         }
-        public static uint16_t operator |(uint16_t var1, byte var2)       /* | */
+        public static uint16_t operator |(uint16_t var1, byte var2)     /* | */
         {
-            uint16_t result = new uint16_t(var1.var | var2);
-            return result;
+            return new uint16_t(var1.var | var2);
         }
-        public static uint16_t operator ^(uint16_t var1, byte var2)       /* ^ */
+        public static uint16_t operator ^(uint16_t var1, byte var2)     /* ^ */
         {
-            uint16_t result = new uint16_t(var1.var ^ var2);
-            return result;
+            return new uint16_t(var1.var ^ var2);
         }
 
         /* Comparison */
-        public static bool operator >(uint16_t var1, byte var2)     /* > */
+        public static bool operator >(uint16_t var1, byte var2)         /* > */
         {
             return (var1.var > var2) ? true : false;
         }
-        public static bool operator <(uint16_t var1, byte var2)     /* < */
+        public static bool operator <(uint16_t var1, byte var2)         /* < */
         {
             return (var1.var < var2) ? true : false;
         }
-        public static bool operator <=(uint16_t var1, byte var2)    /* <= */
+        public static bool operator <=(uint16_t var1, byte var2)        /* <= */
         {
             return (var1.var <= var2) ? true : false;
         }
-        public static bool operator >=(uint16_t var1, byte var2)    /* >= */
+        public static bool operator >=(uint16_t var1, byte var2)        /* >= */
         {
             return (var1.var >= var2) ? true : false;
         }
-        public static bool operator ==(uint16_t var1, byte var2)    /* == */
+        public static bool operator ==(uint16_t var1, byte var2)        /* == */
         {
             return (var1.var == var2) ? true : false;
         }
-        public static bool operator !=(uint16_t var1, byte var2)    /* > */
+        public static bool operator !=(uint16_t var1, byte var2)        /* != */
         {
             return (var1.var != var2) ? true : false;
         }
@@ -3226,17 +3033,7 @@ namespace stdint
     /****************************** int32_t **********************************/
     class int32_t
     {
-        public Int32 var
-        {
-            get
-            {
-                return var;
-            }
-            set
-            {
-                var = value;
-            }
-        }
+        public Int32 var = 0;
 
         #region Constructors
         public int32_t()                { var = 0; }
@@ -3271,69 +3068,61 @@ namespace stdint
         }
 
         /* Math */
-        public static int32_t operator +(int32_t var1, int8_t var2)       /* + */
+        public static int32_t operator +(int32_t var1, int8_t var2)     /* + */
         {
-            int32_t result = new int32_t(var1.var + var2.var);
-            return result;
+            return new int32_t(var1.var + var2.var);
         }
-        public static int32_t operator -(int32_t var1, int8_t var2)       /* - */
+        public static int32_t operator -(int32_t var1, int8_t var2)     /* - */
         {
-            int32_t result = new int32_t(var1.var - var2.var);
-            return result;
+            return new int32_t(var1.var - var2.var);
         }
-        public static int32_t operator *(int32_t var1, int8_t var2)       /* * */
+        public static int32_t operator *(int32_t var1, int8_t var2)     /* * */
         {
-            int32_t result = new int32_t(var1.var * var2.var);
-            return result;
+            return new int32_t(var1.var * var2.var);
         }
-        public static int32_t operator /(int32_t var1, int8_t var2)       /* / */
+        public static int32_t operator /(int32_t var1, int8_t var2)     /* / */
         {
-            int32_t result = new int32_t(var1.var / var2.var);
-            return result;
+            return new int32_t(var1.var / var2.var);
         }
-        public static int32_t operator %(int32_t var1, int8_t var2)       /* % */
+        public static int32_t operator %(int32_t var1, int8_t var2)     /* % */
         {
-            int32_t result = new int32_t(var1.var % var2.var);
-            return result;
+            return new int32_t(var1.var % var2.var);
         }
-        public static int32_t operator &(int32_t var1, int8_t var2)       /* & */
+        public static int32_t operator &(int32_t var1, int8_t var2)     /* & */
         {
-            int32_t result = new int32_t(var1.var & var2.var);
-            return result;
+            return new int32_t(var1.var & var2.var);
         }
-        public static int32_t operator |(int32_t var1, int8_t var2)       /* | */
+        public static int32_t operator |(int32_t var1, int8_t var2)     /* | */
         {
-            int32_t result = new int32_t(var1.var | (byte)var2.var);
-            return result;
+            return new int32_t(var1.var | (byte)var2.var);
         }
-        public static int32_t operator ^(int32_t var1, int8_t var2)       /* ^ */
+        public static int32_t operator ^(int32_t var1, int8_t var2)     /* ^ */
         {
-            int32_t result = new int32_t(var1.var ^ var2.var);
-            return result;
+            return new int32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(int32_t var1, int8_t var2)     /* > */
+        public static bool operator >(int32_t var1, int8_t var2)        /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(int32_t var1, int8_t var2)     /* < */
+        public static bool operator <(int32_t var1, int8_t var2)        /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(int32_t var1, int8_t var2)    /* <= */
+        public static bool operator <=(int32_t var1, int8_t var2)       /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(int32_t var1, int8_t var2)    /* >= */
+        public static bool operator >=(int32_t var1, int8_t var2)       /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(int32_t var1, int8_t var2)    /* == */
+        public static bool operator ==(int32_t var1, int8_t var2)       /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(int32_t var1, int8_t var2)    /* > */
+        public static bool operator !=(int32_t var1, int8_t var2)       /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -3351,69 +3140,61 @@ namespace stdint
         }
 
         /* Math */
-        public static int32_t operator +(int32_t var1, uint8_t var2)       /* + */
+        public static int32_t operator +(int32_t var1, uint8_t var2)    /* + */
         {
-            int32_t result = new int32_t(var1.var + var2.var);
-            return result;
+            return new int32_t(var1.var + var2.var);
         }
-        public static int32_t operator -(int32_t var1, uint8_t var2)       /* - */
+        public static int32_t operator -(int32_t var1, uint8_t var2)    /* - */
         {
-            int32_t result = new int32_t(var1.var - var2.var);
-            return result;
+            return new int32_t(var1.var - var2.var);
         }
-        public static int32_t operator *(int32_t var1, uint8_t var2)       /* * */
+        public static int32_t operator *(int32_t var1, uint8_t var2)    /* * */
         {
-            int32_t result = new int32_t(var1.var * var2.var);
-            return result;
+            return new int32_t(var1.var * var2.var);
         }
-        public static int32_t operator /(int32_t var1, uint8_t var2)       /* / */
+        public static int32_t operator /(int32_t var1, uint8_t var2)    /* / */
         {
-            int32_t result = new int32_t(var1.var / var2.var);
-            return result;
+            return new int32_t(var1.var / var2.var);
         }
-        public static int32_t operator %(int32_t var1, uint8_t var2)       /* % */
+        public static int32_t operator %(int32_t var1, uint8_t var2)    /* % */
         {
-            int32_t result = new int32_t(var1.var % var2.var);
-            return result;
+            return new int32_t(var1.var % var2.var);
         }
-        public static int32_t operator &(int32_t var1, uint8_t var2)       /* & */
+        public static int32_t operator &(int32_t var1, uint8_t var2)    /* & */
         {
-            int32_t result = new int32_t(var1.var & var2.var);
-            return result;
+            return new int32_t(var1.var & var2.var);
         }
-        public static int32_t operator |(int32_t var1, uint8_t var2)       /* | */
+        public static int32_t operator |(int32_t var1, uint8_t var2)    /* | */
         {
-            int32_t result = new int32_t(var1.var | var2.var);
-            return result;
+            return new int32_t(var1.var | var2.var);
         }
-        public static int32_t operator ^(int32_t var1, uint8_t var2)       /* ^ */
+        public static int32_t operator ^(int32_t var1, uint8_t var2)    /* ^ */
         {
-            int32_t result = new int32_t(var1.var ^ var2.var);
-            return result;
+            return new int32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(int32_t var1, uint8_t var2)     /* > */
+        public static bool operator >(int32_t var1, uint8_t var2)       /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(int32_t var1, uint8_t var2)     /* < */
+        public static bool operator <(int32_t var1, uint8_t var2)       /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(int32_t var1, uint8_t var2)    /* <= */
+        public static bool operator <=(int32_t var1, uint8_t var2)      /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(int32_t var1, uint8_t var2)    /* >= */
+        public static bool operator >=(int32_t var1, uint8_t var2)      /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(int32_t var1, uint8_t var2)    /* == */
+        public static bool operator ==(int32_t var1, uint8_t var2)      /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(int32_t var1, uint8_t var2)    /* > */
+        public static bool operator !=(int32_t var1, uint8_t var2)      /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -3431,69 +3212,61 @@ namespace stdint
         }
 
         /* Math */
-        public static int32_t operator +(int32_t var1, int16_t var2)       /* + */
+        public static int32_t operator +(int32_t var1, int16_t var2)    /* + */
         {
-            int32_t result = new int32_t(var1.var + var2.var);
-            return result;
+            return new int32_t(var1.var + var2.var);
         }
-        public static int32_t operator -(int32_t var1, int16_t var2)       /* - */
+        public static int32_t operator -(int32_t var1, int16_t var2)    /* - */
         {
-            int32_t result = new int32_t(var1.var - var2.var);
-            return result;
+            return new int32_t(var1.var - var2.var);
         }
-        public static int32_t operator *(int32_t var1, int16_t var2)       /* * */
+        public static int32_t operator *(int32_t var1, int16_t var2)    /* * */
         {
-            int32_t result = new int32_t(var1.var * var2.var);
-            return result;
+            return new int32_t(var1.var * var2.var);
         }
-        public static int32_t operator /(int32_t var1, int16_t var2)       /* / */
+        public static int32_t operator /(int32_t var1, int16_t var2)    /* / */
         {
-            int32_t result = new int32_t(var1.var / var2.var);
-            return result;
+            return new int32_t(var1.var / var2.var);
         }
-        public static int32_t operator %(int32_t var1, int16_t var2)       /* % */
+        public static int32_t operator %(int32_t var1, int16_t var2)    /* % */
         {
-            int32_t result = new int32_t(var1.var % var2.var);
-            return result;
+            return new int32_t(var1.var % var2.var);
         }
-        public static int32_t operator &(int32_t var1, int16_t var2)       /* & */
+        public static int32_t operator &(int32_t var1, int16_t var2)    /* & */
         {
-            int32_t result = new int32_t(var1.var & var2.var);
-            return result;
+            return new int32_t(var1.var & var2.var);
         }
-        public static int32_t operator |(int32_t var1, int16_t var2)       /* | */
+        public static int32_t operator |(int32_t var1, int16_t var2)    /* | */
         {
-            int32_t result = new int32_t(var1.var | (UInt16)var2.var);
-            return result;
+            return new int32_t(var1.var | (ushort)var2.var);
         }
-        public static int32_t operator ^(int32_t var1, int16_t var2)       /* ^ */
+        public static int32_t operator ^(int32_t var1, int16_t var2)    /* ^ */
         {
-            int32_t result = new int32_t(var1.var ^ var2.var);
-            return result;
+            return new int32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(int32_t var1, int16_t var2)     /* > */
+        public static bool operator >(int32_t var1, int16_t var2)       /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(int32_t var1, int16_t var2)     /* < */
+        public static bool operator <(int32_t var1, int16_t var2)       /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(int32_t var1, int16_t var2)    /* <= */
+        public static bool operator <=(int32_t var1, int16_t var2)      /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(int32_t var1, int16_t var2)    /* >= */
+        public static bool operator >=(int32_t var1, int16_t var2)      /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(int32_t var1, int16_t var2)    /* == */
+        public static bool operator ==(int32_t var1, int16_t var2)      /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(int32_t var1, int16_t var2)    /* > */
+        public static bool operator !=(int32_t var1, int16_t var2)      /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -3511,69 +3284,61 @@ namespace stdint
         }
 
         /* Math */
-        public static int32_t operator +(int32_t var1, uint16_t var2)       /* + */
+        public static int32_t operator +(int32_t var1, uint16_t var2)   /* + */
         {
-            int32_t result = new int32_t(var1.var + var2.var);
-            return result;
+            return new int32_t(var1.var + var2.var);
         }
-        public static int32_t operator -(int32_t var1, uint16_t var2)       /* - */
+        public static int32_t operator -(int32_t var1, uint16_t var2)   /* - */
         {
-            int32_t result = new int32_t(var1.var - var2.var);
-            return result;
+            return new int32_t(var1.var - var2.var);
         }
-        public static int32_t operator *(int32_t var1, uint16_t var2)       /* * */
+        public static int32_t operator *(int32_t var1, uint16_t var2)   /* * */
         {
-            int32_t result = new int32_t(var1.var * var2.var);
-            return result;
+            return new int32_t(var1.var * var2.var);
         }
-        public static int32_t operator /(int32_t var1, uint16_t var2)       /* / */
+        public static int32_t operator /(int32_t var1, uint16_t var2)   /* / */
         {
-            int32_t result = new int32_t(var1.var / var2.var);
-            return result;
+            return new int32_t(var1.var / var2.var);
         }
-        public static int32_t operator %(int32_t var1, uint16_t var2)       /* % */
+        public static int32_t operator %(int32_t var1, uint16_t var2)   /* % */
         {
-            int32_t result = new int32_t(var1.var % var2.var);
-            return result;
+            return new int32_t(var1.var % var2.var);
         }
-        public static int32_t operator &(int32_t var1, uint16_t var2)       /* & */
+        public static int32_t operator &(int32_t var1, uint16_t var2)   /* & */
         {
-            int32_t result = new int32_t(var1.var & var2.var);
-            return result;
+            return new int32_t(var1.var & var2.var);
         }
-        public static int32_t operator |(int32_t var1, uint16_t var2)       /* | */
+        public static int32_t operator |(int32_t var1, uint16_t var2)   /* | */
         {
-            int32_t result = new int32_t(var1.var | var2.var);
-            return result;
+            return new int32_t(var1.var | var2.var);
         }
-        public static int32_t operator ^(int32_t var1, uint16_t var2)       /* ^ */
+        public static int32_t operator ^(int32_t var1, uint16_t var2)   /* ^ */
         {
-            int32_t result = new int32_t(var1.var ^ var2.var);
-            return result;
+            return new int32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(int32_t var1, uint16_t var2)     /* > */
+        public static bool operator >(int32_t var1, uint16_t var2)      /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(int32_t var1, uint16_t var2)     /* < */
+        public static bool operator <(int32_t var1, uint16_t var2)      /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(int32_t var1, uint16_t var2)    /* <= */
+        public static bool operator <=(int32_t var1, uint16_t var2)     /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(int32_t var1, uint16_t var2)    /* >= */
+        public static bool operator >=(int32_t var1, uint16_t var2)     /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(int32_t var1, uint16_t var2)    /* == */
+        public static bool operator ==(int32_t var1, uint16_t var2)     /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(int32_t var1, uint16_t var2)    /* > */
+        public static bool operator !=(int32_t var1, uint16_t var2)     /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -3582,7 +3347,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int32(int32_t obj)
         {
-            return (Int32)obj.var;
+            return obj.var;
         }
 
         public static implicit operator int32_t(Int32 var)
@@ -3591,79 +3356,69 @@ namespace stdint
         }
 
         /* Math */
-        public static int32_t operator +(int32_t var1, int32_t var2)       /* + */
+        public static int32_t operator +(int32_t var1, int32_t var2)    /* + */
         {
-            int32_t result = new int32_t(var1.var + var2.var);
-            return result;
+            return new int32_t(var1.var + var2.var);
         }
-        public static int32_t operator ++(int32_t var1)                   /* ++ */
+        public static int32_t operator ++(int32_t obj)
         {
-            var1.var++;
-            return var1;
+            return (obj.var++);
         }
-        public static int32_t operator -(int32_t var1, int32_t var2)       /* - */
+        public static int32_t operator -(int32_t var1, int32_t var2)    /* - */
         {
-            int32_t result = new int32_t(var1.var - var2.var);
-            return result;
+            return new int32_t(var1.var - var2.var);
         }
-        public static int32_t operator --(int32_t var1)                   /* -- */
+        public static int32_t operator --(int32_t obj)
         {
-            var1.var--;
-            return var1;
+            return (obj.var--);
         }
-        public static int32_t operator *(int32_t var1, int32_t var2)       /* * */
+        public static int32_t operator *(int32_t var1, int32_t var2)    /* * */
         {
-            int32_t result = new int32_t(var1.var * var2.var);
-            return result;
+            return new int32_t(var1.var * var2.var);
         }
-        public static int32_t operator /(int32_t var1, int32_t var2)       /* / */
+        public static int32_t operator /(int32_t var1, int32_t var2)    /* / */
         {
-            int32_t result = new int32_t(var1.var / var2.var);
-            return result;
+            return new int32_t(var1.var / var2.var);
         }
-        public static int32_t operator %(int32_t var1, int32_t var2)       /* % */
+        public static int32_t operator %(int32_t var1, int32_t var2)    /* % */
         {
-            int32_t result = new int32_t(var1.var % var2.var);
-            return result;
+            return new int32_t(var1.var % var2.var);
         }
-        public static int32_t operator &(int32_t var1, int32_t var2)       /* & */
+        public static int32_t operator &(int32_t var1, int32_t var2)    /* & */
         {
-            int32_t result = new int32_t(var1.var & var2.var);
-            return result;
+            return new int32_t(var1.var & var2.var);
         }
-        public static int32_t operator |(int32_t var1, int32_t var2)       /* | */
+        public static int32_t operator |(int32_t var1, int32_t var2)    /* | */
         {
-            int32_t result = new int32_t(var1.var | var2.var);
-            return result;
+            return new int32_t(var1.var | var2.var);
         }
-        public static int32_t operator ^(int32_t var1, int32_t var2)       /* ^ */
+        public static int32_t operator ^(int32_t var1, int32_t var2)    /* ^ */
         {
-            int32_t result = new int32_t(var1.var ^ var2.var);
-            return result;
+            return new int32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(int32_t var1, int32_t var2)     /* > */
+        public static bool operator >(int32_t var1, int32_t var2)       /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(int32_t var1, int32_t var2)     /* < */
+        public static bool operator <(int32_t var1, int32_t var2)       /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(int32_t var1, int32_t var2)    /* <= */
+        public static bool operator <=(int32_t var1, int32_t var2)      /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(int32_t var1, int32_t var2)    /* >= */
+        public static bool operator >=(int32_t var1, int32_t var2)      /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(int32_t var1, int32_t var2)    /* == */
+        public static bool operator ==(int32_t var1, int32_t var2)      /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(int32_t var1, int32_t var2)    /* > */
+        public static bool operator !=(int32_t var1, int32_t var2)      /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -3681,69 +3436,61 @@ namespace stdint
         }
 
         /* Math */
-        public static int32_t operator +(int32_t var1, uint32_t var2)       /* + */
+        public static int32_t operator +(int32_t var1, uint32_t var2)    /* + */
         {
-            int32_t result = new int32_t(var1.var + var2.var);
-            return result;
+            return new int32_t(var1.var + var2.var);
         }
-        public static int32_t operator -(int32_t var1, uint32_t var2)       /* - */
+        public static int32_t operator -(int32_t var1, uint32_t var2)   /* - */
         {
-            int32_t result = new int32_t(var1.var - var2.var);
-            return result;
+            return new int32_t(var1.var - var2.var);
         }
-        public static int32_t operator *(int32_t var1, uint32_t var2)       /* * */
+        public static int32_t operator *(int32_t var1, uint32_t var2)   /* * */
         {
-            int32_t result = new int32_t(var1.var * var2.var);
-            return result;
+            return new int32_t(var1.var * var2.var);
         }
-        public static int32_t operator /(int32_t var1, uint32_t var2)       /* / */
+        public static int32_t operator /(int32_t var1, uint32_t var2)   /* / */
         {
-            int32_t result = new int32_t(var1.var / var2.var);
-            return result;
+            return new int32_t(var1.var / var2.var);
         }
-        public static int32_t operator %(int32_t var1, uint32_t var2)       /* % */
+        public static int32_t operator %(int32_t var1, uint32_t var2)   /* % */
         {
-            int32_t result = new int32_t(var1.var % var2.var);
-            return result;
+            return new int32_t(var1.var % var2.var);
         }
-        public static int32_t operator &(int32_t var1, uint32_t var2)       /* & */
+        public static int32_t operator &(int32_t var1, uint32_t var2)   /* & */
         {
-            int32_t result = new int32_t(var1.var & var2.var);
-            return result;
+            return new int32_t(var1.var & var2.var);
         }
-        public static int32_t operator |(int32_t var1, uint32_t var2)       /* | */
+        public static int32_t operator |(int32_t var1, uint32_t var2)   /* | */
         {
-            int32_t result = new int32_t((UInt32)var1.var | var2.var);
-            return result;
+            return new int32_t((uint)var1.var | var2.var);
         }
-        public static int32_t operator ^(int32_t var1, uint32_t var2)       /* ^ */
+        public static int32_t operator ^(int32_t var1, uint32_t var2)   /* ^ */
         {
-            int32_t result = new int32_t(var1.var ^ var2.var);
-            return result;
+            return new int32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(int32_t var1, uint32_t var2)     /* > */
+        public static bool operator >(int32_t var1, uint32_t var2)      /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(int32_t var1, uint32_t var2)     /* < */
+        public static bool operator <(int32_t var1, uint32_t var2)      /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(int32_t var1, uint32_t var2)    /* <= */
+        public static bool operator <=(int32_t var1, uint32_t var2)     /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(int32_t var1, uint32_t var2)    /* >= */
+        public static bool operator >=(int32_t var1, uint32_t var2)     /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(int32_t var1, uint32_t var2)    /* == */
+        public static bool operator ==(int32_t var1, uint32_t var2)     /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(int32_t var1, uint32_t var2)    /* > */
+        public static bool operator !=(int32_t var1, uint32_t var2)     /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -3752,7 +3499,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator Int64(int32_t obj)
         {
-            return (Int64)obj.var;
+            return obj.var;
         }
 
         public static implicit operator int32_t(Int64 var)
@@ -3761,69 +3508,61 @@ namespace stdint
         }
 
         /* Math */
-        public static int32_t operator +(int32_t var1, int64_t var2)       /* + */
+        public static int32_t operator +(int32_t var1, int64_t var2)    /* + */
         {
-            int32_t result = new int32_t(var1.var + var2.var);
-            return result;
+            return new int32_t(var1.var + var2.var);
         }
-        public static int32_t operator -(int32_t var1, int64_t var2)       /* - */
+        public static int32_t operator -(int32_t var1, int64_t var2)    /* - */
         {
-            int32_t result = new int32_t(var1.var - var2.var);
-            return result;
+            return new int32_t(var1.var - var2.var);
         }
-        public static int32_t operator *(int32_t var1, int64_t var2)       /* * */
+        public static int32_t operator *(int32_t var1, int64_t var2)    /* * */
         {
-            int32_t result = new int32_t(var1.var * var2.var);
-            return result;
+            return new int32_t(var1.var * var2.var);
         }
-        public static int32_t operator /(int32_t var1, int64_t var2)       /* / */
+        public static int32_t operator /(int32_t var1, int64_t var2)    /* / */
         {
-            int32_t result = new int32_t(var1.var / var2.var);
-            return result;
+            return new int32_t(var1.var / var2.var);
         }
-        public static int32_t operator %(int32_t var1, int64_t var2)       /* % */
+        public static int32_t operator %(int32_t var1, int64_t var2)    /* % */
         {
-            int32_t result = new int32_t(var1.var % var2.var);
-            return result;
+            return new int32_t(var1.var % var2.var);
         }
-        public static int32_t operator &(int32_t var1, int64_t var2)       /* & */
+        public static int32_t operator &(int32_t var1, int64_t var2)    /* & */
         {
-            int32_t result = new int32_t(var1.var & var2.var);
-            return result;
+            return new int32_t(var1.var & var2.var);
         }
-        public static int32_t operator |(int32_t var1, int64_t var2)       /* | */
+        public static int32_t operator |(int32_t var1, int64_t var2)    /* | */
         {
-            int32_t result = new int32_t((UInt32)var1.var | var2.var);
-            return result;
+            return new int32_t((uint)var1.var | var2.var);
         }
-        public static int32_t operator ^(int32_t var1, int64_t var2)       /* ^ */
+        public static int32_t operator ^(int32_t var1, int64_t var2)    /* ^ */
         {
-            int32_t result = new int32_t(var1.var ^ var2.var);
-            return result;
+            return new int32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(int32_t var1, int64_t var2)     /* > */
+        public static bool operator >(int32_t var1, int64_t var2)       /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(int32_t var1, int64_t var2)     /* < */
+        public static bool operator <(int32_t var1, int64_t var2)       /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(int32_t var1, int64_t var2)    /* <= */
+        public static bool operator <=(int32_t var1, int64_t var2)      /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(int32_t var1, int64_t var2)    /* >= */
+        public static bool operator >=(int32_t var1, int64_t var2)      /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(int32_t var1, int64_t var2)    /* == */
+        public static bool operator ==(int32_t var1, int64_t var2)      /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(int32_t var1, int64_t var2)    /* > */
+        public static bool operator !=(int32_t var1, int64_t var2)      /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -3841,138 +3580,122 @@ namespace stdint
         }
 
         /* Math */
-        public static int32_t operator +(int32_t var1, uint64_t var2)       /* + */
+        public static int32_t operator +(int32_t var1, uint64_t var2)   /* + */
         {
-            int32_t result = new int32_t(var1.var + (Int64)var2.var);
-            return result;
+            return new int32_t((ulong)var1.var + var2.var);
         }
-        public static int32_t operator -(int32_t var1, uint64_t var2)       /* - */
+        public static int32_t operator -(int32_t var1, uint64_t var2)   /* - */
         {
-            int32_t result = new int32_t(var1.var - (Int64)var2.var);
-            return result;
+            return new int32_t((ulong)var1.var - var2.var);
         }
-        public static int32_t operator *(int32_t var1, uint64_t var2)       /* * */
+        public static int32_t operator *(int32_t var1, uint64_t var2)   /* * */
         {
-            int32_t result = new int32_t(var1.var * (Int64)var2.var);
-            return result;
+            return new int32_t((ulong)var1.var * var2.var);
         }
-        public static int32_t operator /(int32_t var1, uint64_t var2)       /* / */
+        public static int32_t operator /(int32_t var1, uint64_t var2)   /* / */
         {
-            int32_t result = new int32_t(var1.var / (Int64)var2.var);
-            return result;
+            return new int32_t((ulong)var1.var / var2.var);
         }
-        public static int32_t operator %(int32_t var1, uint64_t var2)       /* % */
+        public static int32_t operator %(int32_t var1, uint64_t var2)   /* % */
         {
-            int32_t result = new int32_t(var1.var % (Int64)var2.var);
-            return result;
+            return new int32_t((ulong)var1.var % var2.var);
         }
-        public static int32_t operator &(int32_t var1, uint64_t var2)       /* & */
+        public static int32_t operator &(int32_t var1, uint64_t var2)   /* & */
         {
-            int32_t result = new int32_t(var1.var & (Int64)var2.var);
-            return result;
+            return new int32_t((ulong)var1.var & var2.var);
         }
-        public static int32_t operator |(int32_t var1, uint64_t var2)       /* | */
+        public static int32_t operator |(int32_t var1, uint64_t var2)   /* | */
         {
-            int32_t result = new int32_t((UInt32)var1.var | var2.var);
-            return result;
+            return new int32_t((uint)var1.var | var2.var);
         }
-        public static int32_t operator ^(int32_t var1, uint64_t var2)       /* ^ */
+        public static int32_t operator ^(int32_t var1, uint64_t var2)   /* ^ */
         {
-            int32_t result = new int32_t(var1.var ^ (Int64)var2.var);
-            return result;
+            return new int32_t((ulong)var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(int32_t var1, uint64_t var2)     /* > */
+        public static bool operator >(int32_t var1, uint64_t var2)      /* > */
         {
             return (var1.var > (Int64)var2.var) ? true : false;
         }
-        public static bool operator <(int32_t var1, uint64_t var2)     /* < */
+        public static bool operator <(int32_t var1, uint64_t var2)      /* < */
         {
             return (var1.var < (Int64)var2.var) ? true : false;
         }
-        public static bool operator <=(int32_t var1, uint64_t var2)    /* <= */
+        public static bool operator <=(int32_t var1, uint64_t var2)     /* <= */
         {
             return (var1.var <= (Int64)var2.var) ? true : false;
         }
-        public static bool operator >=(int32_t var1, uint64_t var2)    /* >= */
+        public static bool operator >=(int32_t var1, uint64_t var2)     /* >= */
         {
             return (var1.var >= (Int64)var2.var) ? true : false;
         }
-        public static bool operator ==(int32_t var1, uint64_t var2)    /* == */
+        public static bool operator ==(int32_t var1, uint64_t var2)     /* == */
         {
             return (var1.var == (Int64)var2.var) ? true : false;
         }
-        public static bool operator !=(int32_t var1, uint64_t var2)    /* > */
+        public static bool operator !=(int32_t var1, uint64_t var2)     /* != */
         {
             return (var1.var != (Int64)var2.var) ? true : false;
         }
         #endregion
         #region int
         /* Math */
-        public static int32_t operator +(int32_t var1, int var2)       /* + */
+        public static int32_t operator +(int32_t var1, int var2)        /* + */
         {
-            int32_t result = new int32_t(var1.var + var2);
-            return result;
+            return new int32_t(var1.var + var2);
         }
-        public static int32_t operator -(int32_t var1, int var2)       /* - */
+        public static int32_t operator -(int32_t var1, int var2)        /* - */
         {
-            int32_t result = new int32_t(var1.var - var2);
-            return result;
+            return new int32_t(var1.var - var2);
         }
-        public static int32_t operator *(int32_t var1, int var2)       /* * */
+        public static int32_t operator *(int32_t var1, int var2)        /* * */
         {
-            int32_t result = new int32_t(var1.var * var2);
-            return result;
+            return new int32_t(var1.var * var2);
         }
-        public static int32_t operator /(int32_t var1, int var2)       /* / */
+        public static int32_t operator /(int32_t var1, int var2)        /* / */
         {
-            int32_t result = new int32_t(var1.var / var2);
-            return result;
+            return new int32_t(var1.var / var2);
         }
-        public static int32_t operator %(int32_t var1, int var2)       /* % */
+        public static int32_t operator %(int32_t var1, int var2)        /* % */
         {
-            int32_t result = new int32_t(var1.var % var2);
-            return result;
+            return new int32_t(var1.var % var2);
         }
-        public static int32_t operator &(int32_t var1, int var2)       /* & */
+        public static int32_t operator &(int32_t var1, int var2)        /* & */
         {
-            int32_t result = new int32_t(var1.var & var2);
-            return result;
+            return new int32_t(var1.var & var2);
         }
-        public static int32_t operator |(int32_t var1, int var2)       /* | */
+        public static int32_t operator |(int32_t var1, int var2)        /* | */
         {
-            int32_t result = new int32_t(var1.var | var2);
-            return result;
+            return new int32_t(var1.var | var2);
         }
-        public static int32_t operator ^(int32_t var1, int var2)       /* ^ */
+        public static int32_t operator ^(int32_t var1, int var2)        /* ^ */
         {
-            int32_t result = new int32_t(var1.var ^ var2);
-            return result;
+            return new int32_t(var1.var ^ var2);
         }
 
         /* Comparison */
-        public static bool operator >(int32_t var1, int var2)     /* > */
+        public static bool operator >(int32_t var1, int var2)           /* > */
         {
             return (var1.var > var2) ? true : false;
         }
-        public static bool operator <(int32_t var1, int var2)     /* < */
+        public static bool operator <(int32_t var1, int var2)           /* < */
         {
             return (var1.var < var2) ? true : false;
         }
-        public static bool operator <=(int32_t var1, int var2)    /* <= */
+        public static bool operator <=(int32_t var1, int var2)          /* <= */
         {
             return (var1.var <= var2) ? true : false;
         }
-        public static bool operator >=(int32_t var1, int var2)    /* >= */
+        public static bool operator >=(int32_t var1, int var2)          /* >= */
         {
             return (var1.var >= var2) ? true : false;
         }
-        public static bool operator ==(int32_t var1, int var2)    /* == */
+        public static bool operator ==(int32_t var1, int var2)          /* == */
         {
             return (var1.var == var2) ? true : false;
         }
-        public static bool operator !=(int32_t var1, int var2)    /* > */
+        public static bool operator !=(int32_t var1, int var2)          /* != */
         {
             return (var1.var != var2) ? true : false;
         }
@@ -3981,67 +3704,59 @@ namespace stdint
         /* Math */
         public static int32_t operator +(int32_t var1, byte var2)       /* + */
         {
-            int32_t result = new int32_t(var1.var + var2);
-            return result;
+            return new int32_t(var1.var + var2);
         }
         public static int32_t operator -(int32_t var1, byte var2)       /* - */
         {
-            int32_t result = new int32_t(var1.var - var2);
-            return result;
+            return new int32_t(var1.var - var2);
         }
         public static int32_t operator *(int32_t var1, byte var2)       /* * */
         {
-            int32_t result = new int32_t(var1.var * var2);
-            return result;
+            return new int32_t(var1.var * var2);
         }
         public static int32_t operator /(int32_t var1, byte var2)       /* / */
         {
-            int32_t result = new int32_t(var1.var / var2);
-            return result;
+            return new int32_t(var1.var * var2);
         }
         public static int32_t operator %(int32_t var1, byte var2)       /* % */
         {
-            int32_t result = new int32_t(var1.var % var2);
-            return result;
+            return new int32_t(var1.var % var2);
         }
         public static int32_t operator &(int32_t var1, byte var2)       /* & */
         {
-            int32_t result = new int32_t(var1.var & var2);
-            return result;
+            return new int32_t(var1.var & var2);
         }
         public static int32_t operator |(int32_t var1, byte var2)       /* | */
         {
-            int32_t result = new int32_t(var1.var | var2);
-            return result;
+            return new int32_t(var1.var | var2);
         }
         public static int32_t operator ^(int32_t var1, byte var2)       /* ^ */
         {
-            int32_t result = new int32_t(var1.var ^ var2);
-            return result;
+            return new int32_t(var1.var ^ var2);
         }
 
         /* Comparison */
-        public static bool operator >(int32_t var1, byte var2)     /* > */
+        public static bool operator >(int32_t var1, byte var2)          /* > */
         {
             return (var1.var > var2) ? true : false;
         }
-        public static bool operator <(int32_t var1, byte var2)     /* < */
+        public static bool operator <(int32_t var1, byte var2)          /* < */
         {
             return (var1.var < var2) ? true : false;
         }
-        public static bool operator <=(int32_t var1, byte var2)    /* <= */
+        public static bool operator <=(int32_t var1, byte var2)         /* <= */
         {
             return (var1.var <= var2) ? true : false;
         }
-        public static bool operator >=(int32_t var1, byte var2)    /* >= */
+        public static bool operator >=(int32_t var1, byte var2)         /* >= */
         {
             return (var1.var >= var2) ? true : false;
         }
-        public static bool operator ==(int32_t var1, byte var2)    /* == */
+        public static bool operator ==(int32_t var1, byte var2)         /* == */
         {
             return (var1.var == var2) ? true : false;
         }
-        public static bool operator !=(int32_t var1, byte var2)    /* > */
+        public static bool operator !=(int32_t var1, byte var2)         /* != */
         {
             return (var1.var != var2) ? true : false;
         }
@@ -4065,17 +3780,7 @@ namespace stdint
     /****************************** uint32_t **********************************/
     class uint32_t
     {
-        public UInt32 var
-        {
-            get
-            {
-                return var;
-            }
-            set
-            {
-                var = value;
-            }
-        }
+        public UInt32 var = 0;
 
         #region Constructors
         public uint32_t()               { var = 0; }
@@ -4110,69 +3815,61 @@ namespace stdint
         }
 
         /* Math */
-        public static uint32_t operator +(uint32_t var1, int8_t var2)       /* + */
+        public static uint32_t operator +(uint32_t var1, int8_t var2)   /* + */
         {
-            uint32_t result = new uint32_t(var1.var + var2.var);
-            return result;
+            return new uint32_t(var1.var + var2.var);
         }
-        public static uint32_t operator -(uint32_t var1, int8_t var2)       /* - */
+        public static uint32_t operator -(uint32_t var1, int8_t var2)   /* - */
         {
-            uint32_t result = new uint32_t(var1.var - var2.var);
-            return result;
+            return new uint32_t(var1.var - var2.var);
         }
-        public static uint32_t operator *(uint32_t var1, int8_t var2)       /* * */
+        public static uint32_t operator *(uint32_t var1, int8_t var2)   /* * */
         {
-            uint32_t result = new uint32_t(var1.var * var2.var);
-            return result;
+            return new uint32_t(var1.var * var2.var);
         }
-        public static uint32_t operator /(uint32_t var1, int8_t var2)       /* / */
+        public static uint32_t operator /(uint32_t var1, int8_t var2)   /* / */
         {
-            uint32_t result = new uint32_t(var1.var / var2.var);
-            return result;
+            return new uint32_t(var1.var / var2.var);
         }
-        public static uint32_t operator %(uint32_t var1, int8_t var2)       /* % */
+        public static uint32_t operator %(uint32_t var1, int8_t var2)   /* % */
         {
-            uint32_t result = new uint32_t(var1.var % var2.var);
-            return result;
+            return new uint32_t(var1.var % var2.var);
         }
-        public static uint32_t operator &(uint32_t var1, int8_t var2)       /* & */
+        public static uint32_t operator &(uint32_t var1, int8_t var2)   /* & */
         {
-            uint32_t result = new uint32_t(var1.var & var2.var);
-            return result;
+            return new uint32_t(var1.var & var2.var);
         }
-        public static uint32_t operator |(uint32_t var1, int8_t var2)       /* | */
+        public static uint32_t operator |(uint32_t var1, int8_t var2)   /* | */
         {
-            uint32_t result = new uint32_t(var1.var | (byte)var2.var);
-            return result;
+            return new uint32_t(var1.var | (byte)var2.var);
         }
-        public static uint32_t operator ^(uint32_t var1, int8_t var2)       /* ^ */
+        public static uint32_t operator ^(uint32_t var1, int8_t var2)   /* ^ */
         {
-            uint32_t result = new uint32_t(var1.var ^ var2.var);
-            return result;
+            return new uint32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(uint32_t var1, int8_t var2)     /* > */
+        public static bool operator >(uint32_t var1, int8_t var2)       /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(uint32_t var1, int8_t var2)     /* < */
+        public static bool operator <(uint32_t var1, int8_t var2)       /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(uint32_t var1, int8_t var2)    /* <= */
+        public static bool operator <=(uint32_t var1, int8_t var2)      /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(uint32_t var1, int8_t var2)    /* >= */
+        public static bool operator >=(uint32_t var1, int8_t var2)      /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(uint32_t var1, int8_t var2)    /* == */
+        public static bool operator ==(uint32_t var1, int8_t var2)      /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint32_t var1, int8_t var2)    /* > */
+        public static bool operator !=(uint32_t var1, int8_t var2)      /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -4190,69 +3887,61 @@ namespace stdint
         }
 
         /* Math */
-        public static uint32_t operator +(uint32_t var1, uint8_t var2)       /* + */
+        public static uint32_t operator +(uint32_t var1, uint8_t var2)  /* + */
         {
-            uint32_t result = new uint32_t(var1.var + var2.var);
-            return result;
+            return new uint32_t(var1.var + var2.var);
         }
-        public static uint32_t operator -(uint32_t var1, uint8_t var2)       /* - */
+        public static uint32_t operator -(uint32_t var1, uint8_t var2)  /* - */
         {
-            uint32_t result = new uint32_t(var1.var - var2.var);
-            return result;
+            return new uint32_t(var1.var - var2.var);
         }
-        public static uint32_t operator *(uint32_t var1, uint8_t var2)       /* * */
+        public static uint32_t operator *(uint32_t var1, uint8_t var2)  /* * */
         {
-            uint32_t result = new uint32_t(var1.var * var2.var);
-            return result;
+            return new uint32_t(var1.var * var2.var);
         }
-        public static uint32_t operator /(uint32_t var1, uint8_t var2)       /* / */
+        public static uint32_t operator /(uint32_t var1, uint8_t var2)  /* / */
         {
-            uint32_t result = new uint32_t(var1.var / var2.var);
-            return result;
+            return new uint32_t(var1.var / var2.var);
         }
-        public static uint32_t operator %(uint32_t var1, uint8_t var2)       /* % */
+        public static uint32_t operator %(uint32_t var1, uint8_t var2)  /* % */
         {
-            uint32_t result = new uint32_t(var1.var % var2.var);
-            return result;
+            return new uint32_t(var1.var % var2.var);
         }
-        public static uint32_t operator &(uint32_t var1, uint8_t var2)       /* & */
+        public static uint32_t operator &(uint32_t var1, uint8_t var2)  /* & */
         {
-            uint32_t result = new uint32_t(var1.var & var2.var);
-            return result;
+            return new uint32_t(var1.var & var2.var);
         }
-        public static uint32_t operator |(uint32_t var1, uint8_t var2)       /* | */
+        public static uint32_t operator |(uint32_t var1, uint8_t var2)  /* | */
         {
-            uint32_t result = new uint32_t(var1.var | var2.var);
-            return result;
+            return new uint32_t(var1.var | var2.var);
         }
-        public static uint32_t operator ^(uint32_t var1, uint8_t var2)       /* ^ */
+        public static uint32_t operator ^(uint32_t var1, uint8_t var2)  /* ^ */
         {
-            uint32_t result = new uint32_t(var1.var ^ var2.var);
-            return result;
+            return new uint32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(uint32_t var1, uint8_t var2)     /* > */
+        public static bool operator >(uint32_t var1, uint8_t var2)      /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(uint32_t var1, uint8_t var2)     /* < */
+        public static bool operator <(uint32_t var1, uint8_t var2)      /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(uint32_t var1, uint8_t var2)    /* <= */
+        public static bool operator <=(uint32_t var1, uint8_t var2)     /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(uint32_t var1, uint8_t var2)    /* >= */
+        public static bool operator >=(uint32_t var1, uint8_t var2)     /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(uint32_t var1, uint8_t var2)    /* == */
+        public static bool operator ==(uint32_t var1, uint8_t var2)     /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint32_t var1, uint8_t var2)    /* > */
+        public static bool operator !=(uint32_t var1, uint8_t var2)     /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -4270,69 +3959,61 @@ namespace stdint
         }
 
         /* Math */
-        public static uint32_t operator +(uint32_t var1, int16_t var2)       /* + */
+        public static uint32_t operator +(uint32_t var1, int16_t var2)  /* + */
         {
-            uint32_t result = new uint32_t(var1.var + var2.var);
-            return result;
+            return new uint32_t(var1.var + var2.var);
         }
-        public static uint32_t operator -(uint32_t var1, int16_t var2)       /* - */
+        public static uint32_t operator -(uint32_t var1, int16_t var2)  /* - */
         {
-            uint32_t result = new uint32_t(var1.var - var2.var);
-            return result;
+            return new uint32_t(var1.var - var2.var);
         }
-        public static uint32_t operator *(uint32_t var1, int16_t var2)       /* * */
+        public static uint32_t operator *(uint32_t var1, int16_t var2)  /* * */
         {
-            uint32_t result = new uint32_t(var1.var * var2.var);
-            return result;
+            return new uint32_t(var1.var * var2.var);
         }
-        public static uint32_t operator /(uint32_t var1, int16_t var2)       /* / */
+        public static uint32_t operator /(uint32_t var1, int16_t var2)  /* / */
         {
-            uint32_t result = new uint32_t(var1.var / var2.var);
-            return result;
+            return new uint32_t(var1.var / var2.var);
         }
-        public static uint32_t operator %(uint32_t var1, int16_t var2)       /* % */
+        public static uint32_t operator %(uint32_t var1, int16_t var2)  /* % */
         {
-            uint32_t result = new uint32_t(var1.var % var2.var);
-            return result;
+            return new uint32_t(var1.var % var2.var);
         }
-        public static uint32_t operator &(uint32_t var1, int16_t var2)       /* & */
+        public static uint32_t operator &(uint32_t var1, int16_t var2)  /* & */
         {
-            uint32_t result = new uint32_t(var1.var & var2.var);
-            return result;
+            return new uint32_t(var1.var & var2.var);
         }
-        public static uint32_t operator |(uint32_t var1, int16_t var2)       /* | */
+        public static uint32_t operator |(uint32_t var1, int16_t var2)  /* | */
         {
-            uint32_t result = new uint32_t(var1.var | (UInt16)var2.var);
-            return result;
+            return new uint32_t(var1.var | (ushort)var2.var);
         }
-        public static uint32_t operator ^(uint32_t var1, int16_t var2)       /* ^ */
+        public static uint32_t operator ^(uint32_t var1, int16_t var2)  /* ^ */
         {
-            uint32_t result = new uint32_t(var1.var ^ var2.var);
-            return result;
+            return new uint32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(uint32_t var1, int16_t var2)     /* > */
+        public static bool operator >(uint32_t var1, int16_t var2)      /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(uint32_t var1, int16_t var2)     /* < */
+        public static bool operator <(uint32_t var1, int16_t var2)      /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(uint32_t var1, int16_t var2)    /* <= */
+        public static bool operator <=(uint32_t var1, int16_t var2)     /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(uint32_t var1, int16_t var2)    /* >= */
+        public static bool operator >=(uint32_t var1, int16_t var2)     /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(uint32_t var1, int16_t var2)    /* == */
+        public static bool operator ==(uint32_t var1, int16_t var2)     /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint32_t var1, int16_t var2)    /* > */
+        public static bool operator !=(uint32_t var1, int16_t var2)     /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -4350,45 +4031,37 @@ namespace stdint
         }
 
         /* Math */
-        public static uint32_t operator +(uint32_t var1, uint16_t var2)       /* + */
+        public static uint32_t operator +(uint32_t var1, uint16_t var2) /* + */
         {
-            uint32_t result = new uint32_t(var1.var + var2.var);
-            return result;
+            return new uint32_t(var1.var + var2.var);
         }
-        public static uint32_t operator -(uint32_t var1, uint16_t var2)       /* - */
+        public static uint32_t operator -(uint32_t var1, uint16_t var2) /* - */
         {
-            uint32_t result = new uint32_t(var1.var - var2.var);
-            return result;
+            return new uint32_t(var1.var - var2.var);
         }
-        public static uint32_t operator *(uint32_t var1, uint16_t var2)       /* * */
+        public static uint32_t operator *(uint32_t var1, uint16_t var2) /* * */
         {
-            uint32_t result = new uint32_t(var1.var * var2.var);
-            return result;
+            return new uint32_t(var1.var * var2.var);
         }
-        public static uint32_t operator /(uint32_t var1, uint16_t var2)       /* / */
+        public static uint32_t operator /(uint32_t var1, uint16_t var2) /* / */
         {
-            uint32_t result = new uint32_t(var1.var / var2.var);
-            return result;
+            return new uint32_t(var1.var / var2.var);
         }
-        public static uint32_t operator %(uint32_t var1, uint16_t var2)       /* % */
+        public static uint32_t operator %(uint32_t var1, uint16_t var2) /* % */
         {
-            uint32_t result = new uint32_t(var1.var % var2.var);
-            return result;
+            return new uint32_t(var1.var % var2.var);
         }
-        public static uint32_t operator &(uint32_t var1, uint16_t var2)       /* & */
+        public static uint32_t operator &(uint32_t var1, uint16_t var2) /* & */
         {
-            uint32_t result = new uint32_t(var1.var & var2.var);
-            return result;
+            return new uint32_t(var1.var & var2.var);
         }
-        public static uint32_t operator |(uint32_t var1, uint16_t var2)       /* | */
+        public static uint32_t operator |(uint32_t var1, uint16_t var2) /* | */
         {
-            uint32_t result = new uint32_t(var1.var | var2.var);
-            return result;
+            return new uint32_t(var1.var | var2.var);
         }
-        public static uint32_t operator ^(uint32_t var1, uint16_t var2)       /* ^ */
+        public static uint32_t operator ^(uint32_t var1, uint16_t var2) /* ^ */
         {
-            uint32_t result = new uint32_t(var1.var ^ var2.var);
-            return result;
+            return new uint32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -4412,7 +4085,7 @@ namespace stdint
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint32_t var1, uint16_t var2)    /* > */
+        public static bool operator !=(uint32_t var1, uint16_t var2)    /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -4430,69 +4103,61 @@ namespace stdint
         }
 
         /* Math */
-        public static uint32_t operator +(uint32_t var1, int32_t var2)       /* + */
+        public static uint32_t operator +(uint32_t var1, int32_t var2)  /* + */
         {
-            uint32_t result = new uint32_t(var1.var + var2.var);
-            return result;
+            return new uint32_t(var1.var + var2.var);
         }
-        public static uint32_t operator -(uint32_t var1, int32_t var2)       /* - */
+        public static uint32_t operator -(uint32_t var1, int32_t var2)  /* - */
         {
-            uint32_t result = new uint32_t(var1.var - var2.var);
-            return result;
+            return new uint32_t(var1.var - var2.var);
         }
-        public static uint32_t operator *(uint32_t var1, int32_t var2)       /* * */
+        public static uint32_t operator *(uint32_t var1, int32_t var2)  /* * */
         {
-            uint32_t result = new uint32_t(var1.var * var2.var);
-            return result;
+            return new uint32_t(var1.var * var2.var);
         }
-        public static uint32_t operator /(uint32_t var1, int32_t var2)       /* / */
+        public static uint32_t operator /(uint32_t var1, int32_t var2)  /* / */
         {
-            uint32_t result = new uint32_t(var1.var / var2.var);
-            return result;
+            return new uint32_t(var1.var / var2.var);
         }
-        public static uint32_t operator %(uint32_t var1, int32_t var2)       /* % */
+        public static uint32_t operator %(uint32_t var1, int32_t var2)  /* % */
         {
-            uint32_t result = new uint32_t(var1.var % var2.var);
-            return result;
+            return new uint32_t(var1.var % var2.var);
         }
-        public static uint32_t operator &(uint32_t var1, int32_t var2)       /* & */
+        public static uint32_t operator &(uint32_t var1, int32_t var2)  /* & */
         {
-            uint32_t result = new uint32_t(var1.var & var2.var);
-            return result;
+            return new uint32_t(var1.var & var2.var);
         }
-        public static uint32_t operator |(uint32_t var1, int32_t var2)       /* | */
+        public static uint32_t operator |(uint32_t var1, int32_t var2)  /* | */
         {
-            uint32_t result = new uint32_t(var1.var | (UInt32)var2.var);
-            return result;
+            return new uint32_t(var1.var | (uint)var2.var);
         }
-        public static uint32_t operator ^(uint32_t var1, int32_t var2)       /* ^ */
+        public static uint32_t operator ^(uint32_t var1, int32_t var2)  /* ^ */
         {
-            uint32_t result = new uint32_t(var1.var ^ var2.var);
-            return result;
+            return new uint32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(uint32_t var1, int32_t var2)     /* > */
+        public static bool operator >(uint32_t var1, int32_t var2)      /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(uint32_t var1, int32_t var2)     /* < */
+        public static bool operator <(uint32_t var1, int32_t var2)      /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(uint32_t var1, int32_t var2)    /* <= */
+        public static bool operator <=(uint32_t var1, int32_t var2)     /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(uint32_t var1, int32_t var2)    /* >= */
+        public static bool operator >=(uint32_t var1, int32_t var2)     /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(uint32_t var1, int32_t var2)    /* == */
+        public static bool operator ==(uint32_t var1, int32_t var2)     /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint32_t var1, int32_t var2)    /* > */
+        public static bool operator !=(uint32_t var1, int32_t var2)     /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -4501,7 +4166,7 @@ namespace stdint
         /* Assignment */
         public static implicit operator UInt32(uint32_t obj)
         {
-            return (UInt32)obj.var;
+            return obj.var;
         }
 
         public static implicit operator uint32_t(UInt32 var)
@@ -4510,55 +4175,45 @@ namespace stdint
         }
 
         /* Math */
-        public static uint32_t operator +(uint32_t var1, uint32_t var2)       /* + */
+        public static uint32_t operator +(uint32_t var1, uint32_t var2) /* + */
         {
-            uint32_t result = new uint32_t(var1.var + var2.var);
-            return result;
+            return new uint32_t(var1.var + var2.var);
         }
-        public static uint32_t operator ++(uint32_t var1)                   /* ++ */
+        public static uint32_t operator ++(uint32_t obj)                /* ++ */
         {
-            var1.var++;
-            return var1;
+            return (obj.var++);
         }
-        public static uint32_t operator -(uint32_t var1, uint32_t var2)       /* - */
+        public static uint32_t operator -(uint32_t var1, uint32_t var2) /* - */
         {
-            uint32_t result = new uint32_t(var1.var - var2.var);
-            return result;
+            return new uint32_t(var1.var - var2.var);
         }
-        public static uint32_t operator --(uint32_t var1)                   /* -- */
+        public static uint32_t operator --(uint32_t obj)                /* -- */
         {
-            var1.var--;
-            return var1;
+            return (obj.var--);
         }
-        public static uint32_t operator *(uint32_t var1, uint32_t var2)       /* * */
+        public static uint32_t operator *(uint32_t var1, uint32_t var2) /* * */
         {
-            uint32_t result = new uint32_t(var1.var * var2.var);
-            return result;
+            return new uint32_t(var1.var * var2.var);
         }
-        public static uint32_t operator /(uint32_t var1, uint32_t var2)       /* / */
+        public static uint32_t operator /(uint32_t var1, uint32_t var2) /* / */
         {
-            uint32_t result = new uint32_t(var1.var / var2.var);
-            return result;
+            return new uint32_t(var1.var / var2.var);
         }
-        public static uint32_t operator %(uint32_t var1, uint32_t var2)       /* % */
+        public static uint32_t operator %(uint32_t var1, uint32_t var2) /* % */
         {
-            uint32_t result = new uint32_t(var1.var % var2.var);
-            return result;
+            return new uint32_t(var1.var % var2.var);
         }
-        public static uint32_t operator &(uint32_t var1, uint32_t var2)       /* & */
+        public static uint32_t operator &(uint32_t var1, uint32_t var2) /* & */
         {
-            uint32_t result = new uint32_t(var1.var & var2.var);
-            return result;
+            return new uint32_t(var1.var & var2.var);
         }
-        public static uint32_t operator |(uint32_t var1, uint32_t var2)       /* | */
+        public static uint32_t operator |(uint32_t var1, uint32_t var2) /* | */
         {
-            uint32_t result = new uint32_t(var1.var | var2.var);
-            return result;
+            return new uint32_t(var1.var | var2.var);
         }
-        public static uint32_t operator ^(uint32_t var1, uint32_t var2)       /* ^ */
+        public static uint32_t operator ^(uint32_t var1, uint32_t var2) /* ^ */
         {
-            uint32_t result = new uint32_t(var1.var ^ var2.var);
-            return result;
+            return new uint32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -4582,7 +4237,7 @@ namespace stdint
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint32_t var1, uint32_t var2)    /* > */
+        public static bool operator !=(uint32_t var1, uint32_t var2)    /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -4600,69 +4255,61 @@ namespace stdint
         }
 
         /* Math */
-        public static uint32_t operator +(uint32_t var1, int64_t var2)       /* + */
+        public static uint32_t operator +(uint32_t var1, int64_t var2)  /* + */
         {
-            uint32_t result = new uint32_t(var1.var + var2.var);
-            return result;
+            return new uint32_t(var1.var + var2.var);
         }
-        public static uint32_t operator -(uint32_t var1, int64_t var2)       /* - */
+        public static uint32_t operator -(uint32_t var1, int64_t var2)  /* - */
         {
-            uint32_t result = new uint32_t(var1.var - var2.var);
-            return result;
+            return new uint32_t(var1.var - var2.var);
         }
-        public static uint32_t operator *(uint32_t var1, int64_t var2)       /* * */
+        public static uint32_t operator *(uint32_t var1, int64_t var2)  /* * */
         {
-            uint32_t result = new uint32_t(var1.var * var2.var);
-            return result;
+            return new uint32_t(var1.var * var2.var);
         }
-        public static uint32_t operator /(uint32_t var1, int64_t var2)       /* / */
+        public static uint32_t operator /(uint32_t var1, int64_t var2)  /* / */
         {
-            uint32_t result = new uint32_t(var1.var / var2.var);
-            return result;
+            return new uint32_t(var1.var / var2.var);
         }
-        public static uint32_t operator %(uint32_t var1, int64_t var2)       /* % */
+        public static uint32_t operator %(uint32_t var1, int64_t var2)  /* % */
         {
-            uint32_t result = new uint32_t(var1.var % var2.var);
-            return result;
+            return new uint32_t(var1.var % var2.var);
         }
-        public static uint32_t operator &(uint32_t var1, int64_t var2)       /* & */
+        public static uint32_t operator &(uint32_t var1, int64_t var2)  /* & */
         {
-            uint32_t result = new uint32_t(var1.var & var2.var);
-            return result;
+            return new uint32_t(var1.var & var2.var);
         }
-        public static uint32_t operator |(uint32_t var1, int64_t var2)       /* | */
+        public static uint32_t operator |(uint32_t var1, int64_t var2)  /* | */
         {
-            uint32_t result = new uint32_t(var1.var | (UInt64)var2.var);
-            return result;
+            return new uint32_t(var1.var | var2.var);
         }
-        public static uint32_t operator ^(uint32_t var1, int64_t var2)       /* ^ */
+        public static uint32_t operator ^(uint32_t var1, int64_t var2)  /* ^ */
         {
-            uint32_t result = new uint32_t(var1.var ^ var2.var);
-            return result;
+            return new uint32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
-        public static bool operator >(uint32_t var1, int64_t var2)     /* > */
+        public static bool operator >(uint32_t var1, int64_t var2)      /* > */
         {
             return (var1.var > var2.var) ? true : false;
         }
-        public static bool operator <(uint32_t var1, int64_t var2)     /* < */
+        public static bool operator <(uint32_t var1, int64_t var2)      /* < */
         {
             return (var1.var < var2.var) ? true : false;
         }
-        public static bool operator <=(uint32_t var1, int64_t var2)    /* <= */
+        public static bool operator <=(uint32_t var1, int64_t var2)     /* <= */
         {
             return (var1.var <= var2.var) ? true : false;
         }
-        public static bool operator >=(uint32_t var1, int64_t var2)    /* >= */
+        public static bool operator >=(uint32_t var1, int64_t var2)     /* >= */
         {
             return (var1.var >= var2.var) ? true : false;
         }
-        public static bool operator ==(uint32_t var1, int64_t var2)    /* == */
+        public static bool operator ==(uint32_t var1, int64_t var2)     /* == */
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint32_t var1, int64_t var2)    /* > */
+        public static bool operator !=(uint32_t var1, int64_t var2)     /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
@@ -4680,45 +4327,37 @@ namespace stdint
         }
 
         /* Math */
-        public static uint32_t operator +(uint32_t var1, uint64_t var2)       /* + */
+        public static uint32_t operator +(uint32_t var1, uint64_t var2) /* + */
         {
-            uint32_t result = new uint32_t(var1.var + var2.var);
-            return result;
+            return new uint32_t(var1.var + var2.var);
         }
-        public static uint32_t operator -(uint32_t var1, uint64_t var2)       /* - */
+        public static uint32_t operator -(uint32_t var1, uint64_t var2) /* - */
         {
-            uint32_t result = new uint32_t(var1.var - var2.var);
-            return result;
+            return new uint32_t(var1.var - var2.var);
         }
-        public static uint32_t operator *(uint32_t var1, uint64_t var2)       /* * */
+        public static uint32_t operator *(uint32_t var1, uint64_t var2) /* * */
         {
-            uint32_t result = new uint32_t(var1.var * var2.var);
-            return result;
+            return new uint32_t(var1.var * var2.var);
         }
-        public static uint32_t operator /(uint32_t var1, uint64_t var2)       /* / */
+        public static uint32_t operator /(uint32_t var1, uint64_t var2) /* / */
         {
-            uint32_t result = new uint32_t(var1.var / var2.var);
-            return result;
+            return new uint32_t(var1.var / var2.var);
         }
-        public static uint32_t operator %(uint32_t var1, uint64_t var2)       /* % */
+        public static uint32_t operator %(uint32_t var1, uint64_t var2) /* % */
         {
-            uint32_t result = new uint32_t(var1.var % var2.var);
-            return result;
+            return new uint32_t(var1.var % var2.var);
         }
-        public static uint32_t operator &(uint32_t var1, uint64_t var2)       /* & */
+        public static uint32_t operator &(uint32_t var1, uint64_t var2) /* & */
         {
-            uint32_t result = new uint32_t(var1.var & var2.var);
-            return result;
+            return new uint32_t(var1.var & var2.var);
         }
-        public static uint32_t operator |(uint32_t var1, uint64_t var2)       /* | */
+        public static uint32_t operator |(uint32_t var1, uint64_t var2) /* | */
         {
-            uint32_t result = new uint32_t(var1.var | var2.var);
-            return result;
+            return new uint32_t(var1.var | var2.var);
         }
-        public static uint32_t operator ^(uint32_t var1, uint64_t var2)       /* ^ */
+        public static uint32_t operator ^(uint32_t var1, uint64_t var2) /* ^ */
         {
-            uint32_t result = new uint32_t(var1.var ^ var2.var);
-            return result;
+            return new uint32_t(var1.var ^ var2.var);
         }
 
         /* Comparison */
@@ -4742,145 +4381,129 @@ namespace stdint
         {
             return (var1.var == var2.var) ? true : false;
         }
-        public static bool operator !=(uint32_t var1, uint64_t var2)    /* > */
+        public static bool operator !=(uint32_t var1, uint64_t var2)    /* != */
         {
             return (var1.var != var2.var) ? true : false;
         }
         #endregion
         #region int
         /* Math */
-        public static uint32_t operator +(uint32_t var1, int var2)       /* + */
+        public static uint32_t operator +(uint32_t var1, int var2)      /* + */
         {
-            uint32_t result = new uint32_t(var1.var + var2);
-            return result;
+            return new uint32_t(var1.var + var2);
         }
-        public static uint32_t operator -(uint32_t var1, int var2)       /* - */
+        public static uint32_t operator -(uint32_t var1, int var2)      /* - */
         {
-            uint32_t result = new uint32_t(var1.var - var2);
-            return result;
+            return new uint32_t(var1.var - var2);
         }
-        public static uint32_t operator *(uint32_t var1, int var2)       /* * */
+        public static uint32_t operator *(uint32_t var1, int var2)      /* * */
         {
-            uint32_t result = new uint32_t(var1.var * var2);
-            return result;
+            return new uint32_t(var1.var * var2);
         }
-        public static uint32_t operator /(uint32_t var1, int var2)       /* / */
+        public static uint32_t operator /(uint32_t var1, int var2)      /* / */
         {
-            uint32_t result = new uint32_t(var1.var / var2);
-            return result;
+            return new uint32_t(var1.var / var2);
         }
-        public static uint32_t operator %(uint32_t var1, int var2)       /* % */
+        public static uint32_t operator %(uint32_t var1, int var2)      /* % */
         {
-            uint32_t result = new uint32_t(var1.var % var2);
-            return result;
+            return new uint32_t(var1.var % var2);
         }
-        public static uint32_t operator &(uint32_t var1, int var2)       /* & */
+        public static uint32_t operator &(uint32_t var1, int var2)      /* & */
         {
-            uint32_t result = new uint32_t(var1.var & var2);
-            return result;
+            return new uint32_t(var1.var & var2);
         }
-        public static uint32_t operator |(uint32_t var1, int var2)       /* | */
+        public static uint32_t operator |(uint32_t var1, int var2)      /* | */
         {
-            uint32_t result = new uint32_t(var1.var | (UInt32)var2);
-            return result;
+            return new uint32_t(var1.var | (uint)var2);
         }
-        public static uint32_t operator ^(uint32_t var1, int var2)       /* ^ */
+        public static uint32_t operator ^(uint32_t var1, int var2)      /* ^ */
         {
-            uint32_t result = new uint32_t(var1.var ^ var2);
-            return result;
+            return new uint32_t(var1.var ^ var2);
         }
 
         /* Comparison */
-        public static bool operator >(uint32_t var1, int var2)     /* > */
+        public static bool operator >(uint32_t var1, int var2)          /* > */
         {
             return (var1.var > var2) ? true : false;
         }
-        public static bool operator <(uint32_t var1, int var2)     /* < */
+        public static bool operator <(uint32_t var1, int var2)          /* < */
         {
             return (var1.var < var2) ? true : false;
         }
-        public static bool operator <=(uint32_t var1, int var2)    /* <= */
+        public static bool operator <=(uint32_t var1, int var2)         /* <= */
         {
             return (var1.var <= var2) ? true : false;
         }
-        public static bool operator >=(uint32_t var1, int var2)    /* >= */
+        public static bool operator >=(uint32_t var1, int var2)         /* >= */
         {
             return (var1.var >= var2) ? true : false;
         }
-        public static bool operator ==(uint32_t var1, int var2)    /* == */
+        public static bool operator ==(uint32_t var1, int var2)         /* == */
         {
             return (var1.var == var2) ? true : false;
         }
-        public static bool operator !=(uint32_t var1, int var2)    /* > */
+        public static bool operator !=(uint32_t var1, int var2)         /* != */
         {
             return (var1.var != var2) ? true : false;
         }
         #endregion
         #region byte
         /* Math */
-        public static uint32_t operator +(uint32_t var1, byte var2)       /* + */
+        public static uint32_t operator +(uint32_t var1, byte var2)     /* + */
         {
-            uint32_t result = new uint32_t(var1.var + var2);
-            return result;
+            return new uint32_t(var1.var + var2);
         }
-        public static uint32_t operator -(uint32_t var1, byte var2)       /* - */
+        public static uint32_t operator -(uint32_t var1, byte var2)     /* - */
         {
-            uint32_t result = new uint32_t(var1.var - var2);
-            return result;
+            return new uint32_t(var1.var - var2);
         }
-        public static uint32_t operator *(uint32_t var1, byte var2)       /* * */
+        public static uint32_t operator *(uint32_t var1, byte var2)     /* * */
         {
-            uint32_t result = new uint32_t(var1.var * var2);
-            return result;
+            return new uint32_t(var1.var * var2);
         }
-        public static uint32_t operator /(uint32_t var1, byte var2)       /* / */
+        public static uint32_t operator /(uint32_t var1, byte var2)     /* / */
         {
-            uint32_t result = new uint32_t(var1.var / var2);
-            return result;
+            return new uint32_t(var1.var / var2);
         }
-        public static uint32_t operator %(uint32_t var1, byte var2)       /* % */
+        public static uint32_t operator %(uint32_t var1, byte var2)     /* % */
         {
-            uint32_t result = new uint32_t(var1.var % var2);
-            return result;
+            return new uint32_t(var1.var % var2);
         }
-        public static uint32_t operator &(uint32_t var1, byte var2)       /* & */
+        public static uint32_t operator &(uint32_t var1, byte var2)     /* & */
         {
-            uint32_t result = new uint32_t(var1.var & var2);
-            return result;
+            return new uint32_t(var1.var & var2);
         }
-        public static uint32_t operator |(uint32_t var1, byte var2)       /* | */
+        public static uint32_t operator |(uint32_t var1, byte var2)     /* | */
         {
-            uint32_t result = new uint32_t(var1.var | var2);
-            return result;
+            return new uint32_t(var1.var | var2);
         }
-        public static uint32_t operator ^(uint32_t var1, byte var2)       /* ^ */
+        public static uint32_t operator ^(uint32_t var1, byte var2)     /* ^ */
         {
-            uint32_t result = new uint32_t(var1.var ^ var2);
-            return result;
+            return new uint32_t(var1.var ^ var2);
         }
 
         /* Comparison */
-        public static bool operator >(uint32_t var1, byte var2)     /* > */
+        public static bool operator >(uint32_t var1, byte var2)         /* > */
         {
             return (var1.var > var2) ? true : false;
         }
-        public static bool operator <(uint32_t var1, byte var2)     /* < */
+        public static bool operator <(uint32_t var1, byte var2)         /* < */
         {
             return (var1.var < var2) ? true : false;
         }
-        public static bool operator <=(uint32_t var1, byte var2)    /* <= */
+        public static bool operator <=(uint32_t var1, byte var2)        /* <= */
         {
             return (var1.var <= var2) ? true : false;
         }
-        public static bool operator >=(uint32_t var1, byte var2)    /* >= */
+        public static bool operator >=(uint32_t var1, byte var2)        /* >= */
         {
             return (var1.var >= var2) ? true : false;
         }
-        public static bool operator ==(uint32_t var1, byte var2)    /* == */
+        public static bool operator ==(uint32_t var1, byte var2)        /* == */
         {
             return (var1.var == var2) ? true : false;
         }
-        public static bool operator !=(uint32_t var1, byte var2)    /* > */
+        public static bool operator !=(uint32_t var1, byte var2)        /* != */
         {
             return (var1.var != var2) ? true : false;
         }
@@ -4904,17 +4527,7 @@ namespace stdint
     /****************************** int64_t **********************************/
     class int64_t
     {
-        public Int64 var
-        {
-            get
-            {
-                return var;
-            }
-            set
-            {
-                var = value;
-            }
-        }
+        public Int64 var = 0;
 
         #region Constructors
         public int64_t()                { var = 0; }
@@ -5743,17 +5356,7 @@ namespace stdint
     /****************************** uint64_t **********************************/
     class uint64_t
     {
-        public UInt64 var
-        {
-            get
-            {
-                return var;
-            }
-            set
-            {
-                var = value;
-            }
-        }
+        public UInt64 var = 0;
 
         #region Constructors
         public uint64_t()               { var = 0; }
