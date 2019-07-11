@@ -15,3 +15,8 @@ C:\GitHub\machineLearning2\obj\Debug\machineLearning2.csproj.GenerateResource.ca
 C:\GitHub\machineLearning2\obj\Debug\machineLearning2.csproj.CoreCompileInputs.cache
 C:\GitHub\machineLearning2\obj\Debug\machineLearning2.exe
 C:\GitHub\machineLearning2\obj\Debug\machineLearning2.pdb
+C:\GitHub\machineLearning2\bin\machineLearning2.exe.config
+C:\GitHub\machineLearning2\bin\machineLearning2.exe
+C:\GitHub\machineLearning2\bin\machineLearning2.pdb
+C:\GitHub\machineLearning2\bin\machineLearning2.exe.CodeAnalysisLog.xml
+C:\GitHub\machineLearning2\bin\machineLearning2.exe.lastcodeanalysissucceeded

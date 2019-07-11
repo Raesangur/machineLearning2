@@ -69,9 +69,7 @@
       <DependentUpon>machineLearning2.cs</DependentUpon>
     </Compile>
     <Compile Include="src\neuralNet\Connection.cs" />
-    <Compile Include="src\neuralNet\NeuralNetwork_t.cs" />
     <Compile Include="src\neuralNet\Neuron.cs" />
-    <Compile Include="src\neuralNet\stdint.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Draft_stdint.cs" />
