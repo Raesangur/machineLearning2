@@ -1,18 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-/*****************************************************************************/
+﻿/*****************************************************************************/
 /* TODO:
- * - bool support
  * - sbyte, short, ushort, uint, long and ulong support
+ *      - uint8_t
+ *      - int16_t
+ *      - uint16_t
+ *      - int32_t
+ *      - uint32_t
+ *      - int64_t
+ *      - uint64_t
  * - float and double support
- * - size_t
+ *      - int8_t
+ *      - uint8_t
+ *      - int16_t
+ *      - uint16_t
+ *      - int32_t
+ *      - uint32_t
+ *      - int64_t
+ *      - uint64_t
  * - parsing, strings
  * - Compares
- * - Lists & arrays
  * */
 
 namespace stdint
@@ -20,26 +26,26 @@ namespace stdint
     /****************************** int8_t ***********************************/
     class int8_t
     {
-        public SByte var = 0;
+        public sbyte var = 0;
 
         #region Constructors
         public int8_t()                 { var = 0; }
-        public int8_t(byte value)       { var = (SByte)value; }
-        public int8_t(SByte value)      { var = value; }
-        public int8_t(Int16 value)      { var = (SByte)value; }
-        public int8_t(UInt16 value)     { var = (SByte)value; }
-        public int8_t(int value)        { var = (SByte)value; }
-        public int8_t(UInt32 value)     { var = (SByte)value; }
-        public int8_t(Int64 value)      { var = (SByte)value; }
-        public int8_t(UInt64 value)     { var = (SByte)value; }
+        public int8_t(byte value)       { var = (sbyte)value; }
+        public int8_t(sbyte value)      { var = value; }
+        public int8_t(short value)      { var = (sbyte)value; }
+        public int8_t(ushort value)     { var = (sbyte)value; }
+        public int8_t(int value)        { var = (sbyte)value; }
+        public int8_t(uint value)       { var = (sbyte)value; }
+        public int8_t(long value)       { var = (sbyte)value; }
+        public int8_t(ulong value)      { var = (sbyte)value; }
         public int8_t(int8_t value)     { var = value.var; }
-        public int8_t(uint8_t value)    { var = (SByte)value.var; }
-        public int8_t(int16_t value)    { var = (SByte)value.var; }
-        public int8_t(uint16_t value)   { var = (SByte)value.var; }
-        public int8_t(int32_t value)    { var = (SByte)value.var; }
-        public int8_t(uint32_t value)   { var = (SByte)value.var; }
-        public int8_t(int64_t value)    { var = (SByte)value.var; }
-        public int8_t(uint64_t value)   { var = (SByte)value.var; }
+        public int8_t(uint8_t value)    { var = (sbyte)value.var; }
+        public int8_t(int16_t value)    { var = (sbyte)value.var; }
+        public int8_t(uint16_t value)   { var = (sbyte)value.var; }
+        public int8_t(int32_t value)    { var = (sbyte)value.var; }
+        public int8_t(uint32_t value)   { var = (sbyte)value.var; }
+        public int8_t(int64_t value)    { var = (sbyte)value.var; }
+        public int8_t(uint64_t value)   { var = (sbyte)value.var; }
         #endregion
 
         #region int8_t
@@ -135,35 +141,35 @@ namespace stdint
         }
 
         /* Math */
-        public static int8_t operator +(int8_t var1, uint8_t var2)       /* + */
+        public static int8_t operator +(int8_t var1, uint8_t var2)      /* + */
         {
             return new int8_t(var1.var + var2.var);
         }
-        public static int8_t operator -(int8_t var1, uint8_t var2)       /* - */
+        public static int8_t operator -(int8_t var1, uint8_t var2)      /* - */
         {
             return new int8_t(var1.var - var2.var);
         }
-        public static int8_t operator *(int8_t var1, uint8_t var2)       /* * */
+        public static int8_t operator *(int8_t var1, uint8_t var2)      /* * */
         {
             return new int8_t(var1.var * var2.var);
         }
-        public static int8_t operator /(int8_t var1, uint8_t var2)       /* / */
+        public static int8_t operator /(int8_t var1, uint8_t var2)      /* / */
         {
             return new int8_t(var1.var * var2.var);
         }
-        public static int8_t operator %(int8_t var1, uint8_t var2)       /* % */
+        public static int8_t operator %(int8_t var1, uint8_t var2)      /* % */
         {
             return new int8_t(var1.var % var2.var);
         }
-        public static int8_t operator &(int8_t var1, uint8_t var2)       /* & */
+        public static int8_t operator &(int8_t var1, uint8_t var2)      /* & */
         {
             return new int8_t(var1.var & var2.var);
         }
-        public static int8_t operator |(int8_t var1, uint8_t var2)       /* | */
+        public static int8_t operator |(int8_t var1, uint8_t var2)      /* | */
         {
             return new int8_t((byte)var1.var | var2.var);
         }
-        public static int8_t operator ^(int8_t var1, uint8_t var2)       /* ^ */
+        public static int8_t operator ^(int8_t var1, uint8_t var2)      /* ^ */
         {
             return new int8_t(var1.var ^ var2.var);
         }
@@ -196,46 +202,46 @@ namespace stdint
         #endregion
         #region int16_t
         /* Assignment */
-        public static implicit operator Int16(int8_t obj)
+        public static implicit operator short(int8_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator int8_t(Int16 var)
+        public static implicit operator int8_t(short var)
         {
             return new int8_t(var);
         }
 
         /* Math */
-        public static int8_t operator +(int8_t var1, int16_t var2)       /* + */
+        public static int8_t operator +(int8_t var1, int16_t var2)      /* + */
         {
             return new int8_t(var1.var + var2.var);
         }
-        public static int8_t operator -(int8_t var1, int16_t var2)       /* - */
+        public static int8_t operator -(int8_t var1, int16_t var2)      /* - */
         {
             return new int8_t(var1.var - var2.var);
         }
-        public static int8_t operator *(int8_t var1, int16_t var2)       /* * */
+        public static int8_t operator *(int8_t var1, int16_t var2)      /* * */
         {
             return new int8_t(var1.var * var2.var);
         }
-        public static int8_t operator /(int8_t var1, int16_t var2)       /* / */
+        public static int8_t operator /(int8_t var1, int16_t var2)      /* / */
         {
             return new int8_t(var1.var / var2.var);
         }
-        public static int8_t operator %(int8_t var1, int16_t var2)       /* % */
+        public static int8_t operator %(int8_t var1, int16_t var2)      /* % */
         {
             return new int8_t(var1.var % var2.var);
         }
-        public static int8_t operator &(int8_t var1, int16_t var2)       /* & */
+        public static int8_t operator &(int8_t var1, int16_t var2)      /* & */
         {
             return new int8_t(var1.var & var2.var);
         }
-        public static int8_t operator |(int8_t var1, int16_t var2)       /* | */
+        public static int8_t operator |(int8_t var1, int16_t var2)      /* | */
         {
-            return new int8_t((byte)var1.var | (UInt16)var2.var);
+            return new int8_t((byte)var1.var | (ushort)var2.var);
         }
-        public static int8_t operator ^(int8_t var1, int16_t var2)       /* ^ */
+        public static int8_t operator ^(int8_t var1, int16_t var2)      /* ^ */
         {
             return new int8_t(var1.var ^ var2.var);
         }
@@ -268,12 +274,12 @@ namespace stdint
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator UInt16(int8_t obj)
+        public static implicit operator ushort(int8_t obj)
         {
             return (ushort)obj.var;
         }
 
-        public static implicit operator int8_t(UInt16 var)
+        public static implicit operator int8_t(ushort var)
         {
             return new int8_t(var);
         }
@@ -340,12 +346,12 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator Int32(int8_t obj)
+        public static implicit operator int(int8_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator int8_t(Int32 var)
+        public static implicit operator int8_t(int var)
         {
             return new int8_t(var);
         }
@@ -412,12 +418,12 @@ namespace stdint
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator UInt32(int8_t obj)
+        public static implicit operator uint(int8_t obj)
         {
             return (uint)obj.var;
         }
 
-        public static implicit operator int8_t(UInt32 var)
+        public static implicit operator int8_t(uint var)
         {
             return new int8_t(var);
         }
@@ -484,12 +490,12 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator Int64(int8_t obj)
+        public static implicit operator long(int8_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator int8_t(Int64 var)
+        public static implicit operator int8_t(long var)
         {
             return new int8_t(var);
         }
@@ -557,12 +563,12 @@ namespace stdint
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator UInt64(int8_t obj)
+        public static implicit operator ulong(int8_t obj)
         {
             return (ulong)obj.var;
         }
 
-        public static implicit operator int8_t(UInt64 var)
+        public static implicit operator int8_t(ulong var)
         {
             return new int8_t(var);
         }
@@ -570,27 +576,27 @@ namespace stdint
         /* Math */
         public static int8_t operator +(int8_t var1, uint64_t var2)     /* + */
         {
-            return new int8_t((ulong)var1.var + var2.var);
+            return new int8_t((byte)var1.var + var2.var);
         }
         public static int8_t operator -(int8_t var1, uint64_t var2)     /* - */
         {
-            return new int8_t((ulong)var1.var - var2.var);
+            return new int8_t((byte)var1.var - var2.var);
         }
         public static int8_t operator *(int8_t var1, uint64_t var2)     /* * */
         {
-            return new int8_t((ulong)var1.var * var2.var);
+            return new int8_t((byte)var1.var * var2.var);
         }
         public static int8_t operator /(int8_t var1, uint64_t var2)     /* / */
         {
-            return new int8_t((ulong)var1.var / var2.var);
+            return new int8_t((byte)var1.var / var2.var);
         }
         public static int8_t operator %(int8_t var1, uint64_t var2)     /* % */
         {
-            return new int8_t((ulong)var1.var / var2.var);
+            return new int8_t((byte)var1.var / var2.var);
         }
         public static int8_t operator &(int8_t var1, uint64_t var2)     /* & */
         {
-            return new int8_t((ulong)var1.var & var2.var);
+            return new int8_t((byte)var1.var & var2.var);
         }
         public static int8_t operator |(int8_t var1, uint64_t var2)     /* | */
         {
@@ -598,33 +604,279 @@ namespace stdint
         }
         public static int8_t operator ^(int8_t var1, uint64_t var2)     /* ^ */
         {
-            return new int8_t((ulong)var1.var ^ var2.var);
+            return new int8_t((byte)var1.var ^ var2.var);
         }
 
         /* Comparison */
         public static bool operator >(int8_t var1, uint64_t var2)       /* > */
         {
-            return ((UInt64)var1.var > var2.var) ? true : false;
+            return ((byte)var1.var > var2.var) ? true : false;
         }
         public static bool operator <(int8_t var1, uint64_t var2)       /* < */
         {
-            return ((UInt64)var1.var < var2.var) ? true : false;
+            return ((byte)var1.var < var2.var) ? true : false;
         }
         public static bool operator <=(int8_t var1, uint64_t var2)      /* <= */
         {
-            return ((UInt64)var1.var <= var2.var) ? true : false;
+            return ((byte)var1.var <= var2.var) ? true : false;
         }
         public static bool operator >=(int8_t var1, uint64_t var2)      /* >= */
         {
-            return ((UInt64)var1.var >= var2.var) ? true : false;
+            return ((byte)var1.var >= var2.var) ? true : false;
         }
         public static bool operator ==(int8_t var1, uint64_t var2)      /* == */
         {
-            return ((UInt64)var1.var == var2.var) ? true : false;
+            return ((byte)var1.var == var2.var) ? true : false;
         }
         public static bool operator !=(int8_t var1, uint64_t var2)      /* != */
         {
-            return ((UInt64)var1.var != var2.var) ? true : false;
+            return ((byte)var1.var != var2.var) ? true : false;
+        }
+        #endregion
+        
+        #region default types
+        #region byte
+        /* Math */
+        public static int8_t operator +(int8_t var1, byte var2)         /* + */
+        {
+            return new int8_t(var1.var + var2);
+        }
+        public static int8_t operator -(int8_t var1, byte var2)         /* - */
+        {
+            return new int8_t(var1.var - var2);
+        }
+        public static int8_t operator *(int8_t var1, byte var2)         /* * */
+        {
+            return new int8_t(var1.var * var2);
+        }
+        public static int8_t operator /(int8_t var1, byte var2)         /* / */
+        {
+            return new int8_t(var1.var / var2);
+        }
+        public static int8_t operator %(int8_t var1, byte var2)         /* % */
+        {
+            return new int8_t(var1.var % var2);
+        }
+        public static int8_t operator &(int8_t var1, byte var2)         /* & */
+        {
+            return new int8_t(var1.var & var2);
+        }
+        public static int8_t operator |(int8_t var1, byte var2)         /* | */
+        {
+            return new int8_t((byte)var1.var | var2);
+        }
+        public static int8_t operator ^(int8_t var1, byte var2)         /* != */
+        {
+            return new int8_t(var1.var ^ var2);
+        }
+
+        /* Comparison */
+        public static bool operator >(int8_t var1, byte var2)           /* > */
+        {
+            return (var1.var > var2) ? true : false;
+        }
+        public static bool operator <(int8_t var1, byte var2)           /* < */
+        {
+            return (var1.var < var2) ? true : false;
+        }
+        public static bool operator <=(int8_t var1, byte var2)          /* <= */
+        {
+            return (var1.var <= var2) ? true : false;
+        }
+        public static bool operator >=(int8_t var1, byte var2)          /* >= */
+        {
+            return (var1.var >= var2) ? true : false;
+        }
+        public static bool operator ==(int8_t var1, byte var2)          /* == */
+        {
+            return (var1.var == var2) ? true : false;
+        }
+        public static bool operator !=(int8_t var1, byte var2)          /* != */
+        {
+            return (var1.var != var2) ? true : false;
+        }
+        #endregion
+        #region sbyte
+        /* Math */
+        public static int8_t operator +(int8_t var1, sbyte var2)        /* + */
+        {
+            return new int8_t(var1.var + var2);
+        }
+        public static int8_t operator -(int8_t var1, sbyte var2)        /* - */
+        {
+            return new int8_t(var1.var - var2);
+        }
+        public static int8_t operator *(int8_t var1, sbyte var2)        /* * */
+        {
+            return new int8_t(var1.var * var2);
+        }
+        public static int8_t operator /(int8_t var1, sbyte var2)        /* / */
+        {
+            return new int8_t(var1.var / var2);
+        }
+        public static int8_t operator %(int8_t var1, sbyte var2)        /* % */
+        {
+            return new int8_t(var1.var % var2);
+        }
+        public static int8_t operator &(int8_t var1, sbyte var2)        /* & */
+        {
+            return new int8_t(var1.var & var2);
+        }
+        public static int8_t operator |(int8_t var1, sbyte var2)        /* | */
+        {
+            return new int8_t(var1.var | var2);
+        }
+        public static int8_t operator ^(int8_t var1, sbyte var2)        /* != */
+        {
+            return new int8_t(var1.var ^ var2);
+        }
+
+        /* Comparison */
+        public static bool operator >(int8_t var1, sbyte var2)          /* > */
+        {
+            return (var1.var > var2) ? true : false;
+        }
+        public static bool operator <(int8_t var1, sbyte var2)          /* < */
+        {
+            return (var1.var < var2) ? true : false;
+        }
+        public static bool operator <=(int8_t var1, sbyte var2)         /* <= */
+        {
+            return (var1.var <= var2) ? true : false;
+        }
+        public static bool operator >=(int8_t var1, sbyte var2)         /* >= */
+        {
+            return (var1.var >= var2) ? true : false;
+        }
+        public static bool operator ==(int8_t var1, sbyte var2)         /* == */
+        {
+            return (var1.var == var2) ? true : false;
+        }
+        public static bool operator !=(int8_t var1, sbyte var2)         /* != */
+        {
+            return (var1.var != var2) ? true : false;
+        }
+        #endregion
+        #region short
+        /* Math */
+        public static int8_t operator +(int8_t var1, short var2)        /* + */
+        {
+            return new int8_t(var1.var + var2);
+        }
+        public static int8_t operator -(int8_t var1, short var2)        /* - */
+        {
+            return new int8_t(var1.var - var2);
+        }
+        public static int8_t operator *(int8_t var1, short var2)        /* * */
+        {
+            return new int8_t(var1.var * var2);
+        }
+        public static int8_t operator /(int8_t var1, short var2)        /* / */
+        {
+            return new int8_t(var1.var / var2);
+        }
+        public static int8_t operator %(int8_t var1, short var2)        /* % */
+        {
+            return new int8_t(var1.var % var2);
+        }
+        public static int8_t operator &(int8_t var1, short var2)        /* & */
+        {
+            return new int8_t(var1.var & var2);
+        }
+        public static int8_t operator |(int8_t var1, short var2)        /* | */
+        {
+            return new int8_t((byte)var1.var | (ushort)var2);
+        }
+        public static int8_t operator ^(int8_t var1, short var2)        /* != */
+        {
+            return new int8_t(var1.var ^ var2);
+        }
+
+        /* Comparison */
+        public static bool operator >(int8_t var1, short var2)          /* > */
+        {
+            return (var1.var > var2) ? true : false;
+        }
+        public static bool operator <(int8_t var1, short var2)          /* < */
+        {
+            return (var1.var < var2) ? true : false;
+        }
+        public static bool operator <=(int8_t var1, short var2)         /* <= */
+        {
+            return (var1.var <= var2) ? true : false;
+        }
+        public static bool operator >=(int8_t var1, short var2)         /* >= */
+        {
+            return (var1.var >= var2) ? true : false;
+        }
+        public static bool operator ==(int8_t var1, short var2)         /* == */
+        {
+            return (var1.var == var2) ? true : false;
+        }
+        public static bool operator !=(int8_t var1, short var2)         /* != */
+        {
+            return (var1.var != var2) ? true : false;
+        }
+        #endregion
+        #region ushort
+        /* Math */
+        public static int8_t operator +(int8_t var1, ushort var2)       /* + */
+        {
+            return new int8_t(var1.var + var2);
+        }
+        public static int8_t operator -(int8_t var1, ushort var2)       /* - */
+        {
+            return new int8_t(var1.var - var2);
+        }
+        public static int8_t operator *(int8_t var1, ushort var2)       /* * */
+        {
+            return new int8_t(var1.var * var2);
+        }
+        public static int8_t operator /(int8_t var1, ushort var2)       /* / */
+        {
+            return new int8_t(var1.var / var2);
+        }
+        public static int8_t operator %(int8_t var1, ushort var2)       /* % */
+        {
+            return new int8_t(var1.var % var2);
+        }
+        public static int8_t operator &(int8_t var1, ushort var2)       /* & */
+        {
+            return new int8_t(var1.var & var2);
+        }
+        public static int8_t operator |(int8_t var1, ushort var2)       /* | */
+        {
+            return new int8_t((byte)var1.var | var2);
+        }
+        public static int8_t operator ^(int8_t var1, ushort var2)       /* != */
+        {
+            return new int8_t(var1.var ^ var2);
+        }
+
+        /* Comparison */
+        public static bool operator >(int8_t var1, ushort var2)         /* > */
+        {
+            return (var1.var > var2) ? true : false;
+        }
+        public static bool operator <(int8_t var1, ushort var2)         /* < */
+        {
+            return (var1.var < var2) ? true : false;
+        }
+        public static bool operator <=(int8_t var1, ushort var2)        /* <= */
+        {
+            return (var1.var <= var2) ? true : false;
+        }
+        public static bool operator >=(int8_t var1, ushort var2)        /* >= */
+        {
+            return (var1.var >= var2) ? true : false;
+        }
+        public static bool operator ==(int8_t var1, ushort var2)        /* == */
+        {
+            return (var1.var == var2) ? true : false;
+        }
+        public static bool operator !=(int8_t var1, ushort var2)        /* != */
+        {
+            return (var1.var != var2) ? true : false;
         }
         #endregion
         #region int
@@ -689,67 +941,191 @@ namespace stdint
             return (var1.var != var2) ? true : false;
         }
         #endregion
-        #region byte
+        #region uint
         /* Math */
-        public static int8_t operator +(int8_t var1, byte var2)         /* + */
+        public static int8_t operator +(int8_t var1, uint var2)         /* + */
         {
             return new int8_t(var1.var + var2);
         }
-        public static int8_t operator -(int8_t var1, byte var2)         /* - */
+        public static int8_t operator -(int8_t var1, uint var2)         /* - */
         {
             return new int8_t(var1.var - var2);
         }
-        public static int8_t operator *(int8_t var1, byte var2)         /* * */
+        public static int8_t operator *(int8_t var1, uint var2)         /* * */
         {
             return new int8_t(var1.var * var2);
         }
-        public static int8_t operator /(int8_t var1, byte var2)         /* / */
+        public static int8_t operator /(int8_t var1, uint var2)         /* / */
         {
             return new int8_t(var1.var / var2);
         }
-        public static int8_t operator %(int8_t var1, byte var2)         /* % */
+        public static int8_t operator %(int8_t var1, uint var2)         /* % */
         {
             return new int8_t(var1.var % var2);
         }
-        public static int8_t operator &(int8_t var1, byte var2)         /* & */
+        public static int8_t operator &(int8_t var1, uint var2)         /* & */
         {
             return new int8_t(var1.var & var2);
         }
-        public static int8_t operator |(int8_t var1, byte var2)         /* | */
+        public static int8_t operator |(int8_t var1, uint var2)         /* | */
         {
             return new int8_t((byte)var1.var | var2);
         }
-        public static int8_t operator ^(int8_t var1, byte var2)         /* != */
+        public static int8_t operator ^(int8_t var1, uint var2)         /* != */
         {
             return new int8_t(var1.var ^ var2);
         }
 
         /* Comparison */
-        public static bool operator >(int8_t var1, byte var2)           /* > */
+        public static bool operator >(int8_t var1, uint var2)           /* > */
         {
             return (var1.var > var2) ? true : false;
         }
-        public static bool operator <(int8_t var1, byte var2)           /* < */
+        public static bool operator <(int8_t var1, uint var2)           /* < */
         {
             return (var1.var < var2) ? true : false;
         }
-        public static bool operator <=(int8_t var1, byte var2)          /* <= */
+        public static bool operator <=(int8_t var1, uint var2)          /* <= */
         {
             return (var1.var <= var2) ? true : false;
         }
-        public static bool operator >=(int8_t var1, byte var2)          /* >= */
+        public static bool operator >=(int8_t var1, uint var2)          /* >= */
         {
             return (var1.var >= var2) ? true : false;
         }
-        public static bool operator ==(int8_t var1, byte var2)          /* == */
+        public static bool operator ==(int8_t var1, uint var2)          /* == */
         {
             return (var1.var == var2) ? true : false;
         }
-        public static bool operator !=(int8_t var1, byte var2)          /* != */
+        public static bool operator !=(int8_t var1, uint var2)          /* != */
         {
             return (var1.var != var2) ? true : false;
         }
         #endregion
+        #region long
+        /* Math */
+        public static int8_t operator +(int8_t var1, long var2)         /* + */
+        {
+            return new int8_t(var1.var + var2);
+        }
+        public static int8_t operator -(int8_t var1, long var2)         /* - */
+        {
+            return new int8_t(var1.var - var2);
+        }
+        public static int8_t operator *(int8_t var1, long var2)         /* * */
+        {
+            return new int8_t(var1.var * var2);
+        }
+        public static int8_t operator /(int8_t var1, long var2)         /* / */
+        {
+            return new int8_t(var1.var / var2);
+        }
+        public static int8_t operator %(int8_t var1, long var2)         /* % */
+        {
+            return new int8_t(var1.var % var2);
+        }
+        public static int8_t operator &(int8_t var1, long var2)         /* & */
+        {
+            return new int8_t(var1.var & var2);
+        }
+        public static int8_t operator |(int8_t var1, long var2)         /* | */
+        {
+            return new int8_t((byte)var1.var | var2);
+        }
+        public static int8_t operator ^(int8_t var1, long var2)         /* != */
+        {
+            return new int8_t(var1.var ^ var2);
+        }
+
+        /* Comparison */
+        public static bool operator >(int8_t var1, long var2)           /* > */
+        {
+            return (var1.var > var2) ? true : false;
+        }
+        public static bool operator <(int8_t var1, long var2)           /* < */
+        {
+            return (var1.var < var2) ? true : false;
+        }
+        public static bool operator <=(int8_t var1, long var2)          /* <= */
+        {
+            return (var1.var <= var2) ? true : false;
+        }
+        public static bool operator >=(int8_t var1, long var2)          /* >= */
+        {
+            return (var1.var >= var2) ? true : false;
+        }
+        public static bool operator ==(int8_t var1, long var2)          /* == */
+        {
+            return (var1.var == var2) ? true : false;
+        }
+        public static bool operator !=(int8_t var1, long var2)          /* != */
+        {
+            return (var1.var != var2) ? true : false;
+        }
+        #endregion
+        #region ulong
+        /* Math */
+        public static int8_t operator +(int8_t var1, ulong var2)        /* + */
+        {
+            return new int8_t((byte)var1.var + var2);
+        }
+        public static int8_t operator -(int8_t var1, ulong var2)        /* - */
+        {
+            return new int8_t((byte)var1.var - var2);
+        }
+        public static int8_t operator *(int8_t var1, ulong var2)        /* * */
+        {
+            return new int8_t((byte)var1.var * var2);
+        }
+        public static int8_t operator /(int8_t var1, ulong var2)        /* / */
+        {
+            return new int8_t((byte)var1.var / var2);
+        }
+        public static int8_t operator %(int8_t var1, ulong var2)        /* % */
+        {
+            return new int8_t((byte)var1.var % var2);
+        }
+        public static int8_t operator &(int8_t var1, ulong var2)        /* & */
+        {
+            return new int8_t((byte)var1.var & var2);
+        }
+        public static int8_t operator |(int8_t var1, ulong var2)        /* | */
+        {
+            return new int8_t((byte)var1.var | var2);
+        }
+        public static int8_t operator ^(int8_t var1, ulong var2)        /* != */
+        {
+            return new int8_t((byte)var1.var ^ var2);
+        }
+
+        /* Comparison */
+        public static bool operator >(int8_t var1, ulong var2)          /* > */
+        {
+            return ((byte)var1.var > var2) ? true : false;
+        }
+        public static bool operator <(int8_t var1, ulong var2)          /* < */
+        {
+            return ((byte)var1.var < var2) ? true : false;
+        }
+        public static bool operator <=(int8_t var1, ulong var2)         /* <= */
+        {
+            return ((byte)var1.var <= var2) ? true : false;
+        }
+        public static bool operator >=(int8_t var1, ulong var2)         /* >= */
+        {
+            return ((byte)var1.var >= var2) ? true : false;
+        }
+        public static bool operator ==(int8_t var1, ulong var2)         /* == */
+        {
+            return ((byte)var1.var == var2) ? true : false;
+        }
+        public static bool operator !=(int8_t var1, ulong var2)         /* != */
+        {
+            return ((byte)var1.var != var2) ? true : false;
+        }
+        #endregion
+        #endregion
+
         #region specials
         public override bool Equals(object obj)
         {
@@ -774,13 +1150,13 @@ namespace stdint
         #region Constructors
         public uint8_t()                { var = 0; }
         public uint8_t(byte value)      { var = value; }
-        public uint8_t(SByte value)     { var = (byte)value; }
-        public uint8_t(Int16 value)     { var = (byte)value; }
-        public uint8_t(UInt16 value)    { var = (byte)value; }
+        public uint8_t(sbyte value)     { var = (byte)value; }
+        public uint8_t(short value)     { var = (byte)value; }
+        public uint8_t(ushort value)    { var = (byte)value; }
         public uint8_t(int value)       { var = (byte)value; }
-        public uint8_t(UInt32 value)    { var = (byte)value; }
-        public uint8_t(Int64 value)     { var = (byte)value; }
-        public uint8_t(UInt64 value)    { var = (byte)value; }
+        public uint8_t(uint value)    { var = (byte)value; }
+        public uint8_t(long value)     { var = (byte)value; }
+        public uint8_t(ulong value)    { var = (byte)value; }
         public uint8_t(int8_t value)    { var = (byte)value.var; }
         public uint8_t(uint8_t value)   { var = value.var; }
         public uint8_t(int16_t value)   { var = (byte)value.var; }
@@ -945,12 +1321,12 @@ namespace stdint
         #endregion
         #region int16_t
         /* Assignment */
-        public static implicit operator Int16(uint8_t obj)
+        public static implicit operator short(uint8_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator uint8_t(Int16 var)
+        public static implicit operator uint8_t(short var)
         {
             return new uint8_t(var);
         }
@@ -1017,12 +1393,12 @@ namespace stdint
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator UInt16(uint8_t obj)
+        public static implicit operator ushort(uint8_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator uint8_t(UInt16 var)
+        public static implicit operator uint8_t(ushort var)
         {
             return new uint8_t(var);
         }
@@ -1089,12 +1465,12 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator Int32(uint8_t obj)
+        public static implicit operator int(uint8_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator uint8_t(Int32 var)
+        public static implicit operator uint8_t(int var)
         {
             return new uint8_t(var);
         }
@@ -1162,12 +1538,12 @@ namespace stdint
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator UInt32(uint8_t obj)
+        public static implicit operator uint(uint8_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator uint8_t(UInt32 var)
+        public static implicit operator uint8_t(uint var)
         {
             return new uint8_t(var);
         }
@@ -1234,12 +1610,12 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator Int64(uint8_t obj)
+        public static implicit operator long(uint8_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator uint8_t(Int64 var)
+        public static implicit operator uint8_t(long var)
         {
             return new uint8_t(var);
         }
@@ -1306,12 +1682,12 @@ namespace stdint
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator UInt64(uint8_t obj)
+        public static implicit operator ulong(uint8_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator uint8_t(UInt64 var)
+        public static implicit operator uint8_t(ulong var)
         {
             return new uint8_t(var);
         }
@@ -1517,26 +1893,26 @@ namespace stdint
     /****************************** int16_t **********************************/
     class int16_t
     {
-        public Int16 var = 0;
+        public short var = 0;
 
         #region Constructors
         public int16_t()                { var = 0; }
-        public int16_t(byte value)      { var = (Int16)value; }
-        public int16_t(SByte value)     { var = (Int16)value; }
-        public int16_t(Int16 value)     { var = value; }
-        public int16_t(UInt16 value)    { var = (Int16)value; }
-        public int16_t(int value)       { var = (Int16)value; }
-        public int16_t(UInt32 value)    { var = (Int16)value; }
-        public int16_t(Int64 value)     { var = (Int16)value; }
-        public int16_t(UInt64 value)    { var = (Int16)value; }
-        public int16_t(int8_t value)    { var = (Int16)value.var; }
-        public int16_t(uint8_t value)   { var = (Int16)value.var; }
+        public int16_t(byte value)      { var = (short)value; }
+        public int16_t(sbyte value)     { var = (short)value; }
+        public int16_t(short value)     { var = value; }
+        public int16_t(ushort value)    { var = (short)value; }
+        public int16_t(int value)       { var = (short)value; }
+        public int16_t(uint value)      { var = (short)value; }
+        public int16_t(long value)      { var = (short)value; }
+        public int16_t(ulong value)     { var = (short)value; }
+        public int16_t(int8_t value)    { var = (short)value.var; }
+        public int16_t(uint8_t value)   { var = (short)value.var; }
         public int16_t(int16_t value)   { var = value.var; }
-        public int16_t(uint16_t value)  { var = (Int16)value.var; }
-        public int16_t(int32_t value)   { var = (Int16)value.var; }
-        public int16_t(uint32_t value)  { var = (Int16)value.var; }
-        public int16_t(int64_t value)   { var = (Int16)value.var; }
-        public int16_t(uint64_t value)  { var = (Int16)value.var; }
+        public int16_t(uint16_t value)  { var = (short)value.var; }
+        public int16_t(int32_t value)   { var = (short)value.var; }
+        public int16_t(uint32_t value)  { var = (short)value.var; }
+        public int16_t(int64_t value)   { var = (short)value.var; }
+        public int16_t(uint64_t value)  { var = (short)value.var; }
         #endregion
 
         #region int8_t
@@ -1685,12 +2061,12 @@ namespace stdint
         #endregion
         #region int16_t
         /* Assignment */
-        public static implicit operator Int16(int16_t obj)
+        public static implicit operator short(int16_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator int16_t(Int16 var)
+        public static implicit operator int16_t(short var)
         {
             return new int16_t(var);
         }
@@ -1765,12 +2141,12 @@ namespace stdint
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator UInt16(int16_t obj)
+        public static implicit operator ushort(int16_t obj)
         {
             return (ushort)obj.var;
         }
 
-        public static implicit operator int16_t(UInt16 var)
+        public static implicit operator int16_t(ushort var)
         {
             return new int16_t(var);
         }
@@ -1837,12 +2213,12 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator Int32(int16_t obj)
+        public static implicit operator int(int16_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator int16_t(Int32 var)
+        public static implicit operator int16_t(int var)
         {
             return new int16_t(var);
         }
@@ -1909,12 +2285,12 @@ namespace stdint
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator UInt32(int16_t obj)
+        public static implicit operator uint(int16_t obj)
         {
             return (uint)obj.var;
         }
 
-        public static implicit operator int16_t(UInt32 var)
+        public static implicit operator int16_t(uint var)
         {
             return new int16_t(var);
         }
@@ -1981,12 +2357,12 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator Int64(int16_t obj)
+        public static implicit operator long(int16_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator int16_t(Int64 var)
+        public static implicit operator int16_t(long var)
         {
             return new int16_t(var);
         }
@@ -2053,12 +2429,12 @@ namespace stdint
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator UInt64(int16_t obj)
+        public static implicit operator ulong(int16_t obj)
         {
             return (ulong)obj.var;
         }
 
-        public static implicit operator int16_t(UInt64 var)
+        public static implicit operator int16_t(ulong var)
         {
             return new int16_t(var);
         }
@@ -2066,27 +2442,27 @@ namespace stdint
         /* Math */
         public static int16_t operator +(int16_t var1, uint64_t var2)   /* + */
         {
-            return new int16_t((ulong)var1.var + var2.var);
+            return new int16_t((ushort)var1.var + var2.var);
         }
         public static int16_t operator -(int16_t var1, uint64_t var2)   /* - */
         {
-            return new int16_t((ulong)var1.var - var2.var);
+            return new int16_t((ushort)var1.var - var2.var);
         }
         public static int16_t operator *(int16_t var1, uint64_t var2)   /* * */
         {
-            return new int16_t((ulong)var1.var * var2.var);
+            return new int16_t((ushort)var1.var * var2.var);
         }
         public static int16_t operator /(int16_t var1, uint64_t var2)   /* / */
         {
-            return new int16_t((ulong)var1.var / var2.var);
+            return new int16_t((ushort)var1.var / var2.var);
         }
         public static int16_t operator %(int16_t var1, uint64_t var2)   /* % */
         {
-            return new int16_t((ulong)var1.var % var2.var);
+            return new int16_t((ushort)var1.var % var2.var);
         }
         public static int16_t operator &(int16_t var1, uint64_t var2)   /* & */
         {
-            return new int16_t((ulong)var1.var & var2.var);
+            return new int16_t((ushort)var1.var & var2.var);
         }
         public static int16_t operator |(int16_t var1, uint64_t var2)   /* | */
         {
@@ -2094,33 +2470,33 @@ namespace stdint
         }
         public static int16_t operator ^(int16_t var1, uint64_t var2)   /* ^ */
         {
-            return new int16_t((ulong)var1.var ^ var2.var);
+            return new int16_t((ushort)var1.var ^ var2.var);
         }
 
         /* Comparison */
         public static bool operator >(int16_t var1, uint64_t var2)      /* > */
         {
-            return (var1.var > (Int64)var2.var) ? true : false;
+            return (var1.var > (ushort)var2.var) ? true : false;
         }
         public static bool operator <(int16_t var1, uint64_t var2)      /* < */
         {
-            return (var1.var < (Int64)var2.var) ? true : false;
+            return (var1.var < (ushort)var2.var) ? true : false;
         }
         public static bool operator <=(int16_t var1, uint64_t var2)     /* <= */
         {
-            return (var1.var <= (Int64)var2.var) ? true : false;
+            return (var1.var <= (ushort)var2.var) ? true : false;
         }
         public static bool operator >=(int16_t var1, uint64_t var2)     /* >= */
         {
-            return (var1.var >= (Int64)var2.var) ? true : false;
+            return (var1.var >= (ushort)var2.var) ? true : false;
         }
         public static bool operator ==(int16_t var1, uint64_t var2)     /* == */
         {
-            return (var1.var == (Int64)var2.var) ? true : false;
+            return (var1.var == (ushort)var2.var) ? true : false;
         }
         public static bool operator !=(int16_t var1, uint64_t var2)     /* != */
         {
-            return (var1.var != (Int64)var2.var) ? true : false;
+            return (var1.var != (ushort)var2.var) ? true : false;
         }
         #endregion
         #region int
@@ -2157,7 +2533,7 @@ namespace stdint
         }
         public static int16_t operator |(int16_t var1, int var2)        /* | */
         {
-            int16_t result = new int16_t((UInt16)var1.var | var2);
+            int16_t result = new int16_t((ushort)var1.var | var2);
             return result;
         }
         public static int16_t operator ^(int16_t var1, int var2)        /* ^ */
@@ -2226,7 +2602,7 @@ namespace stdint
         }
         public static int16_t operator |(int16_t var1, byte var2)       /* | */
         {
-            int16_t result = new int16_t((UInt16)var1.var | var2);
+            int16_t result = new int16_t((ushort)var1.var | var2);
             return result;
         }
         public static int16_t operator ^(int16_t var1, byte var2)       /* ^ */
@@ -2280,26 +2656,26 @@ namespace stdint
     /***************************** uint16_t **********************************/
     class uint16_t
     {
-        public UInt16 var = 0;
+        public ushort var = 0;
 
         #region Constructors
         public uint16_t()               { var = 0; }
-        public uint16_t(byte value)     { var = (UInt16)value; }
-        public uint16_t(SByte value)    { var = (UInt16)value; }
-        public uint16_t(Int16 value)    { var = (UInt16)value; }
-        public uint16_t(UInt16 value)   { var = value; }
-        public uint16_t(int value)      { var = (UInt16)value; }
-        public uint16_t(UInt32 value)   { var = (UInt16)value; }
-        public uint16_t(Int64 value)    { var = (UInt16)value; }
-        public uint16_t(UInt64 value)   { var = (UInt16)value; }
-        public uint16_t(int8_t value)   { var = (UInt16)value.var; }
-        public uint16_t(uint8_t value)  { var = (UInt16)value.var; }
-        public uint16_t(int16_t value)  { var = (UInt16)value.var; }
+        public uint16_t(byte value)     { var = (ushort)value; }
+        public uint16_t(sbyte value)    { var = (ushort)value; }
+        public uint16_t(short value)    { var = (ushort)value; }
+        public uint16_t(ushort value)   { var = value; }
+        public uint16_t(int value)      { var = (ushort)value; }
+        public uint16_t(uint value)     { var = (ushort)value; }
+        public uint16_t(long value)     { var = (ushort)value; }
+        public uint16_t(ulong value)    { var = (ushort)value; }
+        public uint16_t(int8_t value)   { var = (ushort)value.var; }
+        public uint16_t(uint8_t value)  { var = (ushort)value.var; }
+        public uint16_t(int16_t value)  { var = (ushort)value.var; }
         public uint16_t(uint16_t value) { var = value.var; }
-        public uint16_t(int32_t value)  { var = (UInt16)value.var; }
-        public uint16_t(uint32_t value) { var = (UInt16)value.var; }
-        public uint16_t(int64_t value)  { var = (UInt16)value.var; }
-        public uint16_t(uint64_t value) { var = (UInt16)value.var; }
+        public uint16_t(int32_t value)  { var = (ushort)value.var; }
+        public uint16_t(uint32_t value) { var = (ushort)value.var; }
+        public uint16_t(int64_t value)  { var = (ushort)value.var; }
+        public uint16_t(uint64_t value) { var = (ushort)value.var; }
         #endregion
 
         #region int8_t
@@ -2448,12 +2824,12 @@ namespace stdint
         #endregion
         #region int16_t
         /* Assignment */
-        public static implicit operator Int16(uint16_t obj)
+        public static implicit operator short(uint16_t obj)
         {
-            return (Int16)obj.var;
+            return (short)obj.var;
         }
 
-        public static implicit operator uint16_t(Int16 var)
+        public static implicit operator uint16_t(short var)
         {
             return new uint16_t(var);
         }
@@ -2520,12 +2896,12 @@ namespace stdint
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator UInt16(uint16_t obj)
+        public static implicit operator ushort(uint16_t obj)
         {
-            return (UInt16)obj.var;
+            return (ushort)obj.var;
         }
 
-        public static implicit operator uint16_t(UInt16 var)
+        public static implicit operator uint16_t(ushort var)
         {
             return new uint16_t(var);
         }
@@ -2600,12 +2976,12 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator Int32(uint16_t obj)
+        public static implicit operator int(uint16_t obj)
         {
-            return (Int32)obj.var;
+            return (int)obj.var;
         }
 
-        public static implicit operator uint16_t(Int32 var)
+        public static implicit operator uint16_t(int var)
         {
             return new uint16_t(var);
         }
@@ -2672,12 +3048,12 @@ namespace stdint
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator UInt32(uint16_t obj)
+        public static implicit operator uint(uint16_t obj)
         {
-            return (UInt32)obj.var;
+            return (uint)obj.var;
         }
 
-        public static implicit operator uint16_t(UInt32 var)
+        public static implicit operator uint16_t(uint var)
         {
             return new uint16_t(var);
         }
@@ -2744,12 +3120,12 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator Int64(uint16_t obj)
+        public static implicit operator long(uint16_t obj)
         {
-            return (Int64)obj.var;
+            return (long)obj.var;
         }
 
-        public static implicit operator uint16_t(Int64 var)
+        public static implicit operator uint16_t(long var)
         {
             return new uint16_t(var);
         }
@@ -2816,12 +3192,12 @@ namespace stdint
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator UInt64(uint16_t obj)
+        public static implicit operator ulong(uint16_t obj)
         {
-            return (UInt64)obj.var;
+            return (ulong)obj.var;
         }
 
-        public static implicit operator uint16_t(UInt64 var)
+        public static implicit operator uint16_t(ulong var)
         {
             return new uint16_t(var);
         }
@@ -3027,26 +3403,26 @@ namespace stdint
     /****************************** int32_t **********************************/
     class int32_t
     {
-        public Int32 var = 0;
+        public int var = 0;
 
         #region Constructors
         public int32_t()                { var = 0; }
-        public int32_t(byte value)      { var = (Int32)value; }
-        public int32_t(SByte value)     { var = (Int32)value; }
-        public int32_t(Int16 value)     { var = (Int32)value; }
-        public int32_t(UInt16 value)    { var = (Int32)value; }
+        public int32_t(byte value)      { var = (int)value; }
+        public int32_t(sbyte value)     { var = (int)value; }
+        public int32_t(short value)     { var = (int)value; }
+        public int32_t(ushort value)    { var = (int)value; }
         public int32_t(int value)       { var = value; }
-        public int32_t(UInt32 value)    { var = (Int32)value; }
-        public int32_t(Int64 value)     { var = (Int32)value; }
-        public int32_t(UInt64 value)    { var = (Int32)value; }
-        public int32_t(int8_t value)    { var = (Int32)value.var; }
-        public int32_t(uint8_t value)   { var = (Int32)value.var; }
-        public int32_t(int16_t value)   { var = (Int32)value.var; }
-        public int32_t(uint16_t value)  { var = (Int32)value.var; }
+        public int32_t(uint value)      { var = (int)value; }
+        public int32_t(long value)      { var = (int)value; }
+        public int32_t(ulong value)     { var = (int)value; }
+        public int32_t(int8_t value)    { var = (int)value.var; }
+        public int32_t(uint8_t value)   { var = (int)value.var; }
+        public int32_t(int16_t value)   { var = (int)value.var; }
+        public int32_t(uint16_t value)  { var = (int)value.var; }
         public int32_t(int32_t value)   { var = value.var; }
-        public int32_t(uint32_t value)  { var = (Int32)value.var; }
-        public int32_t(int64_t value)   { var = (Int32)value.var; }
-        public int32_t(uint64_t value)  { var = (Int32)value.var; }
+        public int32_t(uint32_t value)  { var = (int)value.var; }
+        public int32_t(int64_t value)   { var = (int)value.var; }
+        public int32_t(uint64_t value)  { var = (int)value.var; }
         #endregion
 
         #region int8_t
@@ -3195,12 +3571,12 @@ namespace stdint
         #endregion
         #region int16_t
         /* Assignment */
-        public static implicit operator Int16(int32_t obj)
+        public static implicit operator short(int32_t obj)
         {
-            return (Int16)obj.var;
+            return (short)obj.var;
         }
 
-        public static implicit operator int32_t(Int16 var)
+        public static implicit operator int32_t(short var)
         {
             return new int32_t(var);
         }
@@ -3267,12 +3643,12 @@ namespace stdint
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator UInt16(int32_t obj)
+        public static implicit operator ushort(int32_t obj)
         {
-            return (UInt16)obj.var;
+            return (ushort)obj.var;
         }
 
-        public static implicit operator int32_t(UInt16 var)
+        public static implicit operator int32_t(ushort var)
         {
             return new int32_t(var);
         }
@@ -3339,12 +3715,12 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator Int32(int32_t obj)
+        public static implicit operator int(int32_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator int32_t(Int32 var)
+        public static implicit operator int32_t(int var)
         {
             return new int32_t(var);
         }
@@ -3419,12 +3795,12 @@ namespace stdint
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator UInt32(int32_t obj)
+        public static implicit operator uint(int32_t obj)
         {
-            return (UInt32)obj.var;
+            return (uint)obj.var;
         }
 
-        public static implicit operator int32_t(UInt32 var)
+        public static implicit operator int32_t(uint var)
         {
             return new int32_t(var);
         }
@@ -3491,12 +3867,12 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator Int64(int32_t obj)
+        public static implicit operator long(int32_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator int32_t(Int64 var)
+        public static implicit operator int32_t(long var)
         {
             return new int32_t(var);
         }
@@ -3563,12 +3939,12 @@ namespace stdint
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator UInt64(int32_t obj)
+        public static implicit operator ulong(int32_t obj)
         {
-            return (UInt64)obj.var;
+            return (ulong)obj.var;
         }
 
-        public static implicit operator int32_t(UInt64 var)
+        public static implicit operator int32_t(ulong var)
         {
             return new int32_t(var);
         }
@@ -3576,27 +3952,27 @@ namespace stdint
         /* Math */
         public static int32_t operator +(int32_t var1, uint64_t var2)   /* + */
         {
-            return new int32_t((ulong)var1.var + var2.var);
+            return new int32_t((uint)var1.var + var2.var);
         }
         public static int32_t operator -(int32_t var1, uint64_t var2)   /* - */
         {
-            return new int32_t((ulong)var1.var - var2.var);
+            return new int32_t((uint)var1.var - var2.var);
         }
         public static int32_t operator *(int32_t var1, uint64_t var2)   /* * */
         {
-            return new int32_t((ulong)var1.var * var2.var);
+            return new int32_t((uint)var1.var * var2.var);
         }
         public static int32_t operator /(int32_t var1, uint64_t var2)   /* / */
         {
-            return new int32_t((ulong)var1.var / var2.var);
+            return new int32_t((uint)var1.var / var2.var);
         }
         public static int32_t operator %(int32_t var1, uint64_t var2)   /* % */
         {
-            return new int32_t((ulong)var1.var % var2.var);
+            return new int32_t((uint)var1.var % var2.var);
         }
         public static int32_t operator &(int32_t var1, uint64_t var2)   /* & */
         {
-            return new int32_t((ulong)var1.var & var2.var);
+            return new int32_t((uint)var1.var & var2.var);
         }
         public static int32_t operator |(int32_t var1, uint64_t var2)   /* | */
         {
@@ -3604,33 +3980,33 @@ namespace stdint
         }
         public static int32_t operator ^(int32_t var1, uint64_t var2)   /* ^ */
         {
-            return new int32_t((ulong)var1.var ^ var2.var);
+            return new int32_t((uint)var1.var ^ var2.var);
         }
 
         /* Comparison */
         public static bool operator >(int32_t var1, uint64_t var2)      /* > */
         {
-            return (var1.var > (Int64)var2.var) ? true : false;
+            return (var1.var > (uint)var2.var) ? true : false;
         }
         public static bool operator <(int32_t var1, uint64_t var2)      /* < */
         {
-            return (var1.var < (Int64)var2.var) ? true : false;
+            return (var1.var < (uint)var2.var) ? true : false;
         }
         public static bool operator <=(int32_t var1, uint64_t var2)     /* <= */
         {
-            return (var1.var <= (Int64)var2.var) ? true : false;
+            return (var1.var <= (uint)var2.var) ? true : false;
         }
         public static bool operator >=(int32_t var1, uint64_t var2)     /* >= */
         {
-            return (var1.var >= (Int64)var2.var) ? true : false;
+            return (var1.var >= (uint)var2.var) ? true : false;
         }
         public static bool operator ==(int32_t var1, uint64_t var2)     /* == */
         {
-            return (var1.var == (Int64)var2.var) ? true : false;
+            return (var1.var == (uint)var2.var) ? true : false;
         }
         public static bool operator !=(int32_t var1, uint64_t var2)     /* != */
         {
-            return (var1.var != (Int64)var2.var) ? true : false;
+            return (var1.var != (uint)var2.var) ? true : false;
         }
         #endregion
         #region int
@@ -3774,26 +4150,26 @@ namespace stdint
     /****************************** uint32_t **********************************/
     class uint32_t
     {
-        public UInt32 var = 0;
+        public uint var = 0;
 
         #region Constructors
         public uint32_t()               { var = 0; }
-        public uint32_t(byte value)     { var = (UInt32)value; }
-        public uint32_t(SByte value)    { var = (UInt32)value; }
-        public uint32_t(Int16 value)    { var = (UInt32)value; }
-        public uint32_t(UInt16 value)   { var = (UInt32)value; }
-        public uint32_t(int value)      { var = (UInt32)value; }
-        public uint32_t(UInt32 value)   { var = value; }
-        public uint32_t(Int64 value)    { var = (UInt32)value; }
-        public uint32_t(UInt64 value)   { var = (UInt32)value; }
-        public uint32_t(int8_t value)   { var = (UInt32)value.var; }
-        public uint32_t(uint8_t value)  { var = (UInt32)value.var; }
-        public uint32_t(int16_t value)  { var = (UInt32)value.var; }
-        public uint32_t(uint16_t value) { var = (UInt32)value.var; }
-        public uint32_t(int32_t value)  { var = (UInt32)value.var; }
+        public uint32_t(byte value)     { var = (uint)value; }
+        public uint32_t(sbyte value)    { var = (uint)value; }
+        public uint32_t(short value)    { var = (uint)value; }
+        public uint32_t(ushort value)   { var = (uint)value; }
+        public uint32_t(int value)      { var = (uint)value; }
+        public uint32_t(uint value)     { var = value; }
+        public uint32_t(long value)     { var = (uint)value; }
+        public uint32_t(ulong value)    { var = (uint)value; }
+        public uint32_t(int8_t value)   { var = (uint)value.var; }
+        public uint32_t(uint8_t value)  { var = (uint)value.var; }
+        public uint32_t(int16_t value)  { var = (uint)value.var; }
+        public uint32_t(uint16_t value) { var = (uint)value.var; }
+        public uint32_t(int32_t value)  { var = (uint)value.var; }
         public uint32_t(uint32_t value) { var = value.var; }
-        public uint32_t(int64_t value)  { var = (UInt32)value.var; }
-        public uint32_t(uint64_t value) { var = (UInt32)value.var; }
+        public uint32_t(int64_t value)  { var = (uint)value.var; }
+        public uint32_t(uint64_t value) { var = (uint)value.var; }
         #endregion
 
         #region int8_t
@@ -3942,12 +4318,12 @@ namespace stdint
         #endregion
         #region int16_t
         /* Assignment */
-        public static implicit operator Int16(uint32_t obj)
+        public static implicit operator short(uint32_t obj)
         {
-            return (Int16)obj.var;
+            return (short)obj.var;
         }
 
-        public static implicit operator uint32_t(Int16 var)
+        public static implicit operator uint32_t(short var)
         {
             return new uint32_t(var);
         }
@@ -4014,12 +4390,12 @@ namespace stdint
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator UInt16(uint32_t obj)
+        public static implicit operator ushort(uint32_t obj)
         {
-            return (UInt16)obj.var;
+            return (ushort)obj.var;
         }
 
-        public static implicit operator uint32_t(UInt16 var)
+        public static implicit operator uint32_t(ushort var)
         {
             return new uint32_t(var);
         }
@@ -4086,12 +4462,12 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator Int32(uint32_t obj)
+        public static implicit operator int(uint32_t obj)
         {
-            return (Int32)obj.var;
+            return (int)obj.var;
         }
 
-        public static implicit operator uint32_t(Int32 var)
+        public static implicit operator uint32_t(int var)
         {
             return new uint32_t(var);
         }
@@ -4158,12 +4534,12 @@ namespace stdint
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator UInt32(uint32_t obj)
+        public static implicit operator uint(uint32_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator uint32_t(UInt32 var)
+        public static implicit operator uint32_t(uint var)
         {
             return new uint32_t(var);
         }
@@ -4238,12 +4614,12 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator Int64(uint32_t obj)
+        public static implicit operator long(uint32_t obj)
         {
-            return (Int64)obj.var;
+            return (long)obj.var;
         }
 
-        public static implicit operator uint32_t(Int64 var)
+        public static implicit operator uint32_t(long var)
         {
             return new uint32_t(var);
         }
@@ -4310,12 +4686,12 @@ namespace stdint
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator UInt64(uint32_t obj)
+        public static implicit operator ulong(uint32_t obj)
         {
-            return (UInt64)obj.var;
+            return (ulong)obj.var;
         }
 
-        public static implicit operator uint32_t(UInt64 var)
+        public static implicit operator uint32_t(ulong var)
         {
             return new uint32_t(var);
         }
@@ -4521,26 +4897,26 @@ namespace stdint
     /****************************** int64_t **********************************/
     class int64_t
     {
-        public Int64 var = 0;
+        public long var = 0;
 
         #region Constructors
         public int64_t()                { var = 0; }
-        public int64_t(byte value)      { var = (Int64)value; }
-        public int64_t(SByte value)     { var = (Int64)value; }
-        public int64_t(Int16 value)     { var = (Int64)value; }
-        public int64_t(UInt16 value)    { var = (Int64)value; }
-        public int64_t(int value)       { var = (Int64)value; }
-        public int64_t(UInt32 value)    { var = (Int64)value; }
-        public int64_t(Int64 value)     { var = value; }
-        public int64_t(UInt64 value)    { var = (Int64)value; }
-        public int64_t(int8_t value)    { var = (Int64)value.var; }
-        public int64_t(uint8_t value)   { var = (Int64)value.var; }
-        public int64_t(int16_t value)   { var = (Int64)value.var; }
-        public int64_t(uint16_t value)  { var = (Int64)value.var; }
-        public int64_t(int32_t value)   { var = (Int64)value.var; }
-        public int64_t(uint32_t value)  { var = (Int64)value.var; }
+        public int64_t(byte value)      { var = (long)value; }
+        public int64_t(sbyte value)     { var = (long)value; }
+        public int64_t(short value)     { var = (long)value; }
+        public int64_t(ushort value)    { var = (long)value; }
+        public int64_t(int value)       { var = (long)value; }
+        public int64_t(uint value)      { var = (long)value; }
+        public int64_t(long value)      { var = value; }
+        public int64_t(ulong value)     { var = (long)value; }
+        public int64_t(int8_t value)    { var = (long)value.var; }
+        public int64_t(uint8_t value)   { var = (long)value.var; }
+        public int64_t(int16_t value)   { var = (long)value.var; }
+        public int64_t(uint16_t value)  { var = (long)value.var; }
+        public int64_t(int32_t value)   { var = (long)value.var; }
+        public int64_t(uint32_t value)  { var = (long)value.var; }
         public int64_t(int64_t value)   { var = value.var; }
-        public int64_t(uint64_t value)  { var = (Int64)value.var; }
+        public int64_t(uint64_t value)  { var = (long)value.var; }
         #endregion
 
         #region int8_t
@@ -4689,12 +5065,12 @@ namespace stdint
         #endregion
         #region int16_t
         /* Assignment */
-        public static implicit operator Int16(int64_t obj)
+        public static implicit operator short(int64_t obj)
         {
-            return (Int16)obj.var;
+            return (short)obj.var;
         }
 
-        public static implicit operator int64_t(Int16 var)
+        public static implicit operator int64_t(short var)
         {
             return new int64_t(var);
         }
@@ -4761,12 +5137,12 @@ namespace stdint
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator UInt16(int64_t obj)
+        public static implicit operator ushort(int64_t obj)
         {
-            return (UInt16)obj.var;
+            return (ushort)obj.var;
         }
 
-        public static implicit operator int64_t(UInt16 var)
+        public static implicit operator int64_t(ushort var)
         {
             return new int64_t(var);
         }
@@ -4833,12 +5209,12 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator Int32(int64_t obj)
+        public static implicit operator int(int64_t obj)
         {
-            return (Int32)obj.var;
+            return (int)obj.var;
         }
 
-        public static implicit operator int64_t(Int32 var)
+        public static implicit operator int64_t(int var)
         {
             return new int64_t(var);
         }
@@ -4905,12 +5281,12 @@ namespace stdint
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator UInt32(int64_t obj)
+        public static implicit operator uint(int64_t obj)
         {
-            return (UInt32)obj.var;
+            return (uint)obj.var;
         }
 
-        public static implicit operator int64_t(UInt32 var)
+        public static implicit operator int64_t(uint var)
         {
             return new int64_t(var);
         }
@@ -4977,12 +5353,12 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator Int64(int64_t obj)
+        public static implicit operator long(int64_t obj)
         {
             return obj.var;
         }
 
-        public static implicit operator int64_t(Int64 var)
+        public static implicit operator int64_t(long var)
         {
             return new int64_t(var);
         }
@@ -5057,12 +5433,12 @@ namespace stdint
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator UInt64(int64_t obj)
+        public static implicit operator ulong(int64_t obj)
         {
-            return (UInt64)obj.var;
+            return (ulong)obj.var;
         }
 
-        public static implicit operator int64_t(UInt64 var)
+        public static implicit operator int64_t(ulong var)
         {
             return new int64_t(var);
         }
@@ -5104,27 +5480,27 @@ namespace stdint
         /* Comparison */
         public static bool operator >(int64_t var1, uint64_t var2)      /* > */
         {                                                               
-            return (var1.var > (Int64)var2.var) ? true : false;         
+            return (var1.var > (long)var2.var) ? true : false;         
         }                                                               
         public static bool operator <(int64_t var1, uint64_t var2)      /* < */
         {                                                               
-            return (var1.var < (Int64)var2.var) ? true : false;         
+            return (var1.var < (long)var2.var) ? true : false;         
         }                                                               
         public static bool operator <=(int64_t var1, uint64_t var2)     /* <= */
         {                                                               
-            return (var1.var <= (Int64)var2.var) ? true : false;        
+            return (var1.var <= (long)var2.var) ? true : false;        
         }                                                               
         public static bool operator >=(int64_t var1, uint64_t var2)     /* >= */
         {                                                               
-            return (var1.var >= (Int64)var2.var) ? true : false;        
+            return (var1.var >= (long)var2.var) ? true : false;        
         }                                                               
         public static bool operator ==(int64_t var1, uint64_t var2)     /* == */
         {                                                               
-            return (var1.var == (Int64)var2.var) ? true : false;        
+            return (var1.var == (long)var2.var) ? true : false;        
         }                                                               
         public static bool operator !=(int64_t var1, uint64_t var2)     /* != */
         {
-            return (var1.var != (Int64)var2.var) ? true : false;
+            return (var1.var != (long)var2.var) ? true : false;
         }
         #endregion
         #region int
@@ -5268,25 +5644,25 @@ namespace stdint
     /****************************** uint64_t **********************************/
     class uint64_t
     {
-        public UInt64 var = 0;
+        public ulong var = 0;
 
         #region Constructors
         public uint64_t()               { var = 0; }
-        public uint64_t(byte value)     { var = (UInt64)value; }
-        public uint64_t(SByte value)    { var = (UInt64)value; }
-        public uint64_t(Int16 value)    { var = (UInt64)value; }
-        public uint64_t(UInt16 value)   { var = (UInt64)value; }
-        public uint64_t(int value)      { var = (UInt64)value; }
-        public uint64_t(UInt32 value)   { var = (UInt64)value; }
-        public uint64_t(Int64 value)    { var = (UInt64)value; }
-        public uint64_t(UInt64 value)   { var = value; }
-        public uint64_t(int8_t value)   { var = (UInt64)value.var; }
-        public uint64_t(uint8_t value)  { var = (UInt64)value.var; }
-        public uint64_t(int16_t value)  { var = (UInt64)value.var; }
-        public uint64_t(uint16_t value) { var = (UInt64)value.var; }
-        public uint64_t(int32_t value)  { var = (UInt64)value.var; }
-        public uint64_t(uint32_t value) { var = (UInt64)value.var; }
-        public uint64_t(int64_t value)  { var = (UInt64)value.var; }
+        public uint64_t(byte value)     { var = (ulong)value; }
+        public uint64_t(sbyte value)    { var = (ulong)value; }
+        public uint64_t(short value)    { var = (ulong)value; }
+        public uint64_t(ushort value)   { var = (ulong)value; }
+        public uint64_t(int value)      { var = (ulong)value; }
+        public uint64_t(uint value)     { var = (ulong)value; }
+        public uint64_t(long value)     { var = (ulong)value; }
+        public uint64_t(ulong value)    { var = value; }
+        public uint64_t(int8_t value)   { var = (ulong)value.var; }
+        public uint64_t(uint8_t value)  { var = (ulong)value.var; }
+        public uint64_t(int16_t value)  { var = (ulong)value.var; }
+        public uint64_t(uint16_t value) { var = (ulong)value.var; }
+        public uint64_t(int32_t value)  { var = (ulong)value.var; }
+        public uint64_t(uint32_t value) { var = (ulong)value.var; }
+        public uint64_t(int64_t value)  { var = (ulong)value.var; }
         public uint64_t(uint64_t value) { var = value.var; }
         #endregion
 
@@ -5436,12 +5812,12 @@ namespace stdint
         #endregion
         #region int16_t
         /* Assignment */
-        public static implicit operator Int16(uint64_t obj)
+        public static implicit operator short(uint64_t obj)
         {
-            return (Int16)obj.var;
+            return (short)obj.var;
         }
 
-        public static implicit operator uint64_t(Int16 var)
+        public static implicit operator uint64_t(short var)
         {
             return new uint64_t(var);
         }
@@ -5483,37 +5859,37 @@ namespace stdint
         /* Comparison */
         public static bool operator >(uint64_t var1, int16_t var2)      /* > */
         {                                                               
-            return (var1.var > (UInt16)var2.var) ? true : false;        
+            return (var1.var > (ushort)var2.var) ? true : false;        
         }                                                               
         public static bool operator <(uint64_t var1, int16_t var2)      /* < */
         {                                                               
-            return (var1.var < (UInt16)var2.var) ? true : false;        
+            return (var1.var < (ushort)var2.var) ? true : false;        
         }                                                               
         public static bool operator <=(uint64_t var1, int16_t var2)     /* <= */
         {                                                               
-            return (var1.var <= (UInt16)var2.var) ? true : false;       
+            return (var1.var <= (ushort)var2.var) ? true : false;       
         }                                                               
         public static bool operator >=(uint64_t var1, int16_t var2)     /* >= */
         {                                                               
-            return (var1.var >= (UInt16)var2.var) ? true : false;       
+            return (var1.var >= (ushort)var2.var) ? true : false;       
         }                                                               
         public static bool operator ==(uint64_t var1, int16_t var2)     /* == */
         {                                                               
-            return (var1.var == (UInt16)var2.var) ? true : false;       
+            return (var1.var == (ushort)var2.var) ? true : false;       
         }                                                               
         public static bool operator !=(uint64_t var1, int16_t var2)     /* != */
         {
-            return (var1.var != (UInt16)var2.var) ? true : false;
+            return (var1.var != (ushort)var2.var) ? true : false;
         }
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator UInt16(uint64_t obj)
+        public static implicit operator ushort(uint64_t obj)
         {
-            return (UInt16)obj.var;
+            return (ushort)obj.var;
         }
 
-        public static implicit operator uint64_t(UInt16 var)
+        public static implicit operator uint64_t(ushort var)
         {
             return new uint64_t(var);
         }
@@ -5580,12 +5956,12 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator Int32(uint64_t obj)
+        public static implicit operator int(uint64_t obj)
         {
-            return (Int32)obj.var;
+            return (int)obj.var;
         }
 
-        public static implicit operator uint64_t(Int32 var)
+        public static implicit operator uint64_t(int var)
         {
             return new uint64_t(var);
         }
@@ -5627,37 +6003,37 @@ namespace stdint
         /* Comparison */
         public static bool operator >(uint64_t var1, int32_t var2)      /* > */
         {                                                               
-            return (var1.var > (UInt32)var2.var) ? true : false;        
+            return (var1.var > (uint)var2.var) ? true : false;        
         }                                                               
         public static bool operator <(uint64_t var1, int32_t var2)      /* < */
         {                                                               
-            return (var1.var < (UInt32)var2.var) ? true : false;        
+            return (var1.var < (uint)var2.var) ? true : false;        
         }                                                               
         public static bool operator <=(uint64_t var1, int32_t var2)     /* <= */
         {                                                               
-            return (var1.var <= (UInt32)var2.var) ? true : false;       
+            return (var1.var <= (uint)var2.var) ? true : false;       
         }                                                               
         public static bool operator >=(uint64_t var1, int32_t var2)     /* >= */
         {                                                               
-            return (var1.var >= (UInt32)var2.var) ? true : false;       
+            return (var1.var >= (uint)var2.var) ? true : false;       
         }                                                               
         public static bool operator ==(uint64_t var1, int32_t var2)     /* == */
         {                                                               
-            return (var1.var == (UInt32)var2.var) ? true : false;       
+            return (var1.var == (uint)var2.var) ? true : false;       
         }                                                               
         public static bool operator !=(uint64_t var1, int32_t var2)     /* != */
         {
-            return (var1.var != (UInt32)var2.var) ? true : false;
+            return (var1.var != (uint)var2.var) ? true : false;
         }
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator UInt32(uint64_t obj)
+        public static implicit operator uint(uint64_t obj)
         {
-            return (UInt32)obj.var;
+            return (uint)obj.var;
         }
 
-        public static implicit operator uint64_t(UInt32 var)
+        public static implicit operator uint64_t(uint var)
         {
             return new uint64_t(var);
         }
@@ -5724,12 +6100,12 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator Int64(uint64_t obj)
+        public static implicit operator long(uint64_t obj)
         {
             return (long)obj.var;
         }
 
-        public static implicit operator uint64_t(Int64 var)
+        public static implicit operator uint64_t(long var)
         {
             return new uint64_t(var);
         }
@@ -5771,37 +6147,37 @@ namespace stdint
         /* Comparison */
         public static bool operator >(uint64_t var1, int64_t var2)      /* > */
         {                                                               
-            return (var1.var > (UInt64)var2.var) ? true : false;        
+            return (var1.var > (ulong)var2.var) ? true : false;        
         }                                                               
         public static bool operator <(uint64_t var1, int64_t var2)      /* < */
         {                                                               
-            return (var1.var < (UInt64)var2.var) ? true : false;        
+            return (var1.var < (ulong)var2.var) ? true : false;        
         }                                                               
         public static bool operator <=(uint64_t var1, int64_t var2)     /* <= */
         {                                                               
-            return (var1.var <= (UInt64)var2.var) ? true : false;       
+            return (var1.var <= (ulong)var2.var) ? true : false;       
         }                                                               
         public static bool operator >=(uint64_t var1, int64_t var2)     /* >= */
         {                                                               
-            return (var1.var >= (UInt64)var2.var) ? true : false;       
+            return (var1.var >= (ulong)var2.var) ? true : false;       
         }                                                               
         public static bool operator ==(uint64_t var1, int64_t var2)     /* == */
         {                                                               
-            return (var1.var == (UInt64)var2.var) ? true : false;       
+            return (var1.var == (ulong)var2.var) ? true : false;       
         }                                                               
         public static bool operator !=(uint64_t var1, int64_t var2)     /* != */
         {
-            return (var1.var != (UInt64)var2.var) ? true : false;
+            return (var1.var != (ulong)var2.var) ? true : false;
         }
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator UInt64(uint64_t obj)
+        public static implicit operator ulong(uint64_t obj)
         {
-            return (UInt64)obj.var;
+            return (ulong)obj.var;
         }
 
-        public static implicit operator uint64_t(UInt64 var)
+        public static implicit operator uint64_t(ulong var)
         {
             return new uint64_t(var);
         }
@@ -5912,27 +6288,27 @@ namespace stdint
         /* Comparison */
         public static bool operator >(uint64_t var1, int var2)          /* > */
         {
-            return (var1.var > (UInt32)var2) ? true : false;
+            return (var1.var > (uint)var2) ? true : false;
         }
         public static bool operator <(uint64_t var1, int var2)          /* < */
         {
-            return (var1.var < (UInt32)var2) ? true : false;
+            return (var1.var < (uint)var2) ? true : false;
         }
         public static bool operator <=(uint64_t var1, int var2)         /* <= */
         {
-            return (var1.var <= (UInt32)var2) ? true : false;
+            return (var1.var <= (uint)var2) ? true : false;
         }
         public static bool operator >=(uint64_t var1, int var2)         /* >= */
         {
-            return (var1.var >= (UInt32)var2) ? true : false;
+            return (var1.var >= (uint)var2) ? true : false;
         }
         public static bool operator ==(uint64_t var1, int var2)         /* == */
         {
-            return (var1.var == (UInt32)var2) ? true : false;
+            return (var1.var == (uint)var2) ? true : false;
         }
         public static bool operator !=(uint64_t var1, int var2)         /* != */
         {
-            return (var1.var != (UInt32)var2) ? true : false;
+            return (var1.var != (uint)var2) ? true : false;
         }
         #endregion
         #region byte
