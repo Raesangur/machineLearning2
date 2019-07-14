@@ -1,5 +1,16 @@
-﻿/*****************************************************************************/
+﻿/* C# stdint */
+/* By : Pascal-Emmanuel Lachance
+ * https://www.github.com/Raesangur
+ */
+
+/*****************************************************************************/
 /* TODO:
+ * - Fix new types assignments
+ *      - uint16_t
+ *      - int32_t
+ *      - uint32_t
+ *      - int64_t
+ *      - uint64_t
  * - parsing, strings
  * - Compares
  * */
@@ -36,17 +47,6 @@ namespace stdint
         #region types
         #region new types
         #region int8_t
-        /* Assignment */
-        public static implicit operator sbyte(int8_t obj)
-        {
-            return obj.var;
-        }
-
-        public static implicit operator int8_t(sbyte var)
-        {
-            return new int8_t(var);
-        }
-
         /* Math */
         public static int8_t operator +(int8_t var1, int8_t var2)       /* + */
         {
@@ -117,14 +117,14 @@ namespace stdint
         #endregion
         #region uint8_t
         /* Assignment */
-        public static implicit operator byte(int8_t obj)
+        public static implicit operator uint8_t(int8_t obj)
         {
-            return (byte)obj.var;
+            return new uint8_t(obj);
         }
 
-        public static implicit operator int8_t(byte var)
+        public static implicit operator int8_t(uint8_t obj)
         {
-            return new int8_t(var);
+            return new int8_t(obj);
         }
 
         /* Math */
@@ -189,14 +189,14 @@ namespace stdint
         #endregion
         #region int16_t
         /* Assignment */
-        public static implicit operator short(int8_t obj)
+        public static implicit operator int16_t(int8_t obj)
         {
-            return obj.var;
+            return new int16_t(obj);
         }
 
-        public static implicit operator int8_t(short var)
+        public static implicit operator int8_t(int16_t obj)
         {
-            return new int8_t(var);
+            return new int8_t(obj);
         }
 
         /* Math */
@@ -261,14 +261,14 @@ namespace stdint
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator ushort(int8_t obj)
+        public static implicit operator uint16_t(int8_t obj)
         {
-            return (ushort)obj.var;
+            return new uint16_t(obj);
         }
 
-        public static implicit operator int8_t(ushort var)
+        public static implicit operator int8_t(uint16_t obj)
         {
-            return new int8_t(var);
+            return new int8_t(obj);
         }
 
         /* Math */
@@ -333,14 +333,14 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator int(int8_t obj)
+        public static implicit operator int32_t(int8_t obj)
         {
-            return obj.var;
+            return new int32_t(obj);
         }
 
-        public static implicit operator int8_t(int var)
+        public static implicit operator int8_t(int32_t obj)
         {
-            return new int8_t(var);
+            return new int8_t(obj);
         }
 
         /* Math */
@@ -405,14 +405,14 @@ namespace stdint
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator uint(int8_t obj)
+        public static implicit operator uint32_t(int8_t obj)
         {
-            return (uint)obj.var;
+            return new uint32_t(obj);
         }
 
-        public static implicit operator int8_t(uint var)
+        public static implicit operator int8_t(uint32_t obj)
         {
-            return new int8_t(var);
+            return new int8_t(obj);
         }
 
         /* Math */
@@ -477,14 +477,14 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator long(int8_t obj)
+        public static implicit operator int64_t(int8_t obj)
         {
-            return obj.var;
+            return new int64_t(obj);
         }
 
-        public static implicit operator int8_t(long var)
+        public static implicit operator int8_t(int64_t obj)
         {
-            return new int8_t(var);
+            return new int8_t(obj);
         }
 
         /* Math */
@@ -550,14 +550,14 @@ namespace stdint
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator ulong(int8_t obj)
+        public static implicit operator uint64_t(int8_t obj)
         {
-            return (ulong)obj.var;
+            return new uint64_t(obj);
         }
 
-        public static implicit operator int8_t(ulong var)
+        public static implicit operator int8_t(uint64_t obj)
         {
-            return new int8_t(var);
+            return new int8_t(obj);
         }
 
         /* Math */
@@ -624,6 +624,17 @@ namespace stdint
 
         #region default types
         #region sbyte
+        /* Assignment */
+        public static implicit operator sbyte(int8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator int8_t(sbyte var)
+        {
+            return new int8_t(var);
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, sbyte var2)        /* + */
         {
@@ -685,6 +696,17 @@ namespace stdint
         }
         #endregion
         #region byte
+        /* Assignment */
+        public static implicit operator byte(int8_t obj)
+        {
+            return (byte)obj.var;
+        }
+
+        public static implicit operator int8_t(byte var)
+        {
+            return new int8_t(var);
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, byte var2)         /* + */
         {
@@ -746,6 +768,17 @@ namespace stdint
         }
         #endregion
         #region short
+        /* Assignment */
+        public static implicit operator short(int8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator int8_t(short var)
+        {
+            return new int8_t(var);
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, short var2)        /* + */
         {
@@ -807,6 +840,17 @@ namespace stdint
         }
         #endregion
         #region ushort
+        /* Assignment */
+        public static implicit operator ushort(int8_t obj)
+        {
+            return (ushort)obj.var;
+        }
+
+        public static implicit operator int8_t(ushort var)
+        {
+            return new int8_t(var);
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, ushort var2)       /* + */
         {
@@ -868,6 +912,17 @@ namespace stdint
         }
         #endregion
         #region int
+        /* Assignment */
+        public static implicit operator int(int8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator int8_t(int var)
+        {
+            return new int8_t(var);
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, int var2)          /* + */
         {
@@ -929,6 +984,17 @@ namespace stdint
         }
         #endregion
         #region uint
+        /* Assignment */
+        public static implicit operator uint(int8_t obj)
+        {
+            return (uint)obj.var;
+        }
+
+        public static implicit operator int8_t(uint var)
+        {
+            return new int8_t(var);
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, uint var2)         /* + */
         {
@@ -990,6 +1056,17 @@ namespace stdint
         }
         #endregion
         #region long
+        /* Assignment */
+        public static implicit operator long(int8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator int8_t(long var)
+        {
+            return new int8_t(var);
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, long var2)         /* + */
         {
@@ -1051,6 +1128,17 @@ namespace stdint
         }
         #endregion
         #region ulong
+        /* Assignment */
+        public static implicit operator ulong(int8_t obj)
+        {
+            return (ulong)obj.var;
+        }
+
+        public static implicit operator int8_t(ulong var)
+        {
+            return new int8_t(var);
+        }
+
         /* Math */
         public static int8_t operator +(int8_t var1, ulong var2)        /* + */
         {
@@ -1284,14 +1372,14 @@ namespace stdint
         #region new types
         #region int8_t
         /* Assignment */
-        public static implicit operator sbyte(uint8_t obj)
+        public static implicit operator int8_t(uint8_t obj)
         {
-            return (sbyte)obj.var;
+            return new int8_t(obj);
         }
 
-        public static implicit operator uint8_t(sbyte var)
+        public static implicit operator uint8_t(int8_t obj)
         {
-            return new uint8_t(var);
+            return new uint8_t(obj);
         }
 
         /* Math */
@@ -1355,17 +1443,6 @@ namespace stdint
         }
         #endregion
         #region uint8_t
-        /* Assignment */
-        public static implicit operator byte(uint8_t obj)
-        {
-            return obj.var;
-        }
-
-        public static implicit operator uint8_t(byte var)
-        {
-            return new uint8_t(var);
-        }
-
         /* Math */
         public static uint8_t operator +(uint8_t var1, uint8_t var2)    /* + */
         {
@@ -1436,14 +1513,14 @@ namespace stdint
         #endregion
         #region int16_t
         /* Assignment */
-        public static implicit operator short(uint8_t obj)
+        public static implicit operator int16_t(uint8_t obj)
         {
-            return obj.var;
+            return new int16_t(obj);
         }
 
-        public static implicit operator uint8_t(short var)
+        public static implicit operator uint8_t(int16_t obj)
         {
-            return new uint8_t(var);
+            return new uint8_t(obj);
         }
 
         /* Math */
@@ -1508,14 +1585,14 @@ namespace stdint
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator ushort(uint8_t obj)
+        public static implicit operator uint16_t(uint8_t obj)
         {
-            return obj.var;
+            return new uint16_t(obj);
         }
 
-        public static implicit operator uint8_t(ushort var)
+        public static implicit operator uint8_t(uint16_t obj)
         {
-            return new uint8_t(var);
+            return new uint8_t(obj);
         }
 
         /* Math */
@@ -1580,14 +1657,14 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator int(uint8_t obj)
+        public static implicit operator int32_t(uint8_t obj)
         {
-            return obj.var;
+            return new int32_t(obj);
         }
 
-        public static implicit operator uint8_t(int var)
+        public static implicit operator uint8_t(int32_t obj)
         {
-            return new uint8_t(var);
+            return new uint8_t(obj);
         }
 
         /* Math */
@@ -1653,14 +1730,14 @@ namespace stdint
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator uint(uint8_t obj)
+        public static implicit operator uint32_t(uint8_t obj)
         {
-            return obj.var;
+            return new uint32_t(obj);
         }
 
-        public static implicit operator uint8_t(uint var)
+        public static implicit operator uint8_t(uint32_t obj)
         {
-            return new uint8_t(var);
+            return new uint8_t(obj);
         }
 
         /* Math */
@@ -1725,14 +1802,14 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator long(uint8_t obj)
+        public static implicit operator int64_t(uint8_t obj)
         {
-            return obj.var;
+            return new int64_t(obj);
         }
 
-        public static implicit operator uint8_t(long var)
+        public static implicit operator uint8_t(int64_t obj)
         {
-            return new uint8_t(var);
+            return new uint8_t(obj);
         }
 
         /* Math */
@@ -1797,14 +1874,14 @@ namespace stdint
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator ulong(uint8_t obj)
+        public static implicit operator uint64_t(uint8_t obj)
         {
-            return obj.var;
+            return new uint64_t(obj);
         }
 
-        public static implicit operator uint8_t(ulong var)
+        public static implicit operator uint8_t(uint64_t obj)
         {
-            return new uint8_t(var);
+            return new uint8_t(obj);
         }
 
         /* Math */
@@ -1871,6 +1948,17 @@ namespace stdint
 
         #region default types
         #region sbyte
+        /* Assignment */
+        public static implicit operator sbyte(uint8_t obj)
+        {
+            return (sbyte)obj.var;
+        }
+
+        public static implicit operator uint8_t(sbyte var)
+        {
+            return new uint8_t(var);
+        }
+
         /* Math */
         public static uint8_t operator +(uint8_t var1, sbyte var2)      /* + */
         {
@@ -1932,6 +2020,17 @@ namespace stdint
         }
         #endregion
         #region byte
+        /* Assignment */
+        public static implicit operator byte(uint8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator uint8_t(byte var)
+        {
+            return new uint8_t(var);
+        }
+
         /* Math */
         public static uint8_t operator +(uint8_t var1, byte var2)       /* + */
         {
@@ -1993,6 +2092,17 @@ namespace stdint
         }
         #endregion
         #region short
+        /* Assignment */
+        public static implicit operator short(uint8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator uint8_t(short var)
+        {
+            return new uint8_t(var);
+        }
+
         /* Math */
         public static uint8_t operator +(uint8_t var1, short var2)      /* + */
         {
@@ -2054,6 +2164,17 @@ namespace stdint
         }
         #endregion
         #region ushort
+        /* Assignment */
+        public static implicit operator ushort(uint8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator uint8_t(ushort var)
+        {
+            return new uint8_t(var);
+        }
+
         /* Math */
         public static uint8_t operator +(uint8_t var1, ushort var2)     /* + */
         {
@@ -2115,6 +2236,17 @@ namespace stdint
         }
         #endregion
         #region int
+        /* Assignment */
+        public static implicit operator int(uint8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator uint8_t(int var)
+        {
+            return new uint8_t(var);
+        }
+
         /* Math */
         public static uint8_t operator +(uint8_t var1, int var2)        /* + */
         {
@@ -2176,6 +2308,17 @@ namespace stdint
         }
         #endregion
         #region uint
+        /* Assignment */
+        public static implicit operator uint(uint8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator uint8_t(uint var)
+        {
+            return new uint8_t(var);
+        }
+
         /* Math */
         public static uint8_t operator +(uint8_t var1, uint var2)       /* + */
         {
@@ -2237,6 +2380,17 @@ namespace stdint
         }
         #endregion
         #region long
+        /* Assignment */
+        public static implicit operator long(uint8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator uint8_t(long var)
+        {
+            return new uint8_t(var);
+        }
+
         /* Math */
         public static uint8_t operator +(uint8_t var1, long var2)       /* + */
         {
@@ -2298,6 +2452,17 @@ namespace stdint
         }
         #endregion
         #region ulong
+        /* Assignment */
+        public static implicit operator ulong(uint8_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator uint8_t(ulong var)
+        {
+            return new uint8_t(var);
+        }
+
         /* Math */
         public static uint8_t operator +(uint8_t var1, ulong var2)      /* + */
         {
@@ -2532,14 +2697,14 @@ namespace stdint
         #region new types
         #region int8_t
         /* Assignment */
-        public static implicit operator sbyte(int16_t obj)
+        public static implicit operator int8_t(int16_t obj)
         {
-            return (sbyte)obj.var;
+            return new int8_t(obj);
         }
 
-        public static implicit operator int16_t(sbyte var)
+        public static implicit operator int16_t(int8_t obj)
         {
-            return new int16_t(var);
+            return new int16_t(obj);
         }
 
         /* Math */
@@ -2604,14 +2769,14 @@ namespace stdint
         #endregion
         #region uint8_t
         /* Assignment */
-        public static implicit operator byte(int16_t obj)
+        public static implicit operator uint8_t(int16_t obj)
         {
-            return (byte)obj.var;
+            return new uint8_t(obj);
         }
 
-        public static implicit operator int16_t(byte var)
+        public static implicit operator int16_t(uint8_t obj)
         {
-            return new int16_t(var);
+            return new int16_t(obj);
         }
 
         /* Math */
@@ -2675,17 +2840,6 @@ namespace stdint
         }
         #endregion
         #region int16_t
-        /* Assignment */
-        public static implicit operator short(int16_t obj)
-        {
-            return obj.var;
-        }
-
-        public static implicit operator int16_t(short var)
-        {
-            return new int16_t(var);
-        }
-
         /* Math */
         public static int16_t operator +(int16_t var1, int16_t var2)    /* + */
         {
@@ -2756,14 +2910,14 @@ namespace stdint
         #endregion
         #region uint16_t
         /* Assignment */
-        public static implicit operator ushort(int16_t obj)
+        public static implicit operator uint16_t(int16_t obj)
         {
-            return (ushort)obj.var;
+            return new uint16_t(obj);
         }
 
-        public static implicit operator int16_t(ushort var)
+        public static implicit operator int16_t(uint16_t obj)
         {
-            return new int16_t(var);
+            return new int16_t(obj);
         }
 
         /* Math */
@@ -2828,14 +2982,14 @@ namespace stdint
         #endregion
         #region int32_t
         /* Assignment */
-        public static implicit operator int(int16_t obj)
+        public static implicit operator int32_t(int16_t obj)
         {
-            return obj.var;
+            return new int32_t(obj);
         }
 
-        public static implicit operator int16_t(int var)
+        public static implicit operator int16_t(int32_t obj)
         {
-            return new int16_t(var);
+            return new int16_t(obj);
         }
 
         /* Math */
@@ -2900,14 +3054,14 @@ namespace stdint
         #endregion
         #region uint32_t
         /* Assignment */
-        public static implicit operator uint(int16_t obj)
+        public static implicit operator uint32_t(int16_t obj)
         {
-            return (uint)obj.var;
+            return new uint32_t(obj);
         }
 
-        public static implicit operator int16_t(uint var)
+        public static implicit operator int16_t(uint32_t obj)
         {
-            return new int16_t(var);
+            return new int16_t(obj);
         }
 
         /* Math */
@@ -2972,14 +3126,14 @@ namespace stdint
         #endregion
         #region int64_t
         /* Assignment */
-        public static implicit operator long(int16_t obj)
+        public static implicit operator int64_t(int16_t obj)
         {
-            return obj.var;
+            return new int64_t(obj);
         }
 
-        public static implicit operator int16_t(long var)
+        public static implicit operator int16_t(int64_t obj)
         {
-            return new int16_t(var);
+            return new int16_t(obj);
         }
 
         /* Math */
@@ -3044,14 +3198,14 @@ namespace stdint
         #endregion
         #region uint64_t
         /* Assignment */
-        public static implicit operator ulong(int16_t obj)
+        public static implicit operator uint64_t(int16_t obj)
         {
-            return (ulong)obj.var;
+            return new uint64_t(obj);
         }
 
-        public static implicit operator int16_t(ulong var)
+        public static implicit operator int16_t(uint64_t obj)
         {
-            return new int16_t(var);
+            return new int16_t(obj);
         }
 
         /* Math */
@@ -3118,6 +3272,17 @@ namespace stdint
 
         #region default types
         #region sbyte
+        /* Assignment */
+        public static implicit operator sbyte(int16_t obj)
+        {
+            return (sbyte)obj.var;
+        }
+
+        public static implicit operator int16_t(sbyte var)
+        {
+            return new int16_t(var);
+        }
+
         /* Math */
         public static int16_t operator +(int16_t var1, sbyte var2)      /* + */
         {
@@ -3179,6 +3344,17 @@ namespace stdint
         }
         #endregion
         #region byte
+        /* Assignment */
+        public static implicit operator byte(int16_t obj)
+        {
+            return (byte)obj.var;
+        }
+
+        public static implicit operator int16_t(byte var)
+        {
+            return new int16_t(var);
+        }
+
         /* Math */
         public static int16_t operator +(int16_t var1, byte var2)       /* + */
         {
@@ -3240,6 +3416,17 @@ namespace stdint
         }
         #endregion
         #region short
+        /* Assignment */
+        public static implicit operator short(int16_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator int16_t(short var)
+        {
+            return new int16_t(var);
+        }
+
         /* Math */
         public static int16_t operator +(int16_t var1, short var2)      /* + */
         {
@@ -3301,6 +3488,17 @@ namespace stdint
         }
         #endregion
         #region ushort
+        /* Assignment */
+        public static implicit operator ushort(int16_t obj)
+        {
+            return (ushort)obj.var;
+        }
+
+        public static implicit operator int16_t(ushort var)
+        {
+            return new int16_t(var);
+        }
+
         /* Math */
         public static int16_t operator +(int16_t var1, ushort var2)     /* + */
         {
@@ -3362,6 +3560,17 @@ namespace stdint
         }
         #endregion
         #region int
+        /* Assignment */
+        public static implicit operator int(int16_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator int16_t(int var)
+        {
+            return new int16_t(var);
+        }
+
         /* Math */
         public static int16_t operator +(int16_t var1, int var2)        /* + */
         {
@@ -3423,6 +3632,17 @@ namespace stdint
         }
         #endregion
         #region uint
+        /* Assignment */
+        public static implicit operator uint(int16_t obj)
+        {
+            return (uint)obj.var;
+        }
+
+        public static implicit operator int16_t(uint var)
+        {
+            return new int16_t(var);
+        }
+
         /* Math */
         public static int16_t operator +(int16_t var1, uint var2)       /* + */
         {
@@ -3484,6 +3704,17 @@ namespace stdint
         }
         #endregion
         #region long
+        /* Assignment */
+        public static implicit operator long(int16_t obj)
+        {
+            return obj.var;
+        }
+
+        public static implicit operator int16_t(long var)
+        {
+            return new int16_t(var);
+        }
+
         /* Math */
         public static int16_t operator +(int16_t var1, long var2)       /* + */
         {
@@ -3545,6 +3776,17 @@ namespace stdint
         }
         #endregion
         #region ulong
+        /* Assignment */
+        public static implicit operator ulong(int16_t obj)
+        {
+            return (ulong)obj.var;
+        }
+
+        public static implicit operator int16_t(ulong var)
+        {
+            return new int16_t(var);
+        }
+
         /* Math */
         public static int16_t operator +(int16_t var1, ulong var2)      /* + */
         {
@@ -3754,8 +3996,8 @@ namespace stdint
 
         #region Constructors
         public uint16_t()               { var = 0; }
-        public uint16_t(byte value)     { var = (ushort)value; }
         public uint16_t(sbyte value)    { var = (ushort)value; }
+        public uint16_t(byte value)     { var = (ushort)value; }
         public uint16_t(short value)    { var = (ushort)value; }
         public uint16_t(ushort value)   { var = value; }
         public uint16_t(int value)      { var = (ushort)value; }

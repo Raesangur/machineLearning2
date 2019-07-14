@@ -1,12 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\dev",
-    "\\Properties",
     "\\src",
     "\\src\\forms",
     "\\src\\neuralNet"
   ],
-  "SelectedNode": "\\src\\Program.cs",
+  "SelectedNode": "\\src",
   "PreviewInSolutionExplorer": false
 }

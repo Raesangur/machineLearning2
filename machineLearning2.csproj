@@ -72,7 +72,7 @@
     <Compile Include="src\neuralNet\Neuron.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\Draft_stdint.cs" />
+    <Compile Include="src\stdint.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
