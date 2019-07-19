@@ -54,14 +54,14 @@ namespace machineLearning2
             Console.WriteLine(int8.ToString());
             Console.WriteLine(uint8.ToString());
 
-            int8++;
+            int8 += 1;
             Console.WriteLine(int8.ToString());
 
             int8 = 10;
             int8 += int8;
             Console.WriteLine(int8.ToString());
 
-            uint8++;
+            uint8 += 1;
             Console.WriteLine(uint8.ToString());
 
             uint8 = 100;
@@ -75,19 +75,36 @@ namespace machineLearning2
             Console.WriteLine(int16.ToString());
             Console.WriteLine(uint16.ToString());
 
-            int16++;
+            int16 += 1;
             Console.WriteLine(int16.ToString());
 
             int16 = 300;
             int16 += int16;
-            int16 += int8 + uint8;
+            int16 += (uint8_t)(int8 + uint8);
             Console.WriteLine(int16.ToString());
 
-            uint16++;
+            uint16 += 1;
             Console.WriteLine(uint16.ToString());
 
             uint16 = int16 * 2;
             Console.WriteLine(uint16.ToString());
+            
+            int16 = 32767;
+            Console.WriteLine(int16.ToString());
+            int16 = int16++;
+            Console.WriteLine(int16.ToString());
+
+
+            int32 = 65535 * 10;
+            Console.WriteLine(int32.ToString());
+
+            int16 = 0;
+            while (int16 + 1 > 0)
+            {
+                int16.Increment();
+            }
+            Console.WriteLine(int16.ToString());
+
 
             Console.ReadKey();
         }
