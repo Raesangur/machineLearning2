@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using stdint;
+using stdint;                           /* Custom C# stdint library : https://www.github.com/Raesangur/Cs-stdint */
 
 namespace machineLearning2
 {
@@ -92,5 +92,29 @@ namespace machineLearning2
         {
             outputConnections.Add(Connection);
         }
+
+
+        #region operator overloads
+        public static bool operator >(Neuron_t n, Connection_t c)
+        {
+            n.addOutputConnection(c);
+            return true;
+        }
+        public static bool operator <(Neuron_t n, Connection_t c)
+        {
+            n.addInputConnection(c);
+            return true;
+        }
+        public static bool operator >(Connection_t c, Neuron_t n)
+        {
+            n.addInputConnection(c);
+            return true;
+        }
+        public  static bool operator <(Connection_t c, Neuron_t n)
+        {
+            n.addOutputConnection(c);
+            return true;
+        }
+        #endregion
     }
 }

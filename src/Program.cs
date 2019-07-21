@@ -29,14 +29,19 @@ namespace machineLearning2
 
         static void stdintTest()
         {
-            int8_t int8 = new int8_t();
-            uint8_t uint8 = new uint8_t();
-            int16_t int16 = new int16_t();
-            uint16_t uint16 = new uint16_t();
-            int32_t int32 = new int32_t();
-            uint32_t uint32 = new uint32_t();
-            int64_t int64 = new int64_t();
-            uint64_t uint64 = new uint64_t();
+            Console.WriteLine("Begin stdint test");
+
+            int8_t int8 = new int8_t(50);
+            uint8_t uint8 = new uint8_t(50);
+            int16_t int16 = new int16_t(50);
+            uint16_t uint16 = new uint16_t(50);
+            int32_t int32 = new int32_t(50);
+            uint32_t uint32 = new uint32_t(50);
+            int64_t int64 = new int64_t(50);
+            uint64_t uint64 = new uint64_t(50);
+
+            byte value = new byte();
+            value = 50;
 
             Console.WriteLine(int8.ToString());
             Console.WriteLine(uint8.ToString());
@@ -48,62 +53,203 @@ namespace machineLearning2
             Console.WriteLine(uint64.ToString());
 
 
+            // 50 / 2 = 25
+            Console.WriteLine("50 / 2 = 25");
+            value /= 2;
+            int8 /= 2;
+            uint8 /= 2;
+            int16 /= 2;
+            uint16 /= 2;
+            int32 /= 2;
+            uint32 /= 2;
+            int64 /= 2;
+            uint64 /= 2;
 
-            int8 = 255;
-            uint8 = int8;
             Console.WriteLine(int8.ToString());
             Console.WriteLine(uint8.ToString());
-
-            int8 += 1;
-            Console.WriteLine(int8.ToString());
-
-            int8 = 10;
-            int8 += int8;
-            Console.WriteLine(int8.ToString());
-
-            uint8 += 1;
-            Console.WriteLine(uint8.ToString());
-
-            uint8 = 100;
-            uint8 += uint8;
-            Console.WriteLine(uint8.ToString());
-
-
-
-            int16 = 65535;
-            uint16 = 65535;
             Console.WriteLine(int16.ToString());
             Console.WriteLine(uint16.ToString());
-
-            int16 += 1;
-            Console.WriteLine(int16.ToString());
-
-            int16 = 300;
-            int16 += int16;
-            int16 += (uint8_t)(int8 + uint8);
-            Console.WriteLine(int16.ToString());
-
-            uint16 += 1;
-            Console.WriteLine(uint16.ToString());
-
-            uint16 = int16 * 2;
-            Console.WriteLine(uint16.ToString());
-            
-            int16 = 32767;
-            Console.WriteLine(int16.ToString());
-            int16 = int16++;
-            Console.WriteLine(int16.ToString());
-
-
-            int32 = 65535 * 10;
             Console.WriteLine(int32.ToString());
+            Console.WriteLine(uint32.ToString());
+            Console.WriteLine(int64.ToString());
+            Console.WriteLine(uint64.ToString());
 
-            int16 = 0;
-            while (int16 + 1 > 0)
-            {
-                int16.Increment();
-            }
+
+            // 25 / 2 = 12.5 -> 12
+            Console.WriteLine("25 / 2 = 12.5 -> 12");
+            value /= 2;
+            int8 /= 2;
+            uint8 /= 2;
+            int16 /= 2;
+            uint16 /= 2;
+            int32 /= 2;
+            uint32 /= 2;
+            int64 /= 2;
+            uint64 /= 2;
+
+            Console.WriteLine(int8.ToString());
+            Console.WriteLine(uint8.ToString());
             Console.WriteLine(int16.ToString());
+            Console.WriteLine(uint16.ToString());
+            Console.WriteLine(int32.ToString());
+            Console.WriteLine(uint32.ToString());
+            Console.WriteLine(int64.ToString());
+            Console.WriteLine(uint64.ToString());
+
+
+            // 12 * 8 = 96
+            Console.WriteLine("12 * 8 = 96");
+            value *= 2;
+            int8 *= 2;
+            uint8 *= 2;
+            int16 *= 2;
+            uint16 *= 2;
+            int32 *= 2;
+            uint32 *= 2;
+            int64 *= 2;
+            uint64 *= 2;
+
+            Console.WriteLine(int8.ToString());
+            Console.WriteLine(uint8.ToString());
+            Console.WriteLine(int16.ToString());
+            Console.WriteLine(uint16.ToString());
+            Console.WriteLine(int32.ToString());
+            Console.WriteLine(uint32.ToString());
+            Console.WriteLine(int64.ToString());
+            Console.WriteLine(uint64.ToString());
+
+
+            // 96 + 4 = 100
+            Console.WriteLine("96 + 4 = 100");
+            value += 4;
+            int8 += 4;
+            uint8 += 4;
+            int16 += 4;
+            uint16 += 4;
+            int32 += 4;
+            uint32 += 4;
+            int64 += 4;
+            uint64 += 4;
+
+            Console.WriteLine(int8.ToString());
+            Console.WriteLine(uint8.ToString());
+            Console.WriteLine(int16.ToString());
+            Console.WriteLine(uint16.ToString());
+            Console.WriteLine(int32.ToString());
+            Console.WriteLine(uint32.ToString());
+            Console.WriteLine(int64.ToString());
+            Console.WriteLine(uint64.ToString());
+
+
+            // 100 - 50 = 50
+            Console.WriteLine("100 - 50 = 50");
+            value -= 50;
+            int8 -= 50;
+            uint8 -= 50;
+            int16 -= 50;
+            uint16 -= 50;
+            int32 -= 50;
+            uint32 -= 50;
+            int64 -= 50;
+            uint64 -= 50;
+
+            Console.WriteLine(int8.ToString());
+            Console.WriteLine(uint8.ToString());
+            Console.WriteLine(int16.ToString());
+            Console.WriteLine(uint16.ToString());
+            Console.WriteLine(int32.ToString());
+            Console.WriteLine(uint32.ToString());
+            Console.WriteLine(int64.ToString());
+            Console.WriteLine(uint64.ToString());
+
+
+            // 50 % 15 = 5
+            Console.WriteLine("50 % 15 = 5");
+            value %= 15;
+            int8 %= 15;
+            uint8 %= 15;
+            int16 %= 15;
+            uint16 %= 15;
+            int32 %= 15;
+            uint32 %= 15;
+            int64 %= 15;
+            uint64 %= 15;
+
+            Console.WriteLine(int8.ToString());
+            Console.WriteLine(uint8.ToString());
+            Console.WriteLine(int16.ToString());
+            Console.WriteLine(uint16.ToString());
+            Console.WriteLine(int32.ToString());
+            Console.WriteLine(uint32.ToString());
+            Console.WriteLine(int64.ToString());
+            Console.WriteLine(uint64.ToString());
+
+
+            // 5 & 4 = 4
+            Console.WriteLine("5 & 4 = 4     101 & 100 = 100");
+            value &= 4;
+            int8 &= 4;
+            uint8 &= 4;
+            int16 &= 4;
+            uint16 &= 4;
+            int32 &= 4;
+            uint32 &= 4;
+            int64 &= 4;
+            uint64 &= 4;
+
+            Console.WriteLine(int8.ToString());
+            Console.WriteLine(uint8.ToString());
+            Console.WriteLine(int16.ToString());
+            Console.WriteLine(uint16.ToString());
+            Console.WriteLine(int32.ToString());
+            Console.WriteLine(uint32.ToString());
+            Console.WriteLine(int64.ToString());
+            Console.WriteLine(uint64.ToString());
+
+            // 4 | 3 = 7
+            Console.WriteLine("4 | 3 = 7     100 | 011 = 111");
+            value |= 3;
+            int8 |= 3;
+            uint8 |= 3;
+            int16 |= 3;
+            uint16 |= 3;
+            int32 |= 3;
+            uint32 |= 3;
+            int64 |= 3;
+            uint64 |= 3;
+
+            Console.WriteLine(int8.ToString());
+            Console.WriteLine(uint8.ToString());
+            Console.WriteLine(int16.ToString());
+            Console.WriteLine(uint16.ToString());
+            Console.WriteLine(int32.ToString());
+            Console.WriteLine(uint32.ToString());
+            Console.WriteLine(int64.ToString());
+            Console.WriteLine(uint64.ToString());
+
+
+            // 7 ^ 9 = 14
+            Console.WriteLine("7 ^ 9 = 14     0111 ^ 1001 = 1110");
+            value ^= 9;
+            int8 ^= 9;
+            uint8 ^= 9;
+            int16 ^= 9;
+            uint16 ^= 9;
+            int32 ^= 9;
+            uint32 ^= 9;
+            int64 ^= 9;
+            uint64 ^= 9;
+
+            Console.WriteLine(int8.ToString());
+            Console.WriteLine(uint8.ToString());
+            Console.WriteLine(int16.ToString());
+            Console.WriteLine(uint16.ToString());
+            Console.WriteLine(int32.ToString());
+            Console.WriteLine(uint32.ToString());
+            Console.WriteLine(int64.ToString());
+            Console.WriteLine(uint64.ToString());
+
+
 
 
             Console.ReadKey();

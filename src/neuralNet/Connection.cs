@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using stdint;                           /* Custom C# stdint library : https://www.github.com/Raesangur/Cs-stdint */
+
 
 namespace machineLearning2
 {
@@ -27,7 +29,6 @@ namespace machineLearning2
             inputNeuron.addOutputConnection(this);
             outputNeuron.addInputConnection(this);
         }
-
         public Connection_t(machineLearning2 Parent, string Name, Neuron_t NeuronIn, Neuron_t NeuronOut, double Weight)
         {
             father = Parent;
@@ -40,5 +41,10 @@ namespace machineLearning2
             outputNeuron.addInputConnection(this);
         }
         #endregion
+
+        public void changeWeight(double newWeight)
+        {
+            weight = newWeight;
+        }
     }
 }
