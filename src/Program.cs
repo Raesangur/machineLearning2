@@ -108,6 +108,7 @@ namespace machineLearning2
             uint32 *= 2;
             int64 *= 2;
             uint64 *= 2;
+           
 
             Console.WriteLine(int8.ToString());
             Console.WriteLine(uint8.ToString());
@@ -184,6 +185,7 @@ namespace machineLearning2
             Console.WriteLine(int64.ToString());
             Console.WriteLine(uint64.ToString());
 
+            
 
             // 5 & 4 = 4
             Console.WriteLine("5 & 4 = 4     101 & 100 = 100");
